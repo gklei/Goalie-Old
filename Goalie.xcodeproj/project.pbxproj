@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F31BAAC41C11F09A0079C537 /* Goal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAC21C11F09A0079C537 /* Goal.xcdatamodeld */; };
+		F31BAAC61C11F1A10079C537 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAC51C11F1A10079C537 /* Goal.swift */; };
+		F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAC71C11F1C80079C537 /* ManagedObject.swift */; };
+		F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAC91C11F2DF0079C537 /* CoreDataStack.swift */; };
+		F31BAACC1C11F32B0079C537 /* NSURL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAACB1C11F32B0079C537 /* NSURL+Extensions.swift */; };
+		F31BAACE1C11F4650079C537 /* UINavigationBar+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAACD1C11F4650079C537 /* UINavigationBar+Extensions.swift */; };
+		F31BAAD01C11F5080079C537 /* DataRelatedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAACF1C11F5080079C537 /* DataRelatedProtocols.swift */; };
+		F31BAAD21C12002B0079C537 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */; };
+		F31BAAD41C1204020079C537 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAD31C1204020079C537 /* DataProvider.swift */; };
+		F31BAAD61C1210B10079C537 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */; };
+		F31BAAD91C1213D40079C537 /* AllGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */; };
+		F31BAADA1C1213D40079C537 /* AllGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */; };
+		F31BAADC1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */; };
+		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
+		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
+		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
+		F3D4618F1C113221002F31A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D4618D1C113221002F31A6 /* Main.storyboard */; };
+		F3D461911C113221002F31A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D461901C113221002F31A6 /* Assets.xcassets */; };
+		F3D461941C113221002F31A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D461921C113221002F31A6 /* LaunchScreen.storyboard */; };
+		F3D4619F1C113221002F31A6 /* GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4619E1C113221002F31A6 /* GoalieTests.swift */; };
+		F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */; };
+		F3D461AC1C113C39002F31A6 /* GoalieTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461AB1C113C39002F31A6 /* GoalieTabBarController.swift */; };
+		F3D461AF1C113C69002F31A6 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461AE1C113C69002F31A6 /* UIImage+Extensions.swift */; };
+		F3D461B11C1144A1002F31A6 /* GoalieNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461B01C1144A1002F31A6 /* GoalieNavigationBar.swift */; };
+		F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */; };
+		F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */; };
+		F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */; };
+		F3D461BF1C117663002F31A6 /* MockupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461BE1C117663002F31A6 /* MockupUI.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3D4619B1C113221002F31A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3D4617C1C113221002F31A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3D461831C113221002F31A6;
+			remoteInfo = Goalie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F31BAAC31C11F09A0079C537 /* Goal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Goal.xcdatamodel; sourceTree = "<group>"; };
+		F31BAAC51C11F1A10079C537 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = Goalie/Goal.swift; sourceTree = "<group>"; };
+		F31BAAC71C11F1C80079C537 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObject.swift; path = Goalie/ManagedObject.swift; sourceTree = "<group>"; };
+		F31BAAC91C11F2DF0079C537 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Goalie/CoreDataStack.swift; sourceTree = "<group>"; };
+		F31BAACB1C11F32B0079C537 /* NSURL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+Extensions.swift"; path = "Goalie/NSURL+Extensions.swift"; sourceTree = "<group>"; };
+		F31BAACD1C11F4650079C537 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "Goalie/UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
+		F31BAACF1C11F5080079C537 /* DataRelatedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataRelatedProtocols.swift; path = Goalie/DataRelatedProtocols.swift; sourceTree = "<group>"; };
+		F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
+		F31BAAD31C1204020079C537 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGoalsTableViewCell.swift; sourceTree = "<group>"; };
+		F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllGoalsTableViewCell.xib; path = Goalie/AllGoalsTableViewCell.xib; sourceTree = "<group>"; };
+		F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Extensions.swift"; path = "Goalie/NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
+		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
+		F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsGridViewController.swift; sourceTree = "<group>"; };
+		F3D4618E1C113221002F31A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3D461901C113221002F31A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Goalie/Assets.xcassets; sourceTree = "<group>"; };
+		F3D461931C113221002F31A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3D461951C113221002F31A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Goalie/Info.plist; sourceTree = "<group>"; };
+		F3D4619A1C113221002F31A6 /* GoalieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D4619E1C113221002F31A6 /* GoalieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieTests.swift; sourceTree = "<group>"; };
+		F3D461A01C113221002F31A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTomorrowViewController.swift; sourceTree = "<group>"; };
+		F3D461AB1C113C39002F31A6 /* GoalieTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalieTabBarController.swift; path = Goalie/GoalieTabBarController.swift; sourceTree = "<group>"; };
+		F3D461AE1C113C69002F31A6 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Goalie/UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		F3D461B01C1144A1002F31A6 /* GoalieNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalieNavigationBar.swift; path = Goalie/GoalieNavigationBar.swift; sourceTree = "<group>"; };
+		F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthCollectionViewCell.xib; path = Goalie/MonthCollectionViewCell.xib; sourceTree = "<group>"; };
+		F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeConstants.swift; path = Goalie/ThemeConstants.swift; sourceTree = "<group>"; };
+		F3D461BE1C117663002F31A6 /* MockupUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockupUI.swift; path = Goalie/MockupUI.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3D461811C113221002F31A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3D461971C113221002F31A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F31BAAC11C11F0690079C537 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				F31BAAC21C11F09A0079C537 /* Goal.xcdatamodeld */,
+				F31BAAC51C11F1A10079C537 /* Goal.swift */,
+				F31BAAC71C11F1C80079C537 /* ManagedObject.swift */,
+				F31BAAC91C11F2DF0079C537 /* CoreDataStack.swift */,
+				F31BAACF1C11F5080079C537 /* DataRelatedProtocols.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		F3D4617B1C113221002F31A6 = {
+			isa = PBXGroup;
+			children = (
+				F31BAAC11C11F0690079C537 /* Core Data */,
+				F3D461BD1C117641002F31A6 /* Mockup UI */,
+				F3D461BA1C116A9E002F31A6 /* Theme */,
+				F3D461B91C1168E2002F31A6 /* Subclasses */,
+				F3D461AD1C113C57002F31A6 /* Extensions */,
+				F3D461861C113221002F31A6 /* Goalie */,
+				F3D4619D1C113221002F31A6 /* GoalieTests */,
+				F3D461B71C115D4C002F31A6 /* Other */,
+				F3D461851C113221002F31A6 /* Products */,
+				F3D461B81C115D67002F31A6 /* XIBs and Storyboards */,
+			);
+			sourceTree = "<group>";
+		};
+		F3D461851C113221002F31A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461841C113221002F31A6 /* Goalie.app */,
+				F3D4619A1C113221002F31A6 /* GoalieTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3D461861C113221002F31A6 /* Goalie */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461891C113221002F31A6 /* AllGoalsViewController.swift */,
+				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
+				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
+				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
+				F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */,
+				F31BAAD31C1204020079C537 /* DataProvider.swift */,
+				F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */,
+				F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */,
+			);
+			path = Goalie;
+			sourceTree = "<group>";
+		};
+		F3D4619D1C113221002F31A6 /* GoalieTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3D4619E1C113221002F31A6 /* GoalieTests.swift */,
+				F3D461A01C113221002F31A6 /* Info.plist */,
+			);
+			path = GoalieTests;
+			sourceTree = "<group>";
+		};
+		F3D461AD1C113C57002F31A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461AE1C113C69002F31A6 /* UIImage+Extensions.swift */,
+				F31BAACB1C11F32B0079C537 /* NSURL+Extensions.swift */,
+				F31BAACD1C11F4650079C537 /* UINavigationBar+Extensions.swift */,
+				F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F3D461B71C115D4C002F31A6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461871C113221002F31A6 /* AppDelegate.swift */,
+				F3D461901C113221002F31A6 /* Assets.xcassets */,
+				F3D461921C113221002F31A6 /* LaunchScreen.storyboard */,
+				F3D461951C113221002F31A6 /* Info.plist */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		F3D461B81C115D67002F31A6 /* XIBs and Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */,
+				F3D4618D1C113221002F31A6 /* Main.storyboard */,
+				F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */,
+			);
+			name = "XIBs and Storyboards";
+			sourceTree = "<group>";
+		};
+		F3D461B91C1168E2002F31A6 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461AB1C113C39002F31A6 /* GoalieTabBarController.swift */,
+				F3D461B01C1144A1002F31A6 /* GoalieNavigationBar.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		F3D461BA1C116A9E002F31A6 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */,
+			);
+			name = Theme;
+			sourceTree = "<group>";
+		};
+		F3D461BD1C117641002F31A6 /* Mockup UI */ = {
+			isa = PBXGroup;
+			children = (
+				F3D461BE1C117663002F31A6 /* MockupUI.swift */,
+			);
+			name = "Mockup UI";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3D461831C113221002F31A6 /* Goalie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3D461A31C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie" */;
+			buildPhases = (
+				F3D461801C113221002F31A6 /* Sources */,
+				F3D461811C113221002F31A6 /* Frameworks */,
+				F3D461821C113221002F31A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Goalie;
+			productName = Goalie;
+			productReference = F3D461841C113221002F31A6 /* Goalie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3D461991C113221002F31A6 /* GoalieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3D461A61C113221002F31A6 /* Build configuration list for PBXNativeTarget "GoalieTests" */;
+			buildPhases = (
+				F3D461961C113221002F31A6 /* Sources */,
+				F3D461971C113221002F31A6 /* Frameworks */,
+				F3D461981C113221002F31A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3D4619C1C113221002F31A6 /* PBXTargetDependency */,
+			);
+			name = GoalieTests;
+			productName = GoalieTests;
+			productReference = F3D4619A1C113221002F31A6 /* GoalieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3D4617C1C113221002F31A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Incipia;
+				TargetAttributes = {
+					F3D461831C113221002F31A6 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					F3D461991C113221002F31A6 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = F3D461831C113221002F31A6;
+					};
+				};
+			};
+			buildConfigurationList = F3D4617F1C113221002F31A6 /* Build configuration list for PBXProject "Goalie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3D4617B1C113221002F31A6;
+			productRefGroup = F3D461851C113221002F31A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3D461831C113221002F31A6 /* Goalie */,
+				F3D461991C113221002F31A6 /* GoalieTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3D461821C113221002F31A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3D461941C113221002F31A6 /* LaunchScreen.storyboard in Resources */,
+				F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */,
+				F3D461911C113221002F31A6 /* Assets.xcassets in Resources */,
+				F3D4618F1C113221002F31A6 /* Main.storyboard in Resources */,
+				F31BAADA1C1213D40079C537 /* AllGoalsTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3D461981C113221002F31A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3D461801C113221002F31A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */,
+				F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */,
+				F31BAACE1C11F4650079C537 /* UINavigationBar+Extensions.swift in Sources */,
+				F31BAACC1C11F32B0079C537 /* NSURL+Extensions.swift in Sources */,
+				F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */,
+				F31BAAD91C1213D40079C537 /* AllGoalsTableViewCell.swift in Sources */,
+				F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */,
+				F31BAAD61C1210B10079C537 /* TableViewDataSource.swift in Sources */,
+				F3D461AC1C113C39002F31A6 /* GoalieTabBarController.swift in Sources */,
+				F31BAAD41C1204020079C537 /* DataProvider.swift in Sources */,
+				F31BAAC61C11F1A10079C537 /* Goal.swift in Sources */,
+				F3D461BF1C117663002F31A6 /* MockupUI.swift in Sources */,
+				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
+				F31BAAD21C12002B0079C537 /* FetchedResultsDataProvider.swift in Sources */,
+				F3D461AF1C113C69002F31A6 /* UIImage+Extensions.swift in Sources */,
+				F3D461B11C1144A1002F31A6 /* GoalieNavigationBar.swift in Sources */,
+				F31BAAD01C11F5080079C537 /* DataRelatedProtocols.swift in Sources */,
+				F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */,
+				F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */,
+				F31BAADC1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				F31BAAC41C11F09A0079C537 /* Goal.xcdatamodeld in Sources */,
+				F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3D461961C113221002F31A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3D4619F1C113221002F31A6 /* GoalieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3D4619C1C113221002F31A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3D461831C113221002F31A6 /* Goalie */;
+			targetProxy = F3D4619B1C113221002F31A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F3D4618D1C113221002F31A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3D4618E1C113221002F31A6 /* Base */,
+			);
+			name = Main.storyboard;
+			path = Goalie;
+			sourceTree = "<group>";
+		};
+		F3D461921C113221002F31A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3D461931C113221002F31A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = Goalie;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3D461A11C113221002F31A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F3D461A21C113221002F31A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3D461A41C113221002F31A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Goalie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F3D461A51C113221002F31A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Goalie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F3D461A71C113221002F31A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoalieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.GoalieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goalie.app/Goalie";
+			};
+			name = Debug;
+		};
+		F3D461A81C113221002F31A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoalieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.GoalieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goalie.app/Goalie";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3D4617F1C113221002F31A6 /* Build configuration list for PBXProject "Goalie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3D461A11C113221002F31A6 /* Debug */,
+				F3D461A21C113221002F31A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3D461A31C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3D461A41C113221002F31A6 /* Debug */,
+				F3D461A51C113221002F31A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3D461A61C113221002F31A6 /* Build configuration list for PBXNativeTarget "GoalieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3D461A71C113221002F31A6 /* Debug */,
+				F3D461A81C113221002F31A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F31BAAC21C11F09A0079C537 /* Goal.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F31BAAC31C11F09A0079C537 /* Goal.xcdatamodel */,
+			);
+			currentVersion = F31BAAC31C11F09A0079C537 /* Goal.xcdatamodel */;
+			name = Goal.xcdatamodeld;
+			path = Goalie/Goal.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F3D4617C1C113221002F31A6 /* Project object */;
+}
