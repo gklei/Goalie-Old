@@ -21,11 +21,13 @@
 		F31BAADA1C1213D40079C537 /* AllGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */; };
 		F31BAADC1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */; };
 		F31BAADE1C1224730079C537 /* AllGoalsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADD1C1224730079C537 /* AllGoalsTableViewDelegate.swift */; };
+		F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */; };
+		F31BAAE21C12415C0079C537 /* GoalDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */; };
+		F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3536E1B1C12520E003A114E /* Assets.xcassets */; };
 		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
 		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
 		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
 		F3D4618F1C113221002F31A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D4618D1C113221002F31A6 /* Main.storyboard */; };
-		F3D461911C113221002F31A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D461901C113221002F31A6 /* Assets.xcassets */; };
 		F3D461941C113221002F31A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D461921C113221002F31A6 /* LaunchScreen.storyboard */; };
 		F3D4619F1C113221002F31A6 /* GoalieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4619E1C113221002F31A6 /* GoalieTests.swift */; };
 		F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */; };
@@ -63,12 +65,14 @@
 		F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllGoalsTableViewCell.xib; path = Goalie/AllGoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Extensions.swift"; path = "Goalie/NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		F31BAADD1C1224730079C537 /* AllGoalsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGoalsTableViewDelegate.swift; sourceTree = "<group>"; };
+		F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
+		F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GoalDetailsViewController.xib; path = Goalie/GoalDetailsViewController.xib; sourceTree = "<group>"; };
+		F3536E1B1C12520E003A114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
 		F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsGridViewController.swift; sourceTree = "<group>"; };
 		F3D4618E1C113221002F31A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F3D461901C113221002F31A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Goalie/Assets.xcassets; sourceTree = "<group>"; };
 		F3D461931C113221002F31A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3D461951C113221002F31A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Goalie/Info.plist; sourceTree = "<group>"; };
 		F3D4619A1C113221002F31A6 /* GoalieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,15 +146,16 @@
 		F3D461861C113221002F31A6 /* Goalie */ = {
 			isa = PBXGroup;
 			children = (
-				F3D461891C113221002F31A6 /* AllGoalsViewController.swift */,
-				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
-				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
-				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
-				F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */,
-				F31BAAD31C1204020079C537 /* DataProvider.swift */,
-				F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */,
 				F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */,
 				F31BAADD1C1224730079C537 /* AllGoalsTableViewDelegate.swift */,
+				F3D461891C113221002F31A6 /* AllGoalsViewController.swift */,
+				F31BAAD31C1204020079C537 /* DataProvider.swift */,
+				F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */,
+				F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */,
+				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
+				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
+				F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */,
+				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
 			);
 			path = Goalie;
 			sourceTree = "<group>";
@@ -178,8 +183,8 @@
 		F3D461B71C115D4C002F31A6 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				F3536E1B1C12520E003A114E /* Assets.xcassets */,
 				F3D461871C113221002F31A6 /* AppDelegate.swift */,
-				F3D461901C113221002F31A6 /* Assets.xcassets */,
 				F3D461921C113221002F31A6 /* LaunchScreen.storyboard */,
 				F3D461951C113221002F31A6 /* Info.plist */,
 			);
@@ -189,6 +194,7 @@
 		F3D461B81C115D67002F31A6 /* XIBs and Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */,
 				F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */,
 				F3D4618D1C113221002F31A6 /* Main.storyboard */,
 				F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */,
@@ -304,8 +310,9 @@
 			files = (
 				F3D461941C113221002F31A6 /* LaunchScreen.storyboard in Resources */,
 				F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */,
-				F3D461911C113221002F31A6 /* Assets.xcassets in Resources */,
 				F3D4618F1C113221002F31A6 /* Main.storyboard in Resources */,
+				F31BAAE21C12415C0079C537 /* GoalDetailsViewController.xib in Resources */,
+				F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */,
 				F31BAADA1C1213D40079C537 /* AllGoalsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +333,7 @@
 			files = (
 				F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */,
 				F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */,
+				F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */,
 				F31BAACE1C11F4650079C537 /* UINavigationBar+Extensions.swift in Sources */,
 				F31BAACC1C11F32B0079C537 /* NSURL+Extensions.swift in Sources */,
 				F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */,

@@ -23,7 +23,6 @@ extension AllGoalsTableViewCell: ConfigurableCell
 {
    func configureForObject(object: Goal)
    {
-      print("configuring cell! goal title: \(object.title)")
       _titleLabel.text = object.title
    }
 }

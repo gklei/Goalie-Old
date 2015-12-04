@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AllGoalsViewController: UIViewController, ManagedObjectContextSettable
+class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UITableViewDelegate
 {
    @IBOutlet private weak var _allGoalsTableView: UITableView!
    
@@ -18,7 +18,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable
    private typealias Data = FetchedResultsDataProvider<AllGoalsViewController>
    private var _tableViewDataSource: TableViewDataSource<AllGoalsViewController, Data, AllGoalsTableViewCell>!
    private var _dataProvider: Data!
-   private var _tableViewDelegate: AllGoalsTableViewDelegate<Data>!
+   private var _tableViewDelegate: AllGoalsTableViewDelegate<Data, AllGoalsViewController>!
    
    private lazy var _goalFetchRequest: NSFetchRequest = {
       let request = Goal.sortedFetchRequest
@@ -27,9 +27,11 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable
       return request
    }()
    
-   // For testing
-   private let _goalTitles = ["A", "B", "C", "D", "E", "F", "G"]
-   private var _goalTitleIndex = 0
+   private var _defaultFRC: NSFetchedResultsController {
+      return NSFetchedResultsController(fetchRequest: _goalFetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+   }
+   
+   private let _detailsViewController = GoalDetailsViewController()
    
    // MARK: - Lifecycle
    override func viewDidLoad()
@@ -39,26 +41,21 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable
       automaticallyAdjustsScrollViewInsets = false
       
       setupTableViewDataSourceAndDelegate()
+      _detailsViewController.managedObjectContext = managedObjectContext
    }
    
    private func setupTableViewDataSourceAndDelegate()
    {
       _allGoalsTableView.registerNib(UINib(nibName: "AllGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "AllGoalsCellIdentifier")
-      
-      let frc = NSFetchedResultsController(fetchRequest: _goalFetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-      
-      _dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+      _dataProvider = FetchedResultsDataProvider(fetchedResultsController: _defaultFRC, delegate: self)
       _tableViewDataSource = TableViewDataSource(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
-      _tableViewDelegate = AllGoalsTableViewDelegate(tableView: _allGoalsTableView, managedObjectContext: managedObjectContext, dataProvider: _dataProvider)
+      _tableViewDelegate = AllGoalsTableViewDelegate(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
    }
    
    // MARK: - IBActions
    @IBAction func addNewGoal()
    {
-      managedObjectContext.performChanges { () -> () in
-         let title = self._goalTitles[self._goalTitleIndex++ % self._goalTitles.count]
-         Goal.insertIntoContext(self.managedObjectContext, withTitle: title, summary: "hi there")
-      }
+      presentViewController(_detailsViewController, animated: true, completion: nil)
    }
    
    @IBAction func deleteFirst()
@@ -70,6 +67,12 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable
             firstGoal.managedObjectContext?.deleteObject(firstGoal)
          })
       }
+   }
+   
+   private func presentDetailsForGoal(goal: Goal)
+   {
+      _detailsViewController.configureWithGoal(goal)
+      presentViewController(_detailsViewController, animated: true, completion: nil)
    }
 }
 
@@ -88,6 +91,14 @@ extension AllGoalsViewController: DataSourceDelegate
    func cellIdentifierForObject(object: Object) -> String
    {
       return "AllGoalsCellIdentifier"
+   }
+}
+
+extension AllGoalsViewController: TableViewDelegate
+{
+   func objectSelected(object: Goal)
+   {
+      presentDetailsForGoal(object)
    }
 }
 

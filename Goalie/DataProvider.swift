@@ -31,12 +31,20 @@ enum DataProviderUpdate<Object>
 }
 
 // PUT THIS IN IT'S OWN FILE
-protocol DataSourceDelegate: class {
+protocol DataSourceDelegate: class
+{
    typealias Object
    func cellIdentifierForObject(object: Object) -> String
 }
 
-protocol ConfigurableCell {
+protocol ConfigurableCell
+{
    typealias DataSource
    func configureForObject(object: DataSource)
+}
+
+protocol TableViewDelegate
+{
+   typealias Object
+   func objectSelected(object: Object)
 }
