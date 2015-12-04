@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell where Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource
+class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell where  Delegate.Object: ManagedObject, Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource
 {
    private let _tableView: UITableView
    private let _dataProvider: Data
@@ -77,10 +77,11 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
    
    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
       if editingStyle == .Delete
-      {
-//         _deleteIndexPath = indexPath
-         let goalToDelete = _dataProvider.objectAtIndexPath(indexPath)
-         print("delete goal: \(goalToDelete)")
+      {  
+         let goal = _dataProvider.objectAtIndexPath(indexPath)
+         goal.managedObjectContext?.performChanges({ () -> () in
+            goal.managedObjectContext?.deleteObject(goal)
+         })
       }
    }
    

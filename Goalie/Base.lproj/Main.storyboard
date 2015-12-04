@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--All Goals View Controller-->
@@ -46,14 +45,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yD3-81-a6K">
-                        <leftBarButtonItems>
-                            <barButtonItem systemItem="trash" id="BZC-Zk-iyD">
-                                <connections>
-                                    <action selector="deleteFirst" destination="9pv-A4-QxB" id="KeW-37-uko"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem id="bzx-52-Kal"/>
-                        </leftBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" id="bzx-52-Kal"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jGy-PM-1Ct">
                             <connections>
                                 <action selector="addNewGoal" destination="9pv-A4-QxB" id="tgf-gN-DhX"/>

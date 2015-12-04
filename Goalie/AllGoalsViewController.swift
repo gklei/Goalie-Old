@@ -58,17 +58,6 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       presentViewController(_detailsViewController, animated: true, completion: nil)
    }
    
-   @IBAction func deleteFirst()
-   {
-      if _dataProvider.numberOfItemsInSection(0) > 0
-      {
-         let firstGoal: Goal = _dataProvider.objectAtIndexPath(NSIndexPath(forRow: 0, inSection: 0))
-         firstGoal.managedObjectContext?.performChanges({ () -> () in
-            firstGoal.managedObjectContext?.deleteObject(firstGoal)
-         })
-      }
-   }
-   
    private func presentDetailsForGoal(goal: Goal)
    {
       _detailsViewController.configureWithGoal(goal)
@@ -91,6 +80,10 @@ extension AllGoalsViewController: DataSourceDelegate
    func cellIdentifierForObject(object: Object) -> String
    {
       return "AllGoalsCellIdentifier"
+   }
+   
+   func dataProviderWantsToDeleteObjectAtIndexPath(indexPath: NSIndexPath)
+   {
    }
 }
 

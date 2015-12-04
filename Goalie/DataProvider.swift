@@ -15,7 +15,6 @@ protocol DataProvider: class
    func numberOfItemsInSection(section: Int) -> Int
 }
 
-
 protocol DataProviderDelegate: class
 {
    typealias Object
