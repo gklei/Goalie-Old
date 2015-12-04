@@ -13,7 +13,7 @@ let ThemeTabBarItemFontSize: CGFloat = 16
 let ThemeMonthGridFontSize: CGFloat = 32
 let ThemeMonthBadgeFontSize: CGFloat = 20
 
-let ThemeFontName = "MarkerFelt-Wide"
+//let ThemeFontName = "MarkerFelt-Wide"
 //let ThemeFontName = "ChalkboardSE-Bold"
 //let ThemeFontName = "Optima-ExtraBlack"
 //let ThemeFontName = "Noteworthy-Bold"
@@ -23,7 +23,8 @@ let ThemeFontName = "MarkerFelt-Wide"
 //let ThemeFontName = "AvenirNextCondensed-Heavy"
 //let ThemeFontName = "BradleyHandITCTT-Bold"
 //let ThemeFontName = "Courier-Bold"
-//let ThemeFontName = "Menlo-Bold"
+let ThemeFontName = "Menlo-Bold"
+//let ThemeFontName = "Chalkduster"
 
 let ThemeTabBarItemFont = UIFont(name: ThemeFontName, size: ThemeTabBarItemFontSize)!
 let ThemeNavigationBarFont = UIFont(name: ThemeFontName, size: ThemeNavigationBarFontSize)!

@@ -74,4 +74,18 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell
       cell.configureForObject(object)
       return cell
    }
+   
+   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+      if editingStyle == .Delete
+      {
+//         _deleteIndexPath = indexPath
+         let goalToDelete = _dataProvider.objectAtIndexPath(indexPath)
+         print("delete goal: \(goalToDelete)")
+      }
+   }
+   
+   func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+   {
+      return true
+   }
 }

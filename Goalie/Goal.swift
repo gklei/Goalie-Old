@@ -35,6 +35,6 @@ extension Goal: ManagedObjectType
    }
    
    public static var defaultSortDescriptors: [NSSortDescriptor] {
-      return [NSSortDescriptor(key: "title", ascending: false)]
+      return [NSSortDescriptor(key: "title", ascending: true)]
    }
 }
