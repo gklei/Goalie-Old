@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DataProvider: class
+protocol DataProviderProtocol: class
 {
    typealias Object
    func objectAtIndexPath(indexPath: NSIndexPath) -> Object
@@ -42,7 +42,7 @@ protocol ConfigurableCell
    func configureForObject(object: DataSource)
 }
 
-protocol TableViewDelegate
+protocol TableViewDelegateProtocol
 {
    typealias Object
    func objectSelected(object: Object)

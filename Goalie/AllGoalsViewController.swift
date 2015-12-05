@@ -15,10 +15,10 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    
    var managedObjectContext: NSManagedObjectContext!
    
-   private typealias Data = FetchedResultsDataProvider<AllGoalsViewController>
-   private var _tableViewDataSource: TableViewDataSource<AllGoalsViewController, Data, AllGoalsTableViewCell>!
-   private var _dataProvider: Data!
-   private var _tableViewDelegate: AllGoalsTableViewDelegate<Data, AllGoalsViewController>!
+   private typealias DataProvider = FetchedResultsDataProvider<AllGoalsViewController>
+   private var _tableViewDataSource: TableViewDataSource<AllGoalsViewController, DataProvider, AllGoalsTableViewCell>!
+   private var _dataProvider: DataProvider!
+   private var _tableViewDelegate: TableViewDelegate<DataProvider, AllGoalsViewController>!
    
    private lazy var _goalFetchRequest: NSFetchRequest = {
       let request = Goal.sortedFetchRequest
@@ -49,7 +49,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       _allGoalsTableView.registerNib(UINib(nibName: "AllGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "AllGoalsCellIdentifier")
       _dataProvider = FetchedResultsDataProvider(fetchedResultsController: _defaultFRC, delegate: self)
       _tableViewDataSource = TableViewDataSource(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
-      _tableViewDelegate = AllGoalsTableViewDelegate(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
+      _tableViewDelegate = TableViewDelegate(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
    }
    
    // MARK: - IBActions
@@ -87,7 +87,7 @@ extension AllGoalsViewController: DataSourceDelegate
    }
 }
 
-extension AllGoalsViewController: TableViewDelegate
+extension AllGoalsViewController: TableViewDelegateProtocol
 {
    func objectSelected(object: Goal)
    {

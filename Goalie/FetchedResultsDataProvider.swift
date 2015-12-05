@@ -8,7 +8,7 @@
 
 import CoreData
 
-class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProvider
+class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProviderProtocol
 {
    private weak var _delegate: Delegate!
    private let _fetchedResultsController: NSFetchedResultsController

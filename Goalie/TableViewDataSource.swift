@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProvider, Cell: UITableViewCell where  Delegate.Object: ManagedObject, Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource
+class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtocol, Cell: UITableViewCell where  Delegate.Object: ManagedObject, Delegate.Object == Data.Object, Cell: ConfigurableCell, Cell.DataSource == Data.Object>: NSObject, UITableViewDataSource
 {
    private let _tableView: UITableView
    private let _dataProvider: Data

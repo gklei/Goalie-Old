@@ -20,7 +20,7 @@
 		F31BAAD91C1213D40079C537 /* AllGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */; };
 		F31BAADA1C1213D40079C537 /* AllGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */; };
 		F31BAADC1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */; };
-		F31BAADE1C1224730079C537 /* AllGoalsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADD1C1224730079C537 /* AllGoalsTableViewDelegate.swift */; };
+		F31BAADE1C1224730079C537 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADD1C1224730079C537 /* TableViewDelegate.swift */; };
 		F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */; };
 		F31BAAE21C12415C0079C537 /* GoalDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */; };
 		F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3536E1B1C12520E003A114E /* Assets.xcassets */; };
@@ -60,13 +60,13 @@
 		F31BAACB1C11F32B0079C537 /* NSURL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSURL+Extensions.swift"; path = "Goalie/NSURL+Extensions.swift"; sourceTree = "<group>"; };
 		F31BAACD1C11F4650079C537 /* UINavigationBar+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UINavigationBar+Extensions.swift"; path = "Goalie/UINavigationBar+Extensions.swift"; sourceTree = "<group>"; };
 		F31BAACF1C11F5080079C537 /* DataRelatedProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataRelatedProtocols.swift; path = Goalie/DataRelatedProtocols.swift; sourceTree = "<group>"; };
-		F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
-		F31BAAD31C1204020079C537 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchedResultsDataProvider.swift; path = Goalie/FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
+		F31BAAD31C1204020079C537 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Goalie/DataProvider.swift; sourceTree = "<group>"; };
+		F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSource.swift; path = Goalie/TableViewDataSource.swift; sourceTree = "<group>"; };
 		F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllGoalsTableViewCell.xib; path = Goalie/AllGoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Extensions.swift"; path = "Goalie/NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
-		F31BAADD1C1224730079C537 /* AllGoalsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGoalsTableViewDelegate.swift; sourceTree = "<group>"; };
+		F31BAADD1C1224730079C537 /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDelegate.swift; path = Goalie/TableViewDelegate.swift; sourceTree = "<group>"; };
 		F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GoalDetailsViewController.xib; path = Goalie/GoalDetailsViewController.xib; sourceTree = "<group>"; };
 		F3536E1B1C12520E003A114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,19 +133,31 @@
 			name = "External Frameworks";
 			sourceTree = "<group>";
 		};
+		F3536E2A1C129831003A114E /* Generic Data Source & Delegate Files */ = {
+			isa = PBXGroup;
+			children = (
+				F31BAAD31C1204020079C537 /* DataProvider.swift */,
+				F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */,
+				F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */,
+				F31BAADD1C1224730079C537 /* TableViewDelegate.swift */,
+			);
+			name = "Generic Data Source & Delegate Files";
+			sourceTree = "<group>";
+		};
 		F3D4617B1C113221002F31A6 = {
 			isa = PBXGroup;
 			children = (
-				F3536E1E1C12743D003A114E /* External Frameworks */,
 				F31BAAC11C11F0690079C537 /* Core Data */,
-				F3D461BD1C117641002F31A6 /* Mockup UI */,
-				F3D461BA1C116A9E002F31A6 /* Theme */,
-				F3D461B91C1168E2002F31A6 /* Subclasses */,
 				F3D461AD1C113C57002F31A6 /* Extensions */,
+				F3536E1E1C12743D003A114E /* External Frameworks */,
+				F3536E2A1C129831003A114E /* Generic Data Source & Delegate Files */,
 				F3D461861C113221002F31A6 /* Goalie */,
 				F3D4619D1C113221002F31A6 /* GoalieTests */,
+				F3D461BD1C117641002F31A6 /* Mockup UI */,
 				F3D461B71C115D4C002F31A6 /* Other */,
 				F3D461851C113221002F31A6 /* Products */,
+				F3D461B91C1168E2002F31A6 /* Subclasses */,
+				F3D461BA1C116A9E002F31A6 /* Theme */,
 				F3D461B81C115D67002F31A6 /* XIBs and Storyboards */,
 			);
 			sourceTree = "<group>";
@@ -163,14 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */,
-				F31BAADD1C1224730079C537 /* AllGoalsTableViewDelegate.swift */,
 				F3D461891C113221002F31A6 /* AllGoalsViewController.swift */,
-				F31BAAD31C1204020079C537 /* DataProvider.swift */,
-				F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */,
 				F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */,
 				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
 				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
-				F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */,
 				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
 			);
 			path = Goalie;
@@ -381,7 +389,7 @@
 				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
 				F31BAAD21C12002B0079C537 /* FetchedResultsDataProvider.swift in Sources */,
 				F3D461AF1C113C69002F31A6 /* UIImage+Extensions.swift in Sources */,
-				F31BAADE1C1224730079C537 /* AllGoalsTableViewDelegate.swift in Sources */,
+				F31BAADE1C1224730079C537 /* TableViewDelegate.swift in Sources */,
 				F3D461B11C1144A1002F31A6 /* GoalieNavigationBar.swift in Sources */,
 				F31BAAD01C11F5080079C537 /* DataRelatedProtocols.swift in Sources */,
 				F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */,
