@@ -24,12 +24,12 @@
                     <animations/>
                     <items>
                         <navigationItem title="Create Goal" id="2fw-hC-wAB">
-                            <barButtonItem key="leftBarButtonItem" image="icn-x" id="HOp-xh-4Y1">
+                            <barButtonItem key="leftBarButtonItem" title="Cancel" id="HOp-xh-4Y1">
                                 <connections>
                                     <action selector="cancelButtonPressed" destination="-1" id="xXu-xA-ljt"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" image="icn-standby" id="z2a-ji-7Ce">
+                            <barButtonItem key="rightBarButtonItem" title="Done" id="z2a-ji-7Ce">
                                 <connections>
                                     <action selector="doneButtonPressed" destination="-1" id="Yld-EO-iZf"/>
                                 </connections>
@@ -78,13 +78,13 @@
                     <rect key="frame" x="8" y="94" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j09-vY-uVB">
                     <rect key="frame" x="8" y="132" width="304" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textField>
             </subviews>
             <animations/>
@@ -108,11 +108,7 @@
                 <constraint firstItem="ogF-Kx-Bl3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="yGu-db-JlH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="234" y="362"/>
+            <point key="canvasLocation" x="11" y="286"/>
         </view>
     </objects>
-    <resources>
-        <image name="icn-standby" width="24" height="24"/>
-        <image name="icn-x" width="22" height="22"/>
-    </resources>
 </document>

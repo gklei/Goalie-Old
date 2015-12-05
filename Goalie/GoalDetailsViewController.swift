@@ -31,6 +31,14 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _summaryTextField.text = goal?.summary
       
       _navigationItem.title = goal != nil ? "Details" : "Create"
+      
+      let attrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
+      
+      _navigationItem.leftBarButtonItem?.title = "Cancel"
+      _navigationItem.leftBarButtonItem?.setTitleTextAttributes(attrs, forState: .Normal)
+      
+      _navigationItem.rightBarButtonItem?.setTitleTextAttributes(attrs, forState: .Normal)
+      _navigationItem.rightBarButtonItem?.title = "Done"
    }
    
    func configureWithGoal(goal: Goal)

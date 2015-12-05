@@ -10,6 +10,7 @@ import UIKit
 
 let ThemeNavigationBarFontSize: CGFloat = 22.0
 let ThemeTabBarItemFontSize: CGFloat = 16
+let ThemeNavigationBarButtonItemFontSize: CGFloat = 18
 let ThemeMonthGridFontSize: CGFloat = 32
 let ThemeMonthBadgeFontSize: CGFloat = 20
 let ThemeAllGoalsLabelFontSize: CGFloat = 14
@@ -29,6 +30,7 @@ let ThemeFontName = "Menlo-Bold"
 
 let ThemeTabBarItemFont = UIFont(name: ThemeFontName, size: ThemeTabBarItemFontSize)!
 let ThemeNavigationBarFont = UIFont(name: ThemeFontName, size: ThemeNavigationBarFontSize)!
+let ThemeNavigationBarButtonItemFont = UIFont(name: ThemeFontName, size: ThemeNavigationBarButtonItemFontSize)!
 let ThemeMonthGridLabelFont = UIFont(name: ThemeFontName, size: ThemeMonthGridFontSize)!
 let ThemeMonthBadgeFont = UIFont(name: ThemeFontName, size: ThemeMonthBadgeFontSize)!
 let ThemeAllGoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeAllGoalsLabelFontSize)!
@@ -46,7 +48,7 @@ let ThemeSelectedStateTextColor = UIColor.cyanColor()
 let ThemeTitleTextColor = UIColor.blackColor()
 
 enum ThemeUIComponent {
-   case TabBar, NavBar
+   case TabBar, NavBar, NavBarButtonItem
 }
 
 struct Theme
@@ -61,6 +63,9 @@ struct Theme
          break
       case .NavBar:
          font = ThemeNavigationBarFont
+         break
+      case .NavBarButtonItem:
+         font = ThemeNavigationBarButtonItemFont
          break
       }
       return font
