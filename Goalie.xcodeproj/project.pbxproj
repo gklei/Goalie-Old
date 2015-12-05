@@ -24,6 +24,8 @@
 		F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */; };
 		F31BAAE21C12415C0079C537 /* GoalDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */; };
 		F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3536E1B1C12520E003A114E /* Assets.xcassets */; };
+		F3536E211C127446003A114E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E1F1C127446003A114E /* Fabric.framework */; };
+		F3536E221C127446003A114E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E201C127446003A114E /* Crashlytics.framework */; };
 		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
 		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
 		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
@@ -68,6 +70,8 @@
 		F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GoalDetailsViewController.xib; path = Goalie/GoalDetailsViewController.xib; sourceTree = "<group>"; };
 		F3536E1B1C12520E003A114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3536E1F1C127446003A114E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		F3536E201C127446003A114E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3536E221C127446003A114E /* Crashlytics.framework in Frameworks */,
+				F3536E211C127446003A114E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,9 +124,19 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		F3536E1E1C12743D003A114E /* External Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3536E1F1C127446003A114E /* Fabric.framework */,
+				F3536E201C127446003A114E /* Crashlytics.framework */,
+			);
+			name = "External Frameworks";
+			sourceTree = "<group>";
+		};
 		F3D4617B1C113221002F31A6 = {
 			isa = PBXGroup;
 			children = (
+				F3536E1E1C12743D003A114E /* External Frameworks */,
 				F31BAAC11C11F0690079C537 /* Core Data */,
 				F3D461BD1C117641002F31A6 /* Mockup UI */,
 				F3D461BA1C116A9E002F31A6 /* Theme */,
@@ -237,6 +253,7 @@
 				F3D461801C113221002F31A6 /* Sources */,
 				F3D461811C113221002F31A6 /* Frameworks */,
 				F3D461821C113221002F31A6 /* Resources */,
+				F3536E1D1C127420003A114E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -277,6 +294,7 @@
 				TargetAttributes = {
 					F3D461831C113221002F31A6 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 49BYD5B64K;
 					};
 					F3D461991C113221002F31A6 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -325,6 +343,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F3536E1D1C127420003A114E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f8adb97359f3be505eb37f857a45751f47fd970d 407866616ca285468c6460521feef426e433f90b9fb69faf01009c146bb9da62";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F3D461801C113221002F31A6 /* Sources */ = {
@@ -483,10 +517,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Goalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ff9a1f18-cc7e-45e9-b186-fdcf5eee2d01";
 			};
 			name = Debug;
 		};
@@ -494,10 +534,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Goalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ff9a1f18-cc7e-45e9-b186-fdcf5eee2d01";
 			};
 			name = Release;
 		};
