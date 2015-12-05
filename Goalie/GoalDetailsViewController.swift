@@ -68,6 +68,8 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private func dismissSelf()
    {
       goal = nil
-      self.dismissViewControllerAnimated(true, completion: nil)
+      _titleTextField.resignFirstResponder()
+      _summaryTextField.resignFirstResponder()
+      self.dismissViewControllerAnimated(false, completion: nil)
    }
 }
