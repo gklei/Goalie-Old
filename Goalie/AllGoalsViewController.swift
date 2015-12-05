@@ -13,7 +13,11 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
 {
    @IBOutlet private weak var _allGoalsTableView: UITableView!
    
-   var managedObjectContext: NSManagedObjectContext!
+   var managedObjectContext: NSManagedObjectContext! {
+      didSet {
+         _detailsViewController.managedObjectContext = managedObjectContext
+      }
+   }
    
    private typealias DataProvider = FetchedResultsDataProvider<AllGoalsViewController>
    private var _tableViewDataSource: TableViewDataSource<AllGoalsViewController, DataProvider, AllGoalsTableViewCell>!
@@ -32,6 +36,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    }
    
    private let _detailsViewController = GoalDetailsViewController()
+   private let _tableViewCellID = "AllGoalsCellIdentifier"
    
    // MARK: - Lifecycle
    override func viewDidLoad()
@@ -41,12 +46,11 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       automaticallyAdjustsScrollViewInsets = false
       
       setupTableViewDataSourceAndDelegate()
-      _detailsViewController.managedObjectContext = managedObjectContext
    }
    
    private func setupTableViewDataSourceAndDelegate()
    {
-      _allGoalsTableView.registerNib(UINib(nibName: "AllGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "AllGoalsCellIdentifier")
+      _allGoalsTableView.registerNib(UINib(nibName: "AllGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
       _dataProvider = FetchedResultsDataProvider(fetchedResultsController: _defaultFRC, delegate: self)
       _tableViewDataSource = TableViewDataSource(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
       _tableViewDelegate = TableViewDelegate(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
@@ -79,14 +83,11 @@ extension AllGoalsViewController: DataSourceDelegate
 {
    func cellIdentifierForObject(object: Object) -> String
    {
-      return "AllGoalsCellIdentifier"
-   }
-   
-   func dataProviderWantsToDeleteObjectAtIndexPath(indexPath: NSIndexPath)
-   {
+      return _tableViewCellID
    }
 }
 
+// MARK: - TableViewDelegateProtocol
 extension AllGoalsViewController: TableViewDelegateProtocol
 {
    func objectSelected(object: Goal)
