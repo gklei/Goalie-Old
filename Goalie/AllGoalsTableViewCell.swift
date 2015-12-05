@@ -10,7 +10,11 @@ import UIKit
 
 class AllGoalsTableViewCell: UITableViewCell
 {
-   @IBOutlet private weak var _titleLabel: UILabel!
+   @IBOutlet private weak var _titleLabel: UILabel! {
+      didSet {
+         _titleLabel.font = ThemeAllGoalsLabelFont
+      }
+   }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
