@@ -11,8 +11,8 @@ import CoreData
 
 class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
 {
-   @IBOutlet private weak var _titleTextField: UITextField!
-   @IBOutlet private weak var _summaryTextField: UITextField!
+   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField!
+   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField!
    @IBOutlet private weak var _navigationItem: UINavigationItem!
    
    var goal: Goal?

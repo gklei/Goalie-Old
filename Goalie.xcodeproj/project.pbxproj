@@ -26,10 +26,12 @@
 		F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3536E1B1C12520E003A114E /* Assets.xcassets */; };
 		F3536E211C127446003A114E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E1F1C127446003A114E /* Fabric.framework */; };
 		F3536E221C127446003A114E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E201C127446003A114E /* Crashlytics.framework */; };
-		F3536E5B1C139F3B003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E541C139F3B003A114E /* TPKeyboardAvoidingCollectionView.m */; };
-		F3536E5C1C139F3B003A114E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E561C139F3B003A114E /* TPKeyboardAvoidingScrollView.m */; };
-		F3536E5D1C139F3B003A114E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E581C139F3B003A114E /* TPKeyboardAvoidingTableView.m */; };
-		F3536E5E1C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E5A1C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		F3536E671C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E601C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m */; };
+		F3536E681C13A56A003A114E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E621C13A56A003A114E /* TPKeyboardAvoidingScrollView.m */; };
+		F3536E691C13A56A003A114E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E641C13A56A003A114E /* TPKeyboardAvoidingTableView.m */; };
+		F3536E6A1C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E661C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		F3536E6F1C13A69F003A114E /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */; };
+		F3536E711C13A6D4003A114E /* JVFloatLabeledText.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
 		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
 		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
@@ -56,6 +58,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F3536E701C13A6C7003A114E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F3536E711C13A6D4003A114E /* JVFloatLabeledText.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F31BAAC31C11F09A0079C537 /* Goal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Goal.xcdatamodel; sourceTree = "<group>"; };
 		F31BAAC51C11F1A10079C537 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Goal.swift; path = Goalie/Goal.swift; sourceTree = "<group>"; };
@@ -76,15 +91,16 @@
 		F3536E1B1C12520E003A114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3536E1F1C127446003A114E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F3536E201C127446003A114E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		F3536E521C139F3A003A114E /* Goalie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Goalie-Bridging-Header.h"; sourceTree = "<group>"; };
-		F3536E531C139F3B003A114E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
-		F3536E541C139F3B003A114E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
-		F3536E551C139F3B003A114E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
-		F3536E561C139F3B003A114E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
-		F3536E571C139F3B003A114E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
-		F3536E581C139F3B003A114E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
-		F3536E591C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
-		F3536E5A1C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		F3536E5F1C13A56A003A114E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingCollectionView.h; path = Goalie/TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		F3536E601C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingCollectionView.m; path = Goalie/TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		F3536E611C13A56A003A114E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingScrollView.h; path = Goalie/TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		F3536E621C13A56A003A114E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingScrollView.m; path = Goalie/TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		F3536E631C13A56A003A114E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TPKeyboardAvoidingTableView.h; path = Goalie/TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		F3536E641C13A56A003A114E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = Goalie/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		F3536E651C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "Goalie/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		F3536E661C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "Goalie/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		F3536E6B1C13A57A003A114E /* Goalie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Goalie-Bridging-Header.h"; path = "Goalie/Goalie-Bridging-Header.h"; sourceTree = "<group>"; };
+		F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatLabeledText.framework; path = Carthage/Build/iOS/JVFloatLabeledText.framework; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +128,7 @@
 			files = (
 				F3536E221C127446003A114E /* Crashlytics.framework in Frameworks */,
 				F3536E211C127446003A114E /* Fabric.framework in Frameworks */,
+				F3536E6F1C13A69F003A114E /* JVFloatLabeledText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +157,7 @@
 		F3536E1E1C12743D003A114E /* External Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */,
 				F3536E511C139F2D003A114E /* TPKeyboardAvoiding */,
 				F3536E1F1C127446003A114E /* Fabric.framework */,
 				F3536E201C127446003A114E /* Crashlytics.framework */,
@@ -161,15 +179,15 @@
 		F3536E511C139F2D003A114E /* TPKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
-				F3536E531C139F3B003A114E /* TPKeyboardAvoidingCollectionView.h */,
-				F3536E541C139F3B003A114E /* TPKeyboardAvoidingCollectionView.m */,
-				F3536E551C139F3B003A114E /* TPKeyboardAvoidingScrollView.h */,
-				F3536E561C139F3B003A114E /* TPKeyboardAvoidingScrollView.m */,
-				F3536E571C139F3B003A114E /* TPKeyboardAvoidingTableView.h */,
-				F3536E581C139F3B003A114E /* TPKeyboardAvoidingTableView.m */,
-				F3536E591C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
-				F3536E5A1C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
-				F3536E521C139F3A003A114E /* Goalie-Bridging-Header.h */,
+				F3536E6B1C13A57A003A114E /* Goalie-Bridging-Header.h */,
+				F3536E5F1C13A56A003A114E /* TPKeyboardAvoidingCollectionView.h */,
+				F3536E601C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m */,
+				F3536E611C13A56A003A114E /* TPKeyboardAvoidingScrollView.h */,
+				F3536E621C13A56A003A114E /* TPKeyboardAvoidingScrollView.m */,
+				F3536E631C13A56A003A114E /* TPKeyboardAvoidingTableView.h */,
+				F3536E641C13A56A003A114E /* TPKeyboardAvoidingTableView.m */,
+				F3536E651C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				F3536E661C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			name = TPKeyboardAvoiding;
 			sourceTree = "<group>";
@@ -292,6 +310,7 @@
 				F3D461811C113221002F31A6 /* Frameworks */,
 				F3D461821C113221002F31A6 /* Resources */,
 				F3536E1D1C127420003A114E /* ShellScript */,
+				F3536E701C13A6C7003A114E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -403,32 +422,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3536E5B1C139F3B003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */,
 				F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */,
 				F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */,
 				F31BAACE1C11F4650079C537 /* UINavigationBar+Extensions.swift in Sources */,
 				F31BAACC1C11F32B0079C537 /* NSURL+Extensions.swift in Sources */,
 				F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */,
+				F3536E671C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				F31BAAD91C1213D40079C537 /* AllGoalsTableViewCell.swift in Sources */,
 				F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */,
 				F31BAAD61C1210B10079C537 /* TableViewDataSource.swift in Sources */,
 				F3D461AC1C113C39002F31A6 /* GoalieTabBarController.swift in Sources */,
 				F31BAAD41C1204020079C537 /* DataProvider.swift in Sources */,
 				F31BAAC61C11F1A10079C537 /* Goal.swift in Sources */,
-				F3536E5C1C139F3B003A114E /* TPKeyboardAvoidingScrollView.m in Sources */,
 				F3D461BF1C117663002F31A6 /* MockupUI.swift in Sources */,
 				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
 				F31BAAD21C12002B0079C537 /* FetchedResultsDataProvider.swift in Sources */,
-				F3536E5E1C139F3B003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				F3536E691C13A56A003A114E /* TPKeyboardAvoidingTableView.m in Sources */,
 				F3D461AF1C113C69002F31A6 /* UIImage+Extensions.swift in Sources */,
 				F31BAADE1C1224730079C537 /* TableViewDelegate.swift in Sources */,
+				F3536E681C13A56A003A114E /* TPKeyboardAvoidingScrollView.m in Sources */,
 				F3D461B11C1144A1002F31A6 /* GoalieNavigationBar.swift in Sources */,
 				F31BAAD01C11F5080079C537 /* DataRelatedProtocols.swift in Sources */,
-				F3536E5D1C139F3B003A114E /* TPKeyboardAvoidingTableView.m in Sources */,
 				F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */,
 				F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */,
 				F31BAADC1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				F3536E6A1C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				F31BAAC41C11F09A0079C537 /* Goal.xcdatamodeld in Sources */,
 				F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */,
 			);
@@ -564,13 +583,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Goalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ff9a1f18-cc7e-45e9-b186-fdcf5eee2d01";
-				SWIFT_OBJC_BRIDGING_HEADER = "Goalie-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Goalie/Goalie-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -584,13 +604,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Goalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ff9a1f18-cc7e-45e9-b186-fdcf5eee2d01";
-				SWIFT_OBJC_BRIDGING_HEADER = "Goalie-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Goalie/Goalie-Bridging-Header.h";
 			};
 			name = Release;
 		};

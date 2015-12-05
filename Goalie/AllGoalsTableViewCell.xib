@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMz-XN-BO2">
-                        <rect key="frame" x="20" y="11.5" width="42" height="20.5"/>
+                        <rect key="frame" x="20" y="11.5" width="280" height="20.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -25,6 +25,7 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="bMz-XN-BO2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="T67-iy-IgO"/>
+                    <constraint firstAttribute="trailing" secondItem="bMz-XN-BO2" secondAttribute="trailing" constant="20" id="uk6-Z8-i8t"/>
                     <constraint firstItem="bMz-XN-BO2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zxp-yJ-2tI"/>
                 </constraints>
             </tableViewCellContentView>

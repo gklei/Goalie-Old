@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoalDetailsViewController" customModule="Goalie" customModuleProvider="target">
             <connections>
                 <outlet property="_navigationItem" destination="2fw-hC-wAB" id="i98-Qb-Yre"/>
+                <outlet property="_summaryTextField" destination="5Bw-KF-wS2" id="xmu-zT-H8k"/>
+                <outlet property="_titleTextField" destination="mQb-Oe-CkO" id="OWw-mz-AVR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,8 +41,51 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-2V-VYI" userLabel="Content View">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Summary" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
+                                    <rect key="frame" x="20" y="74" width="280" height="40"/>
+                                    <animations/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Umi-Sr-7Aw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
+                                            <color key="value" red="0.2295522945" green="1" blue="0.73780876439999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-Oe-CkO" customClass="JVFloatLabeledTextField">
+                                    <rect key="frame" x="20" y="20" width="280" height="40"/>
+                                    <animations/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="BjQ-X3-wEi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
+                                            <color key="value" red="0.2295522945" green="1" blue="0.73780876439999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </textField>
+                            </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="mQb-Oe-CkO" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" constant="20" id="1po-Qb-CxF"/>
+                                <constraint firstItem="5Bw-KF-wS2" firstAttribute="top" secondItem="mQb-Oe-CkO" secondAttribute="bottom" constant="14" id="33T-YG-u47"/>
+                                <constraint firstAttribute="trailing" secondItem="mQb-Oe-CkO" secondAttribute="trailing" constant="20" id="DO5-D1-PfL"/>
+                                <constraint firstItem="mQb-Oe-CkO" firstAttribute="top" secondItem="gqh-2V-VYI" secondAttribute="top" constant="20" id="KOM-7V-2LE"/>
+                                <constraint firstItem="5Bw-KF-wS2" firstAttribute="width" secondItem="mQb-Oe-CkO" secondAttribute="width" id="YLK-1p-ScX"/>
+                                <constraint firstItem="5Bw-KF-wS2" firstAttribute="centerX" secondItem="mQb-Oe-CkO" secondAttribute="centerX" id="cVo-uc-l6c"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <animations/>

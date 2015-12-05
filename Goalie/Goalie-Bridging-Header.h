@@ -6,3 +6,4 @@
 #import "TPKeyboardAvoidingScrollView.h"
 #import "TPKeyboardAvoidingTableView.h"
 #import "UIScrollView+TPKeyboardAvoidingAdditions.h"
+#import <JVFloatLabeledText/JVFloatLabeledText.h>
