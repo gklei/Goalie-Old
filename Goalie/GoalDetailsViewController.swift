@@ -63,23 +63,24 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _topNavigationBar.updateTitle(title)
    }
    
-   func configureWithGoal(goal: Goal)
+   func configureWithGoal(goal: Goal?)
    {
       self.goal = goal
-      _subgoalsTableViewDataSource?.updateGoal(goal)
+      _subgoalsTableViewDataSource?.updateGoal(self.goal)
    }
    
    @IBAction func doneButtonPressed()
    {
       if let goal = goal, let title = _titleTextField.text
       {
-         goal.title = title
-         goal.summary = _summaryTextField.text
-         managedObjectContext.saveOrRollback()
+         managedObjectContext.performChanges({() -> () in
+            goal.title = title
+            goal.summary = self._summaryTextField.text
+         })
       }
       else // Create a new goal
       {
-         managedObjectContext.performChanges { () -> () in
+         managedObjectContext.performChanges {() -> () in
             let title = self._titleTextField.text ?? "No Title Set"
             let summary = self._summaryTextField.text ?? "No Summary Set"
             Goal.insertIntoContext(self.managedObjectContext, title: title, summary: summary)
@@ -104,8 +105,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private func dismissSelf()
    {
       goal = nil
-      _titleTextField.resignFirstResponder()
-      _summaryTextField.resignFirstResponder()
+      dismissKeyboard()
       self.dismissViewControllerAnimated(false, completion: nil)
    }
    

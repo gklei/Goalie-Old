@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a new subgoal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a subgoal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
                         <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

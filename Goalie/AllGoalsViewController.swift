@@ -59,10 +59,10 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    // MARK: - IBActions
    @IBAction func addNewGoal()
    {
-      presentViewController(_detailsViewController, animated: true, completion: nil)
+      presentDetailsForGoal(nil)
    }
    
-   private func presentDetailsForGoal(goal: Goal)
+   private func presentDetailsForGoal(goal: Goal?)
    {
       _detailsViewController.configureWithGoal(goal)
       presentViewController(_detailsViewController, animated: true, completion: nil)
@@ -90,9 +90,9 @@ extension AllGoalsViewController: DataSourceDelegate
 // MARK: - TableViewDelegateProtocol
 extension AllGoalsViewController: TableViewDelegateProtocol
 {
-   func objectSelected(object: Goal)
+   func objectSelected(goal: Goal)
    {
-      presentDetailsForGoal(object)
+      presentDetailsForGoal(goal)
    }
 }
 

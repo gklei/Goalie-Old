@@ -47,4 +47,10 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
    {
       delegate?.subgoalCellFinishedEditing(self)
    }
+   
+   func textFieldShouldReturn(textField: UITextField) -> Bool
+   {
+      _labelTextField.resignFirstResponder()
+      return true
+   }
 }

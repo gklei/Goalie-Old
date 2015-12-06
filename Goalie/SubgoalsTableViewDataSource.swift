@@ -10,7 +10,7 @@ import UIKit
 
 class SubgoalsTableViewDataSource: NSObject, UITableViewDataSource
 {
-   private var _goal: Goal?
+   private weak var _goal: Goal?
    private var _tableView: UITableView
    private var _subgoalCellDelegate: SubgoalsTableViewCellDelegate
    
@@ -25,7 +25,7 @@ class SubgoalsTableViewDataSource: NSObject, UITableViewDataSource
       _tableView.dataSource = self
    }
    
-   func updateGoal(goal: Goal)
+   func updateGoal(goal: Goal?)
    {
       _goal = goal
       _tableView.reloadData()
@@ -54,6 +54,13 @@ extension SubgoalsTableViewDataSource
    
    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
    {
-      return _goal?.children?.count ?? 0
+      // We want to show an extra cell for the "Add subgoal text"
+//      var count = 1
+//      if let subgoalCount = _goal?.children?.count {
+//         count = subgoalCount + 1
+//      }
+//      return count
+      
+      return _goal?.children.count ?? 0
    }
 }

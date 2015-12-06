@@ -17,7 +17,7 @@ public final class Goal: ManagedObject
    @NSManaged public private(set) var creationDate: NSDate
    
    @NSManaged public private(set) var parent: Goal?
-   @NSManaged public private(set) var children: Set<Goal>?
+   @NSManaged public private(set) var children: Set<Goal>
    
    public static func insertIntoContext(moc: NSManagedObjectContext, title: String, summary: String) -> Goal
    {

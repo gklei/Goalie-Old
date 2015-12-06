@@ -5,7 +5,7 @@
         <attribute name="monthValue" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="children" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="parent" inverseEntity="Goal" syncable="YES"/>
+        <relationship name="children" toMany="YES" deletionRule="Cascade" destinationEntity="Goal" inverseName="parent" inverseEntity="Goal" syncable="YES"/>
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="children" inverseEntity="Goal" syncable="YES"/>
     </entity>
     <elements>
