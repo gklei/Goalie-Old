@@ -83,7 +83,11 @@
                                     <animations/>
                                     <items>
                                         <navigationItem title="Subgoals" id="6Dc-RG-Lqc">
-                                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="pPo-UK-zGd"/>
+                                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="pPo-UK-zGd">
+                                                <connections>
+                                                    <action selector="addSubgoalsButtonPressed" destination="-1" id="zse-qi-cnK"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </navigationItem>
                                     </items>
                                 </navigationBar>

@@ -18,6 +18,7 @@ public protocol ManagedObjectType: class
 {
    static var entityName: String {get}
    static var defaultSortDescriptors: [NSSortDescriptor] {get}
+   static var defaultPredicate: NSPredicate? {get}
 }
 
 extension ManagedObjectType
@@ -28,6 +29,7 @@ extension ManagedObjectType
    
    public static var sortedFetchRequest: NSFetchRequest {
       let request = NSFetchRequest(entityName: entityName)
+      request.predicate = defaultPredicate
       request.sortDescriptors = defaultSortDescriptors
       return request
    }

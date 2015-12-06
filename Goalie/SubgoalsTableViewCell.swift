@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SubgoalsTabelViewCellDelegate: class
+protocol SubgoalsTableViewCellDelegate: class
 {
    func subgoalBeganEditing(cell: SubgoalsTableViewCell)
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
@@ -23,7 +23,7 @@ class SubgoalsTableViewCell: UITableViewCell
       }
    }
    
-   weak var delegate: SubgoalsTabelViewCellDelegate?
+   weak var delegate: SubgoalsTableViewCellDelegate?
    
    func updateTitle(title: String)
    {
