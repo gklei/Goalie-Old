@@ -8,17 +8,43 @@
 
 import UIKit
 
-class SubgoalsTableViewCell: UITableViewCell {
+protocol SubgoalsTabelViewCellDelegate: class
+{
+   func subgoalBeganEditing(cell: SubgoalsTableViewCell)
+   func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+class SubgoalsTableViewCell: UITableViewCell
+{
+   @IBOutlet weak private var _labelTextField: UITextField! {
+      didSet {
+         _labelTextField.delegate = self
+         _labelTextField.font = ThemeAllGoalsLabelFont
+      }
+   }
+   
+   weak var delegate: SubgoalsTabelViewCellDelegate?
+   
+   func updateTitle(title: String)
+   {
+      _labelTextField.text = title
+   }
+   
+   func stopEditing()
+   {
+      _labelTextField.resignFirstResponder()
+   }
+}
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
+extension SubgoalsTableViewCell: UITextFieldDelegate
+{
+   func textFieldDidBeginEditing(textField: UITextField)
+   {
+      delegate?.subgoalBeganEditing(self)
+   }
+   
+   func textFieldDidEndEditing(textField: UITextField)
+   {
+      delegate?.subgoalCellFinishedEditing(self)
+   }
 }
