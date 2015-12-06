@@ -32,6 +32,8 @@
 		F3536E6A1C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3536E661C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		F3536E6F1C13A69F003A114E /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */; };
 		F3536E711C13A6D4003A114E /* JVFloatLabeledText.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3536E741C13BCA2003A114E /* SubgoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */; };
+		F3536E751C13BCA2003A114E /* SubgoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3536E731C13BCA2003A114E /* SubgoalsTableViewCell.xib */; };
 		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
 		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
 		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
@@ -101,6 +103,8 @@
 		F3536E661C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "Goalie/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		F3536E6B1C13A57A003A114E /* Goalie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Goalie-Bridging-Header.h"; path = "Goalie/Goalie-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatLabeledText.framework; path = Carthage/Build/iOS/JVFloatLabeledText.framework; sourceTree = "<group>"; };
+		F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubgoalsTableViewCell.swift; sourceTree = "<group>"; };
+		F3536E731C13BCA2003A114E /* SubgoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubgoalsTableViewCell.xib; path = Goalie/SubgoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
 				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
 				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
+				F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */,
 			);
 			path = Goalie;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 		F3D461B81C115D67002F31A6 /* XIBs and Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				F3536E731C13BCA2003A114E /* SubgoalsTableViewCell.xib */,
 				F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */,
 				F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */,
 				F3D4618D1C113221002F31A6 /* Main.storyboard */,
@@ -389,6 +395,7 @@
 				F31BAAE21C12415C0079C537 /* GoalDetailsViewController.xib in Resources */,
 				F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */,
 				F31BAADA1C1213D40079C537 /* AllGoalsTableViewCell.xib in Resources */,
+				F3536E751C13BCA2003A114E /* SubgoalsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +457,7 @@
 				F3536E6A1C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				F31BAAC41C11F09A0079C537 /* Goal.xcdatamodeld in Sources */,
 				F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */,
+				F3536E741C13BCA2003A114E /* SubgoalsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
