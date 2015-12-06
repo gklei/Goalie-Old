@@ -7,9 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoalDetailsViewController" customModule="Goalie" customModuleProvider="target">
             <connections>
-                <outlet property="_navigationItem" destination="2fw-hC-wAB" id="i98-Qb-Yre"/>
+                <outlet property="_subgoalsNavigationBar" destination="TAH-AX-iG6" id="fjk-6J-R7h"/>
                 <outlet property="_summaryTextField" destination="5Bw-KF-wS2" id="xmu-zT-H8k"/>
                 <outlet property="_titleTextField" destination="mQb-Oe-CkO" id="OWw-mz-AVR"/>
+                <outlet property="_topNavigationBar" destination="97a-LG-zcC" id="J6h-SW-2vu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -75,6 +76,15 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
+                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-AX-iG6" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="126" width="320" height="44"/>
+                                    <animations/>
+                                    <items>
+                                        <navigationItem title="Subgoals" id="6Dc-RG-Lqc">
+                                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="pPo-UK-zGd"/>
+                                        </navigationItem>
+                                    </items>
+                                </navigationBar>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,8 +93,11 @@
                                 <constraint firstItem="5Bw-KF-wS2" firstAttribute="top" secondItem="mQb-Oe-CkO" secondAttribute="bottom" constant="14" id="33T-YG-u47"/>
                                 <constraint firstAttribute="trailing" secondItem="mQb-Oe-CkO" secondAttribute="trailing" constant="20" id="DO5-D1-PfL"/>
                                 <constraint firstItem="mQb-Oe-CkO" firstAttribute="top" secondItem="gqh-2V-VYI" secondAttribute="top" constant="20" id="KOM-7V-2LE"/>
+                                <constraint firstAttribute="trailing" secondItem="TAH-AX-iG6" secondAttribute="trailing" id="O9s-Pk-m4r"/>
                                 <constraint firstItem="5Bw-KF-wS2" firstAttribute="width" secondItem="mQb-Oe-CkO" secondAttribute="width" id="YLK-1p-ScX"/>
                                 <constraint firstItem="5Bw-KF-wS2" firstAttribute="centerX" secondItem="mQb-Oe-CkO" secondAttribute="centerX" id="cVo-uc-l6c"/>
+                                <constraint firstItem="TAH-AX-iG6" firstAttribute="top" secondItem="5Bw-KF-wS2" secondAttribute="bottom" constant="12" id="cau-O5-kI8"/>
+                                <constraint firstItem="TAH-AX-iG6" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" id="qHb-2W-5NX"/>
                             </constraints>
                         </view>
                     </subviews>

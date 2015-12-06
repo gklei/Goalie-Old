@@ -10,6 +10,14 @@ import UIKit
 
 extension UINavigationBar
 {
+   public var leftBarButtonItem: UIBarButtonItem? {
+      return self.items?.first?.leftBarButtonItem
+   }
+   
+   public var rightBarButtonItem: UIBarButtonItem? {
+      return self.items?.first?.rightBarButtonItem
+   }
+   
    func hideBottomHairline()
    {
       let navigationBarImageView = hairlineImageViewInNavigationBar(self)

@@ -19,7 +19,7 @@ public final class Goal: ManagedObject
       return NSDateFormatter()
    }()
    
-   public static func insertIntoContext(moc: NSManagedObjectContext, withTitle title: String, summary: String) -> Goal
+   public static func insertIntoContext(moc: NSManagedObjectContext, title: String, summary: String) -> Goal
    {
       let goal: Goal = moc.insertObject()
       goal.title = title

@@ -13,7 +13,13 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
 {
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField!
    @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField!
-   @IBOutlet private weak var _navigationItem: UINavigationItem!
+   
+   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar!
+   @IBOutlet private weak var _subgoalsNavigationBar: GoalieNavigationBar! {
+      didSet {
+         _subgoalsNavigationBar.updateTitleFontSize(16)
+      }
+   }
    
    var goal: Goal?
    var managedObjectContext: NSManagedObjectContext!
@@ -30,15 +36,14 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _titleTextField.text = goal?.title
       _summaryTextField.text = goal?.summary
       
-      _navigationItem.title = goal != nil ? "Details" : "Create"
+      let title = goal != nil ? "Details" : "Create"
+      _topNavigationBar.updateTitle(title)
       
-      let attrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
-      
-      _navigationItem.leftBarButtonItem?.title = "Cancel"
-      _navigationItem.leftBarButtonItem?.setTitleTextAttributes(attrs, forState: .Normal)
-      
-      _navigationItem.rightBarButtonItem?.setTitleTextAttributes(attrs, forState: .Normal)
-      _navigationItem.rightBarButtonItem?.title = "Done"
+//      let leftTitle = goal != nil ? "Back" : "Cancel"
+//      let rightTitle = goal != nil ? "Edit" : "Done"
+//      
+//      _topNavigationBar.updateLeftBarButtonItemTitle(leftTitle)
+//      _topNavigationBar.updateRightBarButtonItemTitle(rightTitle)
    }
    
    func configureWithGoal(goal: Goal)
@@ -54,7 +59,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          managedObjectContext.performChanges { () -> () in
             let title = self._titleTextField.text ?? "No Title Set"
             let summary = self._summaryTextField.text ?? "No Summary Set"
-            Goal.insertIntoContext(self.managedObjectContext, withTitle: title, summary: summary)
+            Goal.insertIntoContext(self.managedObjectContext, title: title, summary: summary)
          }
       }
       dismissSelf()
