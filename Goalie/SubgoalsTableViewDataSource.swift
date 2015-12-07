@@ -23,6 +23,7 @@ class SubgoalsTableViewDataSource: NSObject, UITableViewDataSource
       super.init()
       
       _tableView.dataSource = self
+      _tableView.reloadData()
    }
    
    func updateGoal(goal: Goal?)

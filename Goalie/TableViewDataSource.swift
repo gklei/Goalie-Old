@@ -20,6 +20,7 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
       }
       return _dataProvider.objectAtIndexPath(indexPath)
    }
+   var saveOnDelete = true
    
    required init(tableView: UITableView, dataProvider: Data, delegate: Delegate)
    {
@@ -79,9 +80,14 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
       if editingStyle == .Delete
       {  
          let goal = _dataProvider.objectAtIndexPath(indexPath)
-         goal.managedObjectContext?.performChanges({ () -> () in
+         if saveOnDelete {
+            goal.managedObjectContext?.performChanges({ () -> () in
+               goal.managedObjectContext?.deleteObject(goal)
+            })
+         }
+         else {
             goal.managedObjectContext?.deleteObject(goal)
-         })
+         }
       }
    }
    

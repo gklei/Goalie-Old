@@ -56,6 +56,13 @@ extension Goal
       }
       return child
    }
+   
+   public var childrenFetchRequest: NSFetchRequest {
+      let request = NSFetchRequest(entityName: Goal.entityName)
+      request.predicate = NSPredicate(format: "parent == %@", self)
+      request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+      return request
+   }
 }
 
 extension Goal: ManagedObjectType
