@@ -16,6 +16,9 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private var _goal: Goal!
    private var _shouldShowCancelButton: Bool!
    private var _cancelBarButtonItem: UIBarButtonItem?
+   private var _selectedMonth: Month {
+      return _monthSelectorViewController.selectedMonth
+   }
 
    var managedObjectContext: NSManagedObjectContext!
    private var _currentSubgoalCell: SubgoalsTableViewCell?
@@ -158,7 +161,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          self._goal.title = self._titleTextField.text ?? "Why don't you set the title next time bro?"
          self._goal.title = self._goal.title == "" ? "Why don't you set the title next time bro?" : self._goal.title
          self._goal.summary = self._summaryTextField.text ?? ""
-         self._goal.month = self._monthSelectorViewController.selectedMonth
+         self._goal.month = self._selectedMonth
       })
       _dismissSelf()
    }
