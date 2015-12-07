@@ -60,12 +60,14 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    @IBAction func addNewGoal()
    {
       let newGoal = Goal.insertIntoContext(managedObjectContext, title: "", summary: "")
-      presentDetailsForGoal(newGoal)
+      
+      _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
+      presentViewController(_detailsViewController, animated: true, completion: nil)
    }
    
-   private func presentDetailsForGoal(goal: Goal?)
+   private func presentDetailsForGoal(goal: Goal)
    {
-      _detailsViewController.configureWithGoal(goal)
+      _detailsViewController.configureWithGoal(goal, allowCancel: false)
       presentViewController(_detailsViewController, animated: true, completion: nil)
    }
 }

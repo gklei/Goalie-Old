@@ -57,11 +57,41 @@ extension Goal
       return child
    }
    
+   public var subgoals: Array<Goal> {
+      guard let subgoalArray = children.array as? [Goal] else {
+         fatalError("children must be an NSOrderedSet of Goal objects")
+      }
+      return subgoalArray
+   }
+   
    public var childrenFetchRequest: NSFetchRequest {
       let request = NSFetchRequest(entityName: Goal.entityName)
       request.predicate = NSPredicate(format: "parent == %@", self)
       request.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+      request.returnsObjectsAsFaults = false
+      request.fetchBatchSize = 20
       return request
+   }
+   
+   public func deleteEmptySubgoalsAndSave(save: Bool)
+   {
+      if save {
+         managedObjectContext?.performChanges({ () -> () in
+            self._removeEmptySubgoals()
+         })
+      }
+      else {
+         _removeEmptySubgoals()
+      }
+   }
+   
+   private func _removeEmptySubgoals()
+   {
+      for subgoal in self.subgoals {
+         if subgoal.title == "" {
+            subgoal.managedObjectContext?.deleteObject(subgoal)
+         }
+      }
    }
 }
 

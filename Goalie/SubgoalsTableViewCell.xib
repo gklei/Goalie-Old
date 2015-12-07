@@ -33,6 +33,7 @@
             <connections>
                 <outlet property="_labelTextField" destination="0qk-eC-751" id="9yF-Na-y0R"/>
             </connections>
+            <point key="canvasLocation" x="239" y="325"/>
         </tableViewCell>
     </objects>
 </document>

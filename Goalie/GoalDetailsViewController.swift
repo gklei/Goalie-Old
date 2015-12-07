@@ -13,24 +13,21 @@ let SubgoalsCellIdentifier = "SubgoalsCellIdentifier"
 
 class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
 {
-   private var _goal: Goal? {
-      didSet {
-         if let unwrappedGoal = _goal {
-            _childrenFetchRequest = unwrappedGoal.childrenFetchRequest
-            _childrenFetchRequest?.returnsObjectsAsFaults = false
-            _childrenFetchRequest?.fetchBatchSize = 20
-         }
-      }
-   }
+   private var _goal: Goal!
+   private var _shouldShowCancelButton: Bool!
+   private var _cancelBarButtonItem: UIBarButtonItem?
 
    var managedObjectContext: NSManagedObjectContext!
    private var _currentSubgoalCell: SubgoalsTableViewCell?
-   private var _subgoalsTableViewDataSource: SubgoalsTableViewDataSource?
    
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField!
    @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField!
    
-   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar!
+   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! {
+      didSet {
+         _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem
+      }
+   }
    @IBOutlet private weak var _subgoalsNavigationBar: GoalieNavigationBar! {
       didSet {
          let tapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -52,11 +49,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private typealias DataProvider = FetchedResultsDataProvider<GoalDetailsViewController>
    private var _tableViewDataSource: TableViewDataSource<GoalDetailsViewController, DataProvider, SubgoalsTableViewCell>!
    private var _dataProvider: DataProvider!
-   private var _childrenFetchRequest: NSFetchRequest?
-   private var _defaultFRC: NSFetchedResultsController? {
-      guard let childrenFR = _childrenFetchRequest else {return nil}
-      return NSFetchedResultsController(fetchRequest: childrenFR, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-   }
    
    // MARK: - Init
    convenience init()
@@ -74,17 +66,13 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    override func viewWillAppear(animated: Bool)
    {
       super.viewWillAppear(animated)
-      _setupUI()
-      
-      if let frc = _defaultFRC
-      {
-         _dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
-         _tableViewDataSource = TableViewDataSource(tableView: _subgoalsTableView, dataProvider: _dataProvider, delegate: self)
-      }
+      _updateTitlesAndUI()
+      _hideOrShowCancelButton()
+      _setupSubgoalsTable()
    }
    
    // MARK: - Private / Internal
-   private func _setupUI()
+   private func _updateTitlesAndUI()
    {
       _titleTextField.text = _goal?.title
       _summaryTextField.text = _goal?.summary
@@ -93,11 +81,30 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _topNavigationBar.updateTitle(title)
    }
    
+   // when a new goal is created, we want to show the cancel button, but when viewing the details of a goal that has already been
+   // created, we don't want to show it
+   private func _hideOrShowCancelButton()
+   {
+      let leftBarButtonItem: UIBarButtonItem? = (_shouldShowCancelButton == true) ? _cancelBarButtonItem : nil
+      _topNavigationBar.leftBarButtonItem = leftBarButtonItem
+   }
+   
+   private func _setupSubgoalsTable()
+   {
+      _dataProvider = _dataProviderForGoal(_goal)
+      _tableViewDataSource = TableViewDataSource(tableView: _subgoalsTableView, dataProvider: _dataProvider, delegate: self)
+   }
+   
    private func _dismissSelf()
    {
-      _goal = nil
       dismissKeyboard()
       self.dismissViewControllerAnimated(false, completion: nil)
+   }
+   
+   private func _dataProviderForGoal(goal: Goal) -> DataProvider
+   {
+      let frc = NSFetchedResultsController(fetchRequest: goal.childrenFetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+      return FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
    }
    
    internal func dismissKeyboard()
@@ -108,35 +115,36 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    }
    
    // MARK: - Public
-   func configureWithGoal(goal: Goal?)
+   func configureWithGoal(goal: Goal, allowCancel: Bool)
    {
-      self._goal = goal
+      _goal = goal
+      _shouldShowCancelButton = allowCancel
    }
    
    // MARK: - IBActions
-   @IBAction func doneButtonPressed()
+   @IBAction private func doneButtonPressed()
    {
-      if let goal = _goal
-      {
-         managedObjectContext.performChanges({() -> () in
-            goal.title = self._titleTextField.text ?? "No title set"
-            goal.summary = self._summaryTextField.text ?? ""
-         })
-      }
+      managedObjectContext.performChanges({() -> () in
+         
+         self._goal.deleteEmptySubgoalsAndSave(false)
+         
+         // TODO: validate the input in a way that isn't this:
+         self._goal.title = self._titleTextField.text ?? "Why don't you set the title next time bro?"
+         self._goal.title = self._goal.title == "" ? "Why don't you set the title next time bro?" : self._goal.title
+         self._goal.summary = self._summaryTextField.text ?? ""
+      })
       _dismissSelf()
    }
    
-   @IBAction func cancelButtonPressed()
+   @IBAction private func cancelButtonPressed()
    {
       managedObjectContext.rollback()
       _dismissSelf()
    }
    
-   @IBAction func addSubgoalsButtonPressed()
+   @IBAction private func addSubgoalsButtonPressed()
    {
-      if let parent = self._goal {
-         Goal.insertIntoContext(managedObjectContext, title: "", parent: parent)
-      }
+      Goal.insertIntoContext(managedObjectContext, title: "", parent: _goal)
    }
 }
 
@@ -150,14 +158,13 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
    {
       if let indexPath = _subgoalsTableView.indexPathForCell(cell),
-      let child = _goal?.childGoalForIndexPath(indexPath) {
+      let child = _goal.childGoalForIndexPath(indexPath) {
          child.managedObjectContext?.saveOrRollback()
       }
       
       _currentSubgoalCell = nil
    }
 }
-
 
 // MARK: - DataProviderDelegate
 extension GoalDetailsViewController: DataProviderDelegate

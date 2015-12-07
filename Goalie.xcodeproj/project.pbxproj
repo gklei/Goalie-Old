@@ -34,7 +34,6 @@
 		F3536E711C13A6D4003A114E /* JVFloatLabeledText.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3536E741C13BCA2003A114E /* SubgoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */; };
 		F3536E751C13BCA2003A114E /* SubgoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3536E731C13BCA2003A114E /* SubgoalsTableViewCell.xib */; };
-		F3536E771C13D083003A114E /* SubgoalsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E761C13D083003A114E /* SubgoalsTableViewDataSource.swift */; };
 		F3536E7A1C14FA8F003A114E /* ManagedObjectObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E791C14FA8F003A114E /* ManagedObjectObserver.swift */; };
 		F3536E7C1C14FC63003A114E /* NSManagedObjectContext+Observers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E7B1C14FC63003A114E /* NSManagedObjectContext+Observers.swift */; };
 		F3536E7E1C14FC9C003A114E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E7D1C14FC9C003A114E /* Utilities.swift */; };
@@ -109,7 +108,6 @@
 		F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatLabeledText.framework; path = Carthage/Build/iOS/JVFloatLabeledText.framework; sourceTree = "<group>"; };
 		F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubgoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F3536E731C13BCA2003A114E /* SubgoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubgoalsTableViewCell.xib; path = Goalie/SubgoalsTableViewCell.xib; sourceTree = "<group>"; };
-		F3536E761C13D083003A114E /* SubgoalsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubgoalsTableViewDataSource.swift; sourceTree = "<group>"; };
 		F3536E791C14FA8F003A114E /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectObserver.swift; path = Goalie/ManagedObjectObserver.swift; sourceTree = "<group>"; };
 		F3536E7B1C14FC63003A114E /* NSManagedObjectContext+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Observers.swift"; path = "Goalie/NSManagedObjectContext+Observers.swift"; sourceTree = "<group>"; };
 		F3536E7D1C14FC9C003A114E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
 				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
 				F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */,
-				F3536E761C13D083003A114E /* SubgoalsTableViewDataSource.swift */,
 				F3536E7D1C14FC9C003A114E /* Utilities.swift */,
 			);
 			path = Goalie;
@@ -441,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3536E771C13D083003A114E /* SubgoalsTableViewDataSource.swift in Sources */,
 				F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */,
 				F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */,
 				F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */,

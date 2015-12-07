@@ -11,7 +11,14 @@ import UIKit
 extension UINavigationBar
 {
    public var leftBarButtonItem: UIBarButtonItem? {
-      return self.items?.first?.leftBarButtonItem
+      get {
+         return self.items?.first?.leftBarButtonItem
+      }
+      set {
+         let barButtonItemAttrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
+         newValue?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
+         self.items?.first?.leftBarButtonItem = newValue
+      }
    }
    
    public var rightBarButtonItem: UIBarButtonItem? {
