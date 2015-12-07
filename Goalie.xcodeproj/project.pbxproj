@@ -87,7 +87,7 @@
 		F31BAAD11C12002B0079C537 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchedResultsDataProvider.swift; path = Goalie/FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
 		F31BAAD31C1204020079C537 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataProvider.swift; path = Goalie/DataProvider.swift; sourceTree = "<group>"; };
 		F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSource.swift; path = Goalie/TableViewDataSource.swift; sourceTree = "<group>"; };
-		F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllGoalsTableViewCell.swift; sourceTree = "<group>"; };
+		F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllGoalsTableViewCell.swift; path = Goalie/AllGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AllGoalsTableViewCell.xib; path = Goalie/AllGoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F31BAADB1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Extensions.swift"; path = "Goalie/NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		F31BAADD1C1224730079C537 /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDelegate.swift; path = Goalie/TableViewDelegate.swift; sourceTree = "<group>"; };
@@ -106,11 +106,11 @@
 		F3536E661C13A56A003A114E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "Goalie/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		F3536E6B1C13A57A003A114E /* Goalie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Goalie-Bridging-Header.h"; path = "Goalie/Goalie-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3536E6E1C13A69F003A114E /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatLabeledText.framework; path = Carthage/Build/iOS/JVFloatLabeledText.framework; sourceTree = "<group>"; };
-		F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubgoalsTableViewCell.swift; sourceTree = "<group>"; };
+		F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubgoalsTableViewCell.swift; path = Goalie/SubgoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F3536E731C13BCA2003A114E /* SubgoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SubgoalsTableViewCell.xib; path = Goalie/SubgoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F3536E791C14FA8F003A114E /* ManagedObjectObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManagedObjectObserver.swift; path = Goalie/ManagedObjectObserver.swift; sourceTree = "<group>"; };
 		F3536E7B1C14FC63003A114E /* NSManagedObjectContext+Observers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSManagedObjectContext+Observers.swift"; path = "Goalie/NSManagedObjectContext+Observers.swift"; sourceTree = "<group>"; };
-		F3536E7D1C14FC9C003A114E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F3536E7D1C14FC9C003A114E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = Goalie/Utilities.swift; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		F3D461AB1C113C39002F31A6 /* GoalieTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalieTabBarController.swift; path = Goalie/GoalieTabBarController.swift; sourceTree = "<group>"; };
 		F3D461AE1C113C69002F31A6 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Extensions.swift"; path = "Goalie/UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		F3D461B01C1144A1002F31A6 /* GoalieNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalieNavigationBar.swift; path = Goalie/GoalieNavigationBar.swift; sourceTree = "<group>"; };
-		F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthCollectionViewCell.swift; sourceTree = "<group>"; };
+		F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthCollectionViewCell.swift; path = Goalie/MonthCollectionViewCell.swift; sourceTree = "<group>"; };
 		F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthCollectionViewCell.xib; path = Goalie/MonthCollectionViewCell.xib; sourceTree = "<group>"; };
 		F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeConstants.swift; path = Goalie/ThemeConstants.swift; sourceTree = "<group>"; };
 		F3D461BE1C117663002F31A6 /* MockupUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockupUI.swift; path = Goalie/MockupUI.swift; sourceTree = "<group>"; };
@@ -203,14 +203,25 @@
 			name = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		F3536E7F1C161848003A114E /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */,
+				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
+				F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		F3D4617B1C113221002F31A6 = {
 			isa = PBXGroup;
 			children = (
+				F3536E7F1C161848003A114E /* Custom Cells */,
 				F31BAAC11C11F0690079C537 /* Core Data */,
 				F3D461AD1C113C57002F31A6 /* Extensions */,
 				F3536E1E1C12743D003A114E /* External Frameworks */,
 				F3536E2A1C129831003A114E /* Generic Data Source & Delegate Files */,
-				F3D461861C113221002F31A6 /* Goalie */,
+				F3D461861C113221002F31A6 /* View Controllers */,
 				F3D4619D1C113221002F31A6 /* GoalieTests */,
 				F3D461BD1C117641002F31A6 /* Mockup UI */,
 				F3D461B71C115D4C002F31A6 /* Other */,
@@ -230,18 +241,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F3D461861C113221002F31A6 /* Goalie */ = {
+		F3D461861C113221002F31A6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F31BAAD71C1213D40079C537 /* AllGoalsTableViewCell.swift */,
 				F3D461891C113221002F31A6 /* AllGoalsViewController.swift */,
 				F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */,
-				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
 				F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */,
 				F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */,
-				F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */,
-				F3536E7D1C14FC9C003A114E /* Utilities.swift */,
 			);
+			name = "View Controllers";
 			path = Goalie;
 			sourceTree = "<group>";
 		};
@@ -257,6 +265,7 @@
 		F3D461AD1C113C57002F31A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F3536E7D1C14FC9C003A114E /* Utilities.swift */,
 				F3D461AE1C113C69002F31A6 /* UIImage+Extensions.swift */,
 				F31BAACB1C11F32B0079C537 /* NSURL+Extensions.swift */,
 				F31BAACD1C11F4650079C537 /* UINavigationBar+Extensions.swift */,
