@@ -59,6 +59,12 @@ extension SubgoalsTableViewCell: ConfigurableCell
    func configureForObject(goal: Goal)
    {
       _goal = goal
-      _labelTextField.text = goal.title
+      if goal.title != "" && goal.title[0] != "•" {
+         _labelTextField.text = "• \(goal.title)"
+      }
+      else
+      {
+         _labelTextField.text = goal.title
+      }
    }
 }

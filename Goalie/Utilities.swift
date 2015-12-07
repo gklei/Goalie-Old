@@ -51,7 +51,6 @@ extension SequenceType where Generator.Element: AnyObject
    public func containsObjectIdenticalTo(object: AnyObject) -> Bool {
       return contains { $0 === object }
    }
-   
 }
 
 extension Array
@@ -68,5 +67,20 @@ extension Array
          result.append(Array(self[idx..<end]))
       }
       return result
+   }
+}
+
+extension String {
+   
+   subscript (i: Int) -> Character {
+      return self[self.startIndex.advancedBy(i)]
+   }
+   
+   subscript (i: Int) -> String {
+      return String(self[i] as Character)
+   }
+   
+   subscript (r: Range<Int>) -> String {
+      return substringWithRange(Range(start: startIndex.advancedBy(r.startIndex), end: startIndex.advancedBy(r.endIndex)))
    }
 }
