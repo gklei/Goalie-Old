@@ -175,4 +175,11 @@ extension GoalDetailsViewController: DataSourceDelegate
    {
       return SubgoalsCellIdentifier
    }
+   
+   func configureCell(cell: UITableViewCell)
+   {
+      if let subgoalsCell = cell as? SubgoalsTableViewCell {
+         subgoalsCell.delegate = self
+      }
+   }
 }

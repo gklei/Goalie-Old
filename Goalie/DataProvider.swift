@@ -34,6 +34,7 @@ protocol DataSourceDelegate: class
 {
    typealias Object
    func cellIdentifierForObject(object: Object) -> String
+   func configureCell(cell: UITableViewCell)
 }
 
 protocol ConfigurableCell

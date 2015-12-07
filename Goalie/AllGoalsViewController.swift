@@ -86,6 +86,10 @@ extension AllGoalsViewController: DataSourceDelegate
    {
       return _tableViewCellID
    }
+   
+   func configureCell(cell: UITableViewCell)
+   {
+   }
 }
 
 // MARK: - TableViewDelegateProtocol
