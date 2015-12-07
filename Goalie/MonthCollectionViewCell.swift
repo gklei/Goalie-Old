@@ -18,7 +18,6 @@ class MonthCollectionViewCell: UICollectionViewCell
    @IBOutlet weak private var _goalBadgeLabel: UILabel! {
       didSet {
          _goalBadgeLabel.textColor = ThemeSelectedStateTextColor
-         _goalBadgeLabel.layer.cornerRadius = 3
          _goalBadgeLabel.layer.masksToBounds = true
          _goalBadgeLabel.font = ThemeMonthBadgeFont
       }
@@ -28,8 +27,7 @@ class MonthCollectionViewCell: UICollectionViewCell
    {
       backgroundColor = UIColor.whiteColor()
       layer.borderColor = ThemeTitleTextColor.CGColor
-      layer.borderWidth = 4.0
-      layer.cornerRadius = 6.0
+      layer.borderWidth = 5.0
       layer.masksToBounds = true
    }
    
