@@ -62,8 +62,7 @@ extension SubgoalsTableViewCell: ConfigurableCell
       if goal.title != "" && goal.title[0] != "•" {
          _labelTextField.text = "• \(goal.title)"
       }
-      else
-      {
+      else {
          _labelTextField.text = goal.title
       }
    }
