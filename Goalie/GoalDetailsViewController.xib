@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoalDetailsViewController" customModule="Goalie" customModuleProvider="target">
             <connections>
+                <outlet property="_monthSelectorContainer" destination="H6m-hp-RPI" id="wwZ-9b-m3f"/>
                 <outlet property="_subgoalsNavigationBar" destination="TAH-AX-iG6" id="fjk-6J-R7h"/>
                 <outlet property="_subgoalsTableView" destination="aON-Mw-vjP" id="ulA-pK-R9W"/>
                 <outlet property="_summaryTextField" destination="5Bw-KF-wS2" id="xmu-zT-H8k"/>

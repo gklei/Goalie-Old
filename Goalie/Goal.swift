@@ -42,11 +42,28 @@ public final class Goal: ManagedObject
       creationDate = NSDate()
       title = ""
       summary = ""
+      month = .Jan
    }
 }
 
 extension Goal
 {
+   public var subgoals: Array<Goal> {
+      guard let subgoalArray = children.array as? [Goal] else {
+         fatalError("children must be an NSOrderedSet of Goal objects")
+      }
+      return subgoalArray
+   }
+   
+   public var month: Month {
+      get {
+         return Month(rawValue: Int(monthValue))!
+      }
+      set {
+         monthValue = Int16(newValue.rawValue)
+      }
+   }
+   
    public func childGoalForIndexPath(indexPath: NSIndexPath) -> Goal?
    {
       var child: Goal?
@@ -55,13 +72,6 @@ extension Goal
          child = children.objectAtIndex(indexPath.row) as? Goal
       }
       return child
-   }
-   
-   public var subgoals: Array<Goal> {
-      guard let subgoalArray = children.array as? [Goal] else {
-         fatalError("children must be an NSOrderedSet of Goal objects")
-      }
-      return subgoalArray
    }
    
    public var childrenFetchRequest: NSFetchRequest {

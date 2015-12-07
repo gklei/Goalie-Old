@@ -46,6 +46,9 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       }
    }
    
+   @IBOutlet private weak var _monthSelectorContainer: UIView!
+   private var _monthSelectorViewController = MonthSelectorViewController()
+   
    private typealias DataProvider = FetchedResultsDataProvider<GoalDetailsViewController>
    private var _tableViewDataSource: TableViewDataSource<GoalDetailsViewController, DataProvider, SubgoalsTableViewCell>!
    private var _dataProvider: DataProvider!
@@ -61,6 +64,17 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewDidLoad()
       _subgoalsNavigationBar.updateTitleFontSize(18)
+      
+      _monthSelectorContainer.backgroundColor = UIColor.blackColor()
+      _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
+   }
+   
+   override func viewDidLayoutSubviews()
+   {
+      super.viewDidLayoutSubviews()
+      
+      let insetAmount = _monthSelectorViewController.paddingBetweenMonths * 0.5
+      _monthSelectorViewController.view.frame = _monthSelectorContainer.bounds.insetBy(dx: insetAmount, dy: insetAmount).integral
    }
    
    override func viewWillAppear(animated: Bool)
@@ -70,6 +84,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _hideOrShowCancelButton()
       _setupSubgoalsTable()
       
+      _monthSelectorViewController.selectedMonth = _goal.month
       // this is sort of a convenience for the user.  since subgoals are created with an empty title, the user will see "add a subgoal"
       // in the subgoals table view, and all they have to do is tap that to change the text since the "add a subgoal" text is a placeholder
       // string.  if they do nothing with it, then it'll get deleted since all of the subgoals with empty titles are deleted when the
@@ -143,6 +158,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          self._goal.title = self._titleTextField.text ?? "Why don't you set the title next time bro?"
          self._goal.title = self._goal.title == "" ? "Why don't you set the title next time bro?" : self._goal.title
          self._goal.summary = self._summaryTextField.text ?? ""
+         self._goal.month = self._monthSelectorViewController.selectedMonth
       })
       _dismissSelf()
    }
