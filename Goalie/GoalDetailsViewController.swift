@@ -74,6 +74,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       // in the subgoals table view, and all they have to do is tap that to change the text since the "add a subgoal" text is a placeholder
       // string.  if they do nothing with it, then it'll get deleted since all of the subgoals with empty titles are deleted when the
       // done button is pressed
+      _goal.deleteEmptySubgoalsAndSave(false)
       _createNewSubgoal()
    }
    
