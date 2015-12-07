@@ -69,6 +69,12 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _updateTitlesAndUI()
       _hideOrShowCancelButton()
       _setupSubgoalsTable()
+      
+      // this is sort of a convenience for the user.  since subgoals are created with an empty title, the user will see "add a subgoal"
+      // in the subgoals table view, and all they have to do is tap that to change the text since the "add a subgoal" text is a placeholder
+      // string.  if they do nothing with it, then it'll get deleted since all of the subgoals with empty titles are deleted when the
+      // done button is pressed
+      _createNewSubgoal()
    }
    
    // MARK: - Private / Internal
@@ -105,6 +111,11 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       let frc = NSFetchedResultsController(fetchRequest: goal.childrenFetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
       return FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+   }
+   
+   private func _createNewSubgoal()
+   {
+      Goal.insertIntoContext(managedObjectContext, title: "", parent: _goal)
    }
    
    internal func dismissKeyboard()
@@ -144,7 +155,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    
    @IBAction private func addSubgoalsButtonPressed()
    {
-      Goal.insertIntoContext(managedObjectContext, title: "", parent: _goal)
+      _createNewSubgoal()
    }
 }
 
