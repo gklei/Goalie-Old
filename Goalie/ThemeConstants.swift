@@ -14,6 +14,7 @@ let ThemeNavigationBarButtonItemFontSize: CGFloat = 18
 let ThemeMonthGridFontSize: CGFloat = 32
 let ThemeMonthBadgeFontSize: CGFloat = 20
 let ThemeAllGoalsLabelFontSize: CGFloat = 14
+let ThemeSubgoalsLabelFontSize: CGFloat = 12
 
 //let ThemeFontName = "MarkerFelt-Wide"
 //let ThemeFontName = "ChalkboardSE-Bold"
@@ -34,6 +35,7 @@ let ThemeNavigationBarButtonItemFont = UIFont(name: ThemeFontName, size: ThemeNa
 let ThemeMonthGridLabelFont = UIFont(name: ThemeFontName, size: ThemeMonthGridFontSize)!
 let ThemeMonthBadgeFont = UIFont(name: ThemeFontName, size: ThemeMonthBadgeFontSize)!
 let ThemeAllGoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeAllGoalsLabelFontSize)!
+let ThemeSubgoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeSubgoalsLabelFontSize)!
 
 let ThemeNormalStateTextColor = UIColor.whiteColor()
 

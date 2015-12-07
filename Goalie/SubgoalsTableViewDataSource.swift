@@ -44,9 +44,10 @@ extension SubgoalsTableViewDataSource
       let cell = tableView.dequeueReusableCellWithIdentifier("SubgoalsCellIdentifier", forIndexPath: indexPath) as! SubgoalsTableViewCell
       
       cell.delegate = _subgoalCellDelegate
-      if let children = _goal?.children {
-         let title = children.first?.title ?? ""
-         cell.updateTitle(title)
+      if let children = _goal?.children,
+         let child = children.objectAtIndex(indexPath.row) as? Goal
+      {
+         cell.configureForObject(child)
       }
       
       return cell
@@ -54,13 +55,26 @@ extension SubgoalsTableViewDataSource
    
    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
    {
-      // We want to show an extra cell for the "Add subgoal text"
-//      var count = 1
-//      if let subgoalCount = _goal?.children?.count {
-//         count = subgoalCount + 1
-//      }
-//      return count
-      
       return _goal?.children.count ?? 0
+   }
+   
+   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+      if editingStyle == .Delete
+      {
+//         let goal = _dataProvider.objectAtIndexPath(indexPath)
+//         goal.managedObjectContext?.performChanges({ () -> () in
+//            goal.managedObjectContext?.deleteObject(goal)
+//         })
+         if let children = _goal?.children,
+         let child = children.objectAtIndex(indexPath.row) as? Goal
+         {
+            child.delete()
+         }
+      }
+   }
+   
+   func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+   {
+      return true
    }
 }

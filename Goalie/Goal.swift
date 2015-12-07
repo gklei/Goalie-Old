@@ -12,12 +12,12 @@ import CoreData
 public final class Goal: ManagedObject
 {
    @NSManaged public var title: String
-   @NSManaged public var summary: String?
+   @NSManaged public var summary: String
    @NSManaged public var monthValue: Int16
    @NSManaged public private(set) var creationDate: NSDate
    
    @NSManaged public private(set) var parent: Goal?
-   @NSManaged public private(set) var children: Set<Goal>
+   @NSManaged public private(set) var children: NSOrderedSet
    
    public static func insertIntoContext(moc: NSManagedObjectContext, title: String, summary: String) -> Goal
    {
@@ -40,6 +40,21 @@ public final class Goal: ManagedObject
    
    public override func awakeFromInsert() {
       creationDate = NSDate()
+      title = ""
+      summary = ""
+   }
+}
+
+extension Goal
+{
+   public func childGoalForIndexPath(indexPath: NSIndexPath) -> Goal?
+   {
+      var child: Goal?
+      if indexPath.row < children.count
+      {
+         child = children.objectAtIndex(indexPath.row) as? Goal
+      }
+      return child
    }
 }
 
@@ -53,7 +68,14 @@ extension Goal: ManagedObjectType
       return [NSSortDescriptor(key: "title", ascending: true)]
    }
    
-   public static var defaultPredicate: NSPredicate? {
+   public static var defaultPredicate: NSPredicate {
       return NSPredicate(format: "parent == nil")
+   }
+   
+   public func delete()
+   {
+      self.managedObjectContext?.performChanges({ () -> () in
+         self.managedObjectContext?.deleteObject(self)
+      })
    }
 }

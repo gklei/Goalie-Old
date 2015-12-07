@@ -19,16 +19,12 @@ class SubgoalsTableViewCell: UITableViewCell
    @IBOutlet weak private var _labelTextField: UITextField! {
       didSet {
          _labelTextField.delegate = self
-         _labelTextField.font = ThemeAllGoalsLabelFont
+         _labelTextField.font = ThemeSubgoalsLabelFont
       }
    }
    
    weak var delegate: SubgoalsTableViewCellDelegate?
-   
-   func updateTitle(title: String)
-   {
-      _labelTextField.text = title
-   }
+   weak private var _goal: Goal?
    
    func stopEditing()
    {
@@ -45,6 +41,9 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
    
    func textFieldDidEndEditing(textField: UITextField)
    {
+      if let title = textField.text {
+         _goal?.title = title
+      }
       delegate?.subgoalCellFinishedEditing(self)
    }
    
@@ -52,5 +51,14 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
    {
       _labelTextField.resignFirstResponder()
       return true
+   }
+}
+
+extension SubgoalsTableViewCell: ConfigurableCell
+{
+   func configureForObject(goal: Goal)
+   {
+      _goal = goal
+      _labelTextField.text = goal.title
    }
 }

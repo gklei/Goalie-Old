@@ -18,13 +18,18 @@ public protocol ManagedObjectType: class
 {
    static var entityName: String {get}
    static var defaultSortDescriptors: [NSSortDescriptor] {get}
-   static var defaultPredicate: NSPredicate? {get}
+   static var defaultPredicate: NSPredicate {get}
+   var managedObjectContext: NSManagedObjectContext? { get }
 }
 
 extension ManagedObjectType
 {
    public static var defaultSortDescriptors: [NSSortDescriptor] {
       return []
+   }
+   
+   public static var defaultPredicate: NSPredicate {
+      return NSPredicate(value: true)
    }
    
    public static var sortedFetchRequest: NSFetchRequest {

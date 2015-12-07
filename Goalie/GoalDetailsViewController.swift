@@ -11,7 +11,19 @@ import CoreData
 
 class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
 {
-   var goal: Goal?
+   var goal: Goal? {
+      didSet {
+         if let unwrappedGoal = goal {
+            _observer = ManagedObjectObserver(object: unwrappedGoal) { [unowned self] type in
+               guard type == .Update else { return }
+               self._subgoalsTableView.reloadData()
+            }
+         }
+      }
+   }
+   
+   private var _observer: ManagedObjectObserver?
+   
    var managedObjectContext: NSManagedObjectContext!
    private var _currentSubgoalCell: SubgoalsTableViewCell?
    private var _subgoalsTableViewDataSource: SubgoalsTableViewDataSource?
@@ -41,6 +53,8 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       }
    }
    
+   private var subgoalCount = 0
+   
    convenience init()
    {
       self.init(nibName: nil, bundle: nil)
@@ -66,23 +80,24 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    func configureWithGoal(goal: Goal?)
    {
       self.goal = goal
+      subgoalCount = goal?.children.count ?? 0
       _subgoalsTableViewDataSource?.updateGoal(self.goal)
    }
    
    @IBAction func doneButtonPressed()
    {
-      if let goal = goal, let title = _titleTextField.text
+      if let goal = goal
       {
          managedObjectContext.performChanges({() -> () in
-            goal.title = title
-            goal.summary = self._summaryTextField.text
+            goal.title = self._titleTextField.text ?? "No title set"
+            goal.summary = self._summaryTextField.text ?? ""
          })
       }
       else // Create a new goal
       {
          managedObjectContext.performChanges {() -> () in
-            let title = self._titleTextField.text ?? "No Title Set"
-            let summary = self._summaryTextField.text ?? "No Summary Set"
+            let title = self._titleTextField.text ?? "No title set"
+            let summary = self._summaryTextField.text ?? ""
             Goal.insertIntoContext(self.managedObjectContext, title: title, summary: summary)
          }
       }
@@ -97,8 +112,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    @IBAction func addSubgoalsButtonPressed()
    {
       if let parent = self.goal {
-         Goal.insertIntoContext(managedObjectContext, title: "A SUBGOAL!", parent: parent)
-         _subgoalsTableView.reloadData()
+         Goal.insertIntoContext(managedObjectContext, title: "", parent: parent)
       }
    }
    
@@ -126,6 +140,11 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
    {
+      if let indexPath = _subgoalsTableView.indexPathForCell(cell),
+      let child = goal?.childGoalForIndexPath(indexPath) {
+         child.managedObjectContext?.saveOrRollback()
+      }
+      
       _currentSubgoalCell = nil
    }
 }

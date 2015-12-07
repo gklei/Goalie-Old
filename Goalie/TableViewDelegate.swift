@@ -9,9 +9,8 @@
 import UIKit
 import CoreData
 
-class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateProtocol where Data.Object: ManagedObject, Data.Object == Delegate.Object>: NSObject, ManagedObjectContextSettable, UITableViewDelegate
+class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateProtocol where Data.Object: ManagedObject, Data.Object == Delegate.Object>: NSObject, UITableViewDelegate
 {
-   var managedObjectContext: NSManagedObjectContext!
    private var _tableView: UITableView
    private var _dataProvider: Data
    private var _delegate: Delegate
