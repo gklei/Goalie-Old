@@ -60,7 +60,7 @@
                                             <real key="value" value="0.0"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
-                                            <color key="value" red="0.2295522945" green="1" blue="0.73780876439999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" red="0.31129641006972958" green="0.31735321969696972" blue="0.31086358320881119" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
@@ -75,7 +75,7 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
-                                            <color key="value" red="0.2295522945" green="1" blue="0.73780876439999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" red="0.31129641006972958" green="0.31735321969696972" blue="0.31086358320881119" alpha="1" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
