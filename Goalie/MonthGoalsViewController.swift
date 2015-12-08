@@ -34,9 +34,9 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
    override func viewDidLoad()
    {  
       super.viewDidLoad()
-      _monthGoalsTableView.registerNib(UINib(nibName: "MonthGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
       automaticallyAdjustsScrollViewInsets = false
       
+      _monthGoalsTableView.registerNib(UINib(nibName: "MonthGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
       _goalPresenter = GoalPresenter(presentingController: self)
    }
    
@@ -68,6 +68,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       _month = month
    }
    
+   // MARK: - IBActions
    @IBAction func addNewGoalButtonPressed()
    {
       _goalPresenter.createAndPresentNewGoalWithMonth(_month)

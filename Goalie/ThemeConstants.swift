@@ -46,6 +46,7 @@ let ThemeNormalStateTextColor = UIColor.whiteColor()
 //let ThemeSelectedStateTextColor = UIColor.magentaColor()
 //let ThemeSelectedStateTextColor = UIColor.orangeColor()
 let ThemeSelectedStateTextColor = UIColor.cyanColor()
+//let ThemeSelectedStateTextColor = UIColor.redColor()
 
 let ThemeTitleTextColor = UIColor.blackColor()
 
