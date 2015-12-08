@@ -15,7 +15,6 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
 {
    var managedObjectContext: NSManagedObjectContext! {
       didSet {
-         _detailsViewController.managedObjectContext = managedObjectContext
          _parentGoalsProvider = ParentGoalsDataProvider(managedObjectContext: managedObjectContext)
       }
    }
@@ -30,7 +29,7 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    private let _collectionViewCellID = "MonthCellIdentifier"
    private var _parentGoalsProvider: ParentGoalsDataProvider!
    
-   private var _detailsViewController = GoalDetailsViewController()
+   private var _goalPresenter: GoalPresenter<MonthsGridViewController>!
    private var _selectedMonth: Month?
    
    private var _parentGoalsFRC: NSFetchedResultsController {
@@ -47,6 +46,8 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
       
       _updateBackBarButtonItem()
       _setupCollectionViewLayout()
+      
+      _goalPresenter = GoalPresenter(presentingController: self)
       _monthGridCollectionView.delegate = self
    }
    
@@ -80,10 +81,7 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    // MARK: IBActions
    @IBAction func addNewGoalButtonPressed()
    {
-      let newGoal = Goal.insertIntoContext(managedObjectContext, title: "", summary: "")
-      
-      _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
-      presentViewController(_detailsViewController, animated: true, completion: nil)
+      _goalPresenter.createAndPresentNewGoal()
    }
    
    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

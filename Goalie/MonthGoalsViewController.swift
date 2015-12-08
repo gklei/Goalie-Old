@@ -11,19 +11,15 @@ import CoreData
 
 class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
 {
-   var managedObjectContext: NSManagedObjectContext! {
-      didSet {
-         _detailsViewController.managedObjectContext = managedObjectContext
-      }
-   }
+   var managedObjectContext: NSManagedObjectContext!
    
    private typealias DataProvider = FetchedResultsDataProvider<MonthGoalsViewController>
    private var _dataProvider: DataProvider!
    private var _tableViewDataSource: TableViewDataSource<MonthGoalsViewController, DataProvider, MonthGoalsTableViewCell>!
    private var _tableViewDelegate: TableViewDelegate<DataProvider, MonthGoalsViewController>!
    
-   private let _detailsViewController = GoalDetailsViewController()
    private let _tableViewCellID = "MonthGoalsCellIdentifier"
+   private var _goalPresenter: GoalPresenter<MonthGoalsViewController>!
    
    @IBOutlet private weak var _monthGoalsTableView: UITableView!
    private var _month: Month = .Jan
@@ -40,6 +36,8 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLoad()
       _monthGoalsTableView.registerNib(UINib(nibName: "MonthGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
       automaticallyAdjustsScrollViewInsets = false
+      
+      _goalPresenter = GoalPresenter(presentingController: self)
    }
    
    override func viewWillAppear(animated: Bool)
@@ -64,12 +62,6 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       return FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
    }
    
-   private func _presentDetailsForGoal(goal: Goal)
-   {
-      _detailsViewController.configureWithGoal(goal, allowCancel: false)
-      presentViewController(_detailsViewController, animated: true, completion: nil)
-   }
-   
    // MARK: - Public
    func configureWithMonth(month: Month)
    {
@@ -78,10 +70,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
    
    @IBAction func addNewGoalButtonPressed()
    {
-      let newGoal = Goal.insertIntoContext(managedObjectContext, month: _month)
-      _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
-      
-      presentViewController(_detailsViewController, animated: true, completion: nil)
+      _goalPresenter.createAndPresentNewGoalWithMonth(_month)
    }
 }
 
@@ -112,6 +101,6 @@ extension MonthGoalsViewController: TableViewDelegateProtocol
 {
    func objectSelected(goal: Goal)
    {
-      _presentDetailsForGoal(goal)
+      _goalPresenter.presentDetailsForGoal(goal)
    }
 }

@@ -13,11 +13,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
 {
    @IBOutlet private weak var _allGoalsTableView: UITableView!
    
-   var managedObjectContext: NSManagedObjectContext! {
-      didSet {
-         _detailsViewController.managedObjectContext = managedObjectContext
-      }
-   }
+   var managedObjectContext: NSManagedObjectContext!
    
    private typealias DataProvider = FetchedResultsDataProvider<AllGoalsViewController>
    private var _tableViewDataSource: TableViewDataSource<AllGoalsViewController, DataProvider, AllGoalsTableViewCell>!
@@ -28,7 +24,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       return NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
    }
    
-   private let _detailsViewController = GoalDetailsViewController()
+   private var _goalPresenter: GoalPresenter<AllGoalsViewController>!
    private let _tableViewCellID = "AllGoalsCellIdentifier"
    
    // MARK: - Lifecycle
@@ -38,6 +34,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       navigationItem.title = "All Goals"
       automaticallyAdjustsScrollViewInsets = false
       
+      _goalPresenter = GoalPresenter(presentingController: self)
       setupTableViewDataSourceAndDelegate()
    }
    
@@ -52,16 +49,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    // MARK: - IBActions
    @IBAction func addNewGoal()
    {
-      let newGoal = Goal.insertIntoContext(managedObjectContext, title: "", summary: "")
-      
-      _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
-      presentViewController(_detailsViewController, animated: true, completion: nil)
-   }
-   
-   private func presentDetailsForGoal(goal: Goal)
-   {
-      _detailsViewController.configureWithGoal(goal, allowCancel: false)
-      presentViewController(_detailsViewController, animated: true, completion: nil)
+      _goalPresenter.createAndPresentNewGoal()
    }
 }
 
@@ -92,7 +80,7 @@ extension AllGoalsViewController: TableViewDelegateProtocol
 {
    func objectSelected(goal: Goal)
    {
-      presentDetailsForGoal(goal)
+      _goalPresenter.presentDetailsForGoal(goal)
    }
 }
 
