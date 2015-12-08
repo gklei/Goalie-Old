@@ -18,16 +18,12 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
    }
    
    private typealias DataProvider = FetchedResultsDataProvider<MonthGoalsViewController>
-   private var _tableViewDataSource: TableViewDataSource<MonthGoalsViewController, DataProvider, AllGoalsTableViewCell>!
    private var _dataProvider: DataProvider!
+   private var _tableViewDataSource: TableViewDataSource<MonthGoalsViewController, DataProvider, MonthGoalsTableViewCell>!
    private var _tableViewDelegate: TableViewDelegate<DataProvider, MonthGoalsViewController>!
    
-   private var _defaultFRC: NSFetchedResultsController {
-      return NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-   }
-   
    private let _detailsViewController = GoalDetailsViewController()
-   private let _tableViewCellID = "AllGoalsCellIdentifier"
+   private let _tableViewCellID = "MonthGoalsCellIdentifier"
    
    @IBOutlet private weak var _monthGoalsTableView: UITableView!
    private var _month: Month = .Jan
@@ -42,7 +38,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
    override func viewDidLoad()
    {  
       super.viewDidLoad()
-      _monthGoalsTableView.registerNib(UINib(nibName: "AllGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
+      _monthGoalsTableView.registerNib(UINib(nibName: "MonthGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
       automaticallyAdjustsScrollViewInsets = false
    }
    
