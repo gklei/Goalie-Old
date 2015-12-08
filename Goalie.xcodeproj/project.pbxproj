@@ -42,7 +42,7 @@
 		F3536E8A1C1637D3003A114E /* ProjectEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E891C1637D3003A114E /* ProjectEnums.swift */; };
 		F3536E8C1C1652A9003A114E /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8B1C1652A9003A114E /* CollectionViewDataSource.swift */; };
 		F3536E8E1C174443003A114E /* ParentGoalsFetchRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */; };
-		F3536E901C1746B7003A114E /* GoalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8F1C1746B7003A114E /* GoalProvider.swift */; };
+		F3536E901C1746B7003A114E /* ParentGoalsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */; };
 		F3536E921C176CC1003A114E /* MonthGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */; };
 		F386BC3D1C178D410099F39E /* MonthGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */; };
 		F386BC3E1C178D410099F39E /* MonthGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */; };
@@ -124,7 +124,7 @@
 		F3536E891C1637D3003A114E /* ProjectEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectEnums.swift; path = Goalie/ProjectEnums.swift; sourceTree = "<group>"; };
 		F3536E8B1C1652A9003A114E /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewDataSource.swift; path = Goalie/CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsFetchRequestProvider.swift; path = Goalie/ParentGoalsFetchRequestProvider.swift; sourceTree = "<group>"; };
-		F3536E8F1C1746B7003A114E /* GoalProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalProvider.swift; path = Goalie/GoalProvider.swift; sourceTree = "<group>"; };
+		F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsDataProvider.swift; path = Goalie/ParentGoalsDataProvider.swift; sourceTree = "<group>"; };
 		F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthGoalsViewController.swift; sourceTree = "<group>"; };
 		F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthGoalsTableViewCell.swift; path = Goalie/MonthGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthGoalsTableViewCell.xib; path = Goalie/MonthGoalsTableViewCell.xib; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 				F31BAACF1C11F5080079C537 /* DataRelatedProtocols.swift */,
 				F3536E791C14FA8F003A114E /* ManagedObjectObserver.swift */,
 				F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */,
-				F3536E8F1C1746B7003A114E /* GoalProvider.swift */,
+				F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -485,7 +485,7 @@
 				F3D461AC1C113C39002F31A6 /* GoalieTabBarController.swift in Sources */,
 				F31BAAD41C1204020079C537 /* DataProvider.swift in Sources */,
 				F31BAAC61C11F1A10079C537 /* Goal.swift in Sources */,
-				F3536E901C1746B7003A114E /* GoalProvider.swift in Sources */,
+				F3536E901C1746B7003A114E /* ParentGoalsDataProvider.swift in Sources */,
 				F3536E7A1C14FA8F003A114E /* ManagedObjectObserver.swift in Sources */,
 				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
 				F3536E7C1C14FC63003A114E /* NSManagedObjectContext+Observers.swift in Sources */,
