@@ -23,4 +23,13 @@ class ParentGoalsFetchRequestProvider
    class var fetchRequest: NSFetchRequest {
       return _sharedProvider.fetchRequest
    }
+   
+   class func fetchRequestForMonth(month: Month) -> NSFetchRequest
+   {
+      let request = Goal.sortedParentGoalsFetchRequestForMonth(month)
+      request.returnsObjectsAsFaults = false
+      request.fetchBatchSize = 20
+      
+      return request
+   }
 }

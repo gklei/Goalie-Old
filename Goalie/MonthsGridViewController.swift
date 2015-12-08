@@ -16,30 +16,38 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    var managedObjectContext: NSManagedObjectContext! {
       didSet {
          _detailsViewController.managedObjectContext = managedObjectContext
+         _parentGoalsProvider = ParentGoalsDataProvider(managedObjectContext: managedObjectContext)
+      }
+   }
+
+   @IBOutlet weak private var _monthGoalsSegue: UIStoryboardSegue!
+   @IBOutlet weak private var _monthGridCollectionView: UICollectionView! {
+      didSet {
+         _monthGridCollectionView.registerNib(UINib(nibName: "MonthCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: _collectionViewCellID)
       }
    }
    
-   @IBOutlet weak private var _monthGridCollectionView: UICollectionView!
    private let _collectionViewCellID = "MonthCellIdentifier"
    private var _parentGoalsProvider: ParentGoalsDataProvider!
+   
+   private var _detailsViewController = GoalDetailsViewController()
+   private var _selectedMonth: Month?
    
    private var _parentGoalsFRC: NSFetchedResultsController {
       return NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
    }
    
-   private var _detailsViewController = GoalDetailsViewController()
-   private var _shouldReloadCollectionViewOnChange = true
    
+   // MARK: - Lifecycle
    override func viewDidLoad()
    {
       super.viewDidLoad()
       navigationItem.title = "Months"
       automaticallyAdjustsScrollViewInsets = false
       
-      setupFlowLayout()
-      registerCellNib()
-      
-      _parentGoalsProvider = ParentGoalsDataProvider(managedObjectContext: managedObjectContext)
+      _updateBackBarButtonItem()
+      _setupCollectionViewLayout()
+      _monthGridCollectionView.delegate = self
    }
    
    override func viewWillAppear(animated: Bool)
@@ -48,7 +56,8 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
       _monthGridCollectionView.reloadData()
    }
    
-   private func setupFlowLayout()
+   // MARK: - Private
+   private func _setupCollectionViewLayout()
    {
       let collectionViewLayout = _monthGridCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
       
@@ -60,11 +69,15 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
       collectionViewLayout.sectionInset = UIEdgeInsets(top: padding * 3, left: padding * 1.5, bottom: padding * 1.5, right: padding * 1.5)
    }
    
-   private func registerCellNib()
+   private func _updateBackBarButtonItem()
    {
-      _monthGridCollectionView.registerNib(UINib(nibName: "MonthCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: _collectionViewCellID)
+      let updatedButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
+      let attrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
+      updatedButtonItem.setTitleTextAttributes(attrs, forState: .Normal)
+      navigationItem.backBarButtonItem = updatedButtonItem
    }
    
+   // MARK: IBActions
    @IBAction func addNewGoalButtonPressed()
    {
       let newGoal = Goal.insertIntoContext(managedObjectContext, title: "", summary: "")
@@ -72,8 +85,18 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
       _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
       presentViewController(_detailsViewController, animated: true, completion: nil)
    }
+   
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+   {
+      if let monthGoalsViewController = segue.destinationViewController as? MonthGoalsViewController,
+      let selectedMonth = _selectedMonth {
+         monthGoalsViewController.managedObjectContext = managedObjectContext
+         monthGoalsViewController.configureWithMonth(selectedMonth)
+      }
+   }
 }
 
+// MARK: - UICollectionViewDataSource
 extension MonthsGridViewController: UICollectionViewDataSource
 {
    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
@@ -85,13 +108,21 @@ extension MonthsGridViewController: UICollectionViewDataSource
    {
       let cell = collectionView.dequeueReusableCellWithReuseIdentifier(_collectionViewCellID, forIndexPath: indexPath) as! MonthCollectionViewCell
       
-      let title = monthTitleForIndexPath(indexPath)
-      cell.updateTitle(title)
-      
       let month = Month(rawValue: indexPath.row)!
       let goalCount = _parentGoalsProvider.parentGoalsInMonth(month).count
       
+      cell.updateTitle(month.text)
       cell.updateGoalCount(goalCount)
+      
       return cell
+   }
+}
+
+extension MonthsGridViewController: UICollectionViewDelegate
+{
+   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+   {
+      _selectedMonth = Month(rawValue: indexPath.row)
+      performSegueWithIdentifier("ShowGoalsForMonthSegue", sender: nil)
    }
 }

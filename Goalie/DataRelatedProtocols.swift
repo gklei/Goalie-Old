@@ -45,4 +45,17 @@ extension ManagedObjectType
       request.sortDescriptors = defaultSortDescriptors
       return request
    }
+   
+   public static func sortedParentGoalsFetchRequestForMonth(month: Month) -> NSFetchRequest
+   {
+      let request = NSFetchRequest(entityName: entityName)
+      
+      let parentGoalPredicate = NSPredicate(format: "parent == nil")
+      let monthPredicate = NSPredicate(format: "monthValue == \(Int16(month.rawValue))")
+      let compoundPredicate = NSCompoundPredicate(type: .AndPredicateType, subpredicates: [parentGoalPredicate, monthPredicate])
+
+      request.predicate = compoundPredicate
+      request.sortDescriptors = defaultSortDescriptors
+      return request
+   }
 }

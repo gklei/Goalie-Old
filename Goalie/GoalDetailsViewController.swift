@@ -44,8 +44,8 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          _subgoalsTableView.registerNib(nib, forCellReuseIdentifier: SubgoalsCellIdentifier)
          
          // A trick for making it so that separators don't display for empty cells
-         let size = CGSize(width: 0, height: 1)
-         _subgoalsTableView.tableFooterView = UIView(frame: CGRect(origin: CGPoint.zero, size: size))
+//         let size = CGSize(width: 0, height: 1)
+//         _subgoalsTableView.tableFooterView = UIView(frame: CGRect(origin: CGPoint.zero, size: size))
       }
    }
    
@@ -101,7 +101,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _titleTextField.text = _goal?.title
       _summaryTextField.text = _goal?.summary
       
-      let title = _goal != nil ? "Details" : "Create"
+      let title = (_shouldShowCancelButton == false) ? "Details" : "Create"
       _topNavigationBar.updateTitle(title)
    }
    

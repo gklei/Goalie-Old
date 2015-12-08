@@ -182,6 +182,9 @@
                                         </view>
                                         <animations/>
                                         <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <segue destination="62Q-V3-JCW" kind="push" identifier="ShowGoalsForMonthSegue" id="Wy9-1L-vhW"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -212,6 +215,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="932" y="340"/>
+        </scene>
+        <!--Month Goals View Controller-->
+        <scene sceneID="dEt-1C-dZS">
+            <objects>
+                <viewController id="62Q-V3-JCW" customClass="MonthGoalsViewController" customModule="Goalie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rES-px-N7F"/>
+                        <viewControllerLayoutGuide type="bottom" id="WNV-4c-Vgw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Flf-No-ddM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-fb-F29">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WNV-4c-Vgw" firstAttribute="top" secondItem="Fxk-fb-F29" secondAttribute="bottom" id="5bw-82-Bne"/>
+                            <constraint firstAttribute="trailing" secondItem="Fxk-fb-F29" secondAttribute="trailing" id="C47-rr-0Xb"/>
+                            <constraint firstItem="Fxk-fb-F29" firstAttribute="leading" secondItem="Flf-No-ddM" secondAttribute="leading" id="eEi-Vn-Hie"/>
+                            <constraint firstItem="Fxk-fb-F29" firstAttribute="top" secondItem="rES-px-N7F" secondAttribute="bottom" id="jTH-mb-dqQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QHw-fw-ovE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KWL-ry-UDK">
+                            <connections>
+                                <action selector="addNewGoalButtonPressed" destination="62Q-V3-JCW" id="ER0-Pz-mAH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="_monthGoalsTableView" destination="Fxk-fb-F29" id="XJF-rz-kjQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8pr-yb-PfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="612"/>
         </scene>
         <!--Goalie Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

@@ -27,6 +27,14 @@ public final class Goal: ManagedObject
       return goal
    }
    
+   public static func insertIntoContext(moc: NSManagedObjectContext, month: Month) -> Goal
+   {
+      let goal: Goal = moc.insertObject()
+      goal.month = month
+      
+      return goal
+   }
+   
    public static func insertIntoContext(moc: NSManagedObjectContext, title: String, parent: Goal) -> Goal
    {
       let goal: Goal = moc.insertObject()
