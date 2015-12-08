@@ -57,7 +57,6 @@
 		F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */; };
 		F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */; };
 		F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */; };
-		F3D461BF1C117663002F31A6 /* MockupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461BE1C117663002F31A6 /* MockupUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,7 +141,6 @@
 		F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthCollectionViewCell.swift; path = Goalie/MonthCollectionViewCell.swift; sourceTree = "<group>"; };
 		F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthCollectionViewCell.xib; path = Goalie/MonthCollectionViewCell.xib; sourceTree = "<group>"; };
 		F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeConstants.swift; path = Goalie/ThemeConstants.swift; sourceTree = "<group>"; };
-		F3D461BE1C117663002F31A6 /* MockupUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockupUI.swift; path = Goalie/MockupUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +247,6 @@
 				F3536E2A1C129831003A114E /* Generic Data Source & Delegate Files */,
 				F3D461861C113221002F31A6 /* View Controllers */,
 				F3D4619D1C113221002F31A6 /* GoalieTests */,
-				F3D461BD1C117641002F31A6 /* Mockup UI */,
 				F3D461B71C115D4C002F31A6 /* Other */,
 				F3D461851C113221002F31A6 /* Products */,
 				F3D461B91C1168E2002F31A6 /* Subclasses */,
@@ -342,14 +339,6 @@
 				F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */,
 			);
 			name = Theme;
-			sourceTree = "<group>";
-		};
-		F3D461BD1C117641002F31A6 /* Mockup UI */ = {
-			isa = PBXGroup;
-			children = (
-				F3D461BE1C117663002F31A6 /* MockupUI.swift */,
-			);
-			name = "Mockup UI";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,7 +479,6 @@
 				F31BAAD41C1204020079C537 /* DataProvider.swift in Sources */,
 				F31BAAC61C11F1A10079C537 /* Goal.swift in Sources */,
 				F3536E901C1746B7003A114E /* GoalProvider.swift in Sources */,
-				F3D461BF1C117663002F31A6 /* MockupUI.swift in Sources */,
 				F3536E7A1C14FA8F003A114E /* ManagedObjectObserver.swift in Sources */,
 				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
 				F3536E7C1C14FC63003A114E /* NSManagedObjectContext+Observers.swift in Sources */,
