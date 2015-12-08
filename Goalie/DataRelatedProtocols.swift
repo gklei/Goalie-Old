@@ -38,4 +38,11 @@ extension ManagedObjectType
       request.sortDescriptors = defaultSortDescriptors
       return request
    }
+   
+   public static var sortedParentGoalsFetchRequest: NSFetchRequest {
+      let request = NSFetchRequest(entityName: entityName)
+      request.predicate = NSPredicate(format: "parent == nil")
+      request.sortDescriptors = defaultSortDescriptors
+      return request
+   }
 }

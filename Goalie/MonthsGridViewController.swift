@@ -9,12 +9,19 @@
 import UIKit
 import CoreData
 
+private let NumberOfMonths = 12
+
 class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
 {
+   var managedObjectContext: NSManagedObjectContext!
+   
    @IBOutlet weak private var _monthGridCollectionView: UICollectionView!
    private let _collectionViewCellID = "MonthCellIdentifier"
+   private var _parentGoalsProvider: ParentGoalsDataProvider!
    
-   var managedObjectContext: NSManagedObjectContext!
+   private var _parentGoalsFRC: NSFetchedResultsController {
+      return NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+   }
    
    override func viewDidLoad()
    {
@@ -24,6 +31,8 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
       
       setupFlowLayout()
       registerCellNib()
+      
+      _parentGoalsProvider = ParentGoalsDataProvider(managedObjectContext: managedObjectContext, delegate: self)
    }
    
    private func setupFlowLayout()
@@ -48,7 +57,7 @@ extension MonthsGridViewController: UICollectionViewDataSource
 {
    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
    {
-      return 12
+      return NumberOfMonths
    }
    
    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
@@ -58,9 +67,18 @@ extension MonthsGridViewController: UICollectionViewDataSource
       let title = monthTitleForIndexPath(indexPath)
       cell.updateTitle(title)
       
-      let goalCount = goalCountForIndexPath(indexPath)
-      cell.updateGoalCount(goalCount)
+      let month = Month(rawValue: indexPath.row)!
+      let goalCount = _parentGoalsProvider.parentGoalsInMonth(month).count
       
+      cell.updateGoalCount(goalCount)
       return cell
+   }
+}
+
+extension MonthsGridViewController: ParentGoalsDataProviderDelegate
+{
+   func parentGoalsDidChange()
+   {
+      _monthGridCollectionView.reloadData()
    }
 }

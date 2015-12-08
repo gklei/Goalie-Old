@@ -41,6 +41,8 @@
 		F3536E871C163491003A114E /* MonthSelectorMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E861C163491003A114E /* MonthSelectorMonthView.swift */; };
 		F3536E8A1C1637D3003A114E /* ProjectEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E891C1637D3003A114E /* ProjectEnums.swift */; };
 		F3536E8C1C1652A9003A114E /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8B1C1652A9003A114E /* CollectionViewDataSource.swift */; };
+		F3536E8E1C174443003A114E /* ParentGoalsFetchRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */; };
+		F3536E901C1746B7003A114E /* GoalProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8F1C1746B7003A114E /* GoalProvider.swift */; };
 		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
 		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
 		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
@@ -119,6 +121,8 @@
 		F3536E861C163491003A114E /* MonthSelectorMonthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthSelectorMonthView.swift; path = Goalie/MonthSelectorMonthView.swift; sourceTree = "<group>"; };
 		F3536E891C1637D3003A114E /* ProjectEnums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectEnums.swift; path = Goalie/ProjectEnums.swift; sourceTree = "<group>"; };
 		F3536E8B1C1652A9003A114E /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewDataSource.swift; path = Goalie/CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsFetchRequestProvider.swift; path = Goalie/ParentGoalsFetchRequestProvider.swift; sourceTree = "<group>"; };
+		F3536E8F1C1746B7003A114E /* GoalProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalProvider.swift; path = Goalie/GoalProvider.swift; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				F31BAAC91C11F2DF0079C537 /* CoreDataStack.swift */,
 				F31BAACF1C11F5080079C537 /* DataRelatedProtocols.swift */,
 				F3536E791C14FA8F003A114E /* ManagedObjectObserver.swift */,
+				F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */,
+				F3536E8F1C1746B7003A114E /* GoalProvider.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -480,6 +486,7 @@
 				F3D461AC1C113C39002F31A6 /* GoalieTabBarController.swift in Sources */,
 				F31BAAD41C1204020079C537 /* DataProvider.swift in Sources */,
 				F31BAAC61C11F1A10079C537 /* Goal.swift in Sources */,
+				F3536E901C1746B7003A114E /* GoalProvider.swift in Sources */,
 				F3D461BF1C117663002F31A6 /* MockupUI.swift in Sources */,
 				F3536E7A1C14FA8F003A114E /* ManagedObjectObserver.swift in Sources */,
 				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
@@ -491,6 +498,7 @@
 				F3536E681C13A56A003A114E /* TPKeyboardAvoidingScrollView.m in Sources */,
 				F3536E8A1C1637D3003A114E /* ProjectEnums.swift in Sources */,
 				F3D461B11C1144A1002F31A6 /* GoalieNavigationBar.swift in Sources */,
+				F3536E8E1C174443003A114E /* ParentGoalsFetchRequestProvider.swift in Sources */,
 				F3536E7E1C14FC9C003A114E /* Utilities.swift in Sources */,
 				F31BAAD01C11F5080079C537 /* DataRelatedProtocols.swift in Sources */,
 				F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */,

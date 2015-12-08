@@ -24,15 +24,8 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    private var _dataProvider: DataProvider!
    private var _tableViewDelegate: TableViewDelegate<DataProvider, AllGoalsViewController>!
    
-   private lazy var _goalFetchRequest: NSFetchRequest = {
-      let request = Goal.sortedFetchRequest
-      request.returnsObjectsAsFaults = false
-      request.fetchBatchSize = 20
-      return request
-   }()
-   
    private var _defaultFRC: NSFetchedResultsController {
-      return NSFetchedResultsController(fetchRequest: _goalFetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+      return NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
    }
    
    private let _detailsViewController = GoalDetailsViewController()

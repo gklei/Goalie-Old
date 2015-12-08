@@ -115,10 +115,6 @@ extension Goal: ManagedObjectType
       return [NSSortDescriptor(key: "title", ascending: true)]
    }
    
-   public static var defaultPredicate: NSPredicate {
-      return NSPredicate(format: "parent == nil")
-   }
-   
    public func delete()
    {
       self.managedObjectContext?.performChanges({ () -> () in
