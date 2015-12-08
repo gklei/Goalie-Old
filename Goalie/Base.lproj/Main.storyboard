@@ -199,7 +199,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="302-24-i12">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="q1z-O4-8LC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="q1z-O4-8LC">
+                            <connections>
+                                <action selector="addNewGoalButtonPressed" destination="8rJ-Kc-sve" id="2t3-Jq-QGR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="_monthGridCollectionView" destination="f8i-Ou-8dX" id="vnN-IL-oCA"/>

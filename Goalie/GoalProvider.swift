@@ -9,22 +9,15 @@
 import Foundation
 import CoreData
 
-protocol ParentGoalsDataProviderDelegate
-{
-   func parentGoalsDidChange()
-}
-
 class ParentGoalsDataProvider: NSObject, NSFetchedResultsControllerDelegate
 {
    private var _moc: NSManagedObjectContext
    private var _parentGoalsFRC: NSFetchedResultsController
-   private var _delegate: ParentGoalsDataProviderDelegate
    
-   init(managedObjectContext: NSManagedObjectContext, delegate: ParentGoalsDataProviderDelegate)
+   init(managedObjectContext: NSManagedObjectContext)
    {
       _moc = managedObjectContext
       _parentGoalsFRC = NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: _moc, sectionNameKeyPath: nil, cacheName: nil)
-      _delegate = delegate
       
       super.init()
       _parentGoalsFRC.delegate = self
@@ -44,19 +37,13 @@ class ParentGoalsDataProvider: NSObject, NSFetchedResultsControllerDelegate
       }
       return parentGoals
    }
-   
-   func reloadData()
-   {
-      NSFetchedResultsController.deleteCacheWithName(_parentGoalsFRC.cacheName)
-      do { try _parentGoalsFRC.performFetch() } catch { fatalError("fetch request failed") }
-   }
 }
 
 extension ParentGoalsDataProvider
 {
    func controllerDidChangeContent(controller: NSFetchedResultsController)
    {
-      reloadData()
-      _delegate.parentGoalsDidChange()
+      NSFetchedResultsController.deleteCacheWithName(_parentGoalsFRC.cacheName)
+      do { try _parentGoalsFRC.performFetch() } catch { fatalError("fetch request failed") }
    }
 }
