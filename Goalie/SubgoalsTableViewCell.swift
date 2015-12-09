@@ -30,6 +30,11 @@ class SubgoalsTableViewCell: UITableViewCell
    {
       _labelTextField.resignFirstResponder()
    }
+   
+   func startEditing()
+   {
+      _labelTextField.becomeFirstResponder()
+   }
 }
 
 extension SubgoalsTableViewCell: UITextFieldDelegate

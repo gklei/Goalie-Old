@@ -15,6 +15,13 @@ class AllGoalsTableViewCell: UITableViewCell
          _titleLabel.font = ThemeAllGoalsLabelFont
       }
    }
+   
+   @IBOutlet private weak var _subtitleLabel: UILabel! {
+      didSet {
+         _subtitleLabel.font = ThemeSubgoalsLabelFont
+         _subtitleLabel.textColor = UIColor.darkGrayColor()
+      }
+   }
 
     override func setSelected(selected: Bool, animated: Bool)
     {
@@ -27,5 +34,6 @@ extension AllGoalsTableViewCell: ConfigurableCell
    func configureForObject(object: Goal)
    {
       _titleLabel.text = object.title
+      _subtitleLabel.text = object.month.fullName
    }
 }

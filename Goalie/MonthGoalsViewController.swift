@@ -104,4 +104,8 @@ extension MonthGoalsViewController: TableViewDelegateProtocol
    {
       _goalPresenter.presentDetailsForGoal(goal)
    }
+   
+   func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat {
+      return 40
+   }
 }

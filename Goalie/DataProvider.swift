@@ -47,4 +47,5 @@ protocol TableViewDelegateProtocol
 {
    typealias Object
    func objectSelected(object: Object)
+   func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
 }

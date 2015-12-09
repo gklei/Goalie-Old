@@ -82,5 +82,9 @@ extension AllGoalsViewController: TableViewDelegateProtocol
    {
       _goalPresenter.presentDetailsForGoal(goal)
    }
+   
+   func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
+   {
+      return 55
+   }
 }
-

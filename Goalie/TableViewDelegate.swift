@@ -35,4 +35,8 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
       _tableView.deselectRowAtIndexPath(indexPath, animated: true)
       _delegate.objectSelected(object)
    }
+   
+   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+      return _delegate.heightForRowAtIndexPath(indexPath)
+   }
 }
