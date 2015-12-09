@@ -16,10 +16,31 @@ class AllGoalsTableViewCell: UITableViewCell
       }
    }
    
-   @IBOutlet private weak var _subtitleLabel: UILabel! {
+   @IBOutlet private weak var _monthLabel: UILabel! {
       didSet {
-         _subtitleLabel.font = ThemeSubgoalsLabelFont
-         _subtitleLabel.textColor = UIColor.darkGrayColor()
+         _monthLabel.font = ThemeSubgoalsLabelFont
+         _monthLabel.textColor = UIColor.grayColor()
+      }
+   }
+   
+   @IBOutlet private weak var _subgoalCountLabel: UILabel! {
+      didSet {
+         _subgoalCountLabel.font = ThemeSubgoalsLabelFont
+         _subgoalCountLabel.textColor = UIColor.darkGrayColor()
+      }
+   }
+   
+   @IBOutlet private weak var _todayButton: UIButton! {
+      didSet {
+//         _todayButton.layer.borderWidth = 1
+//         _todayButton.layer.borderColor = UIColor.lightGrayColor().CGColor
+      }
+   }
+   
+   @IBOutlet private weak var _tomorrowButton: UIButton! {
+      didSet {
+//         _tomorrowButton.layer.borderWidth = 1
+//         _tomorrowButton.layer.borderColor = UIColor.lightGrayColor().CGColor
       }
    }
 
@@ -34,6 +55,7 @@ extension AllGoalsTableViewCell: ConfigurableCell
    func configureForObject(object: Goal)
    {
       _titleLabel.text = object.title
-      _subtitleLabel.text = object.month.fullName
+      _monthLabel.text = object.month.fullName
+      _subgoalCountLabel.text = "Subgoals: \(object.subgoals.count)"
    }
 }

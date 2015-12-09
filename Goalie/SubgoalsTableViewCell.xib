@@ -15,26 +15,60 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="• Add a sub-goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
-                        <rect key="frame" x="20" y="0.0" width="280" height="43.5"/>
+                        <rect key="frame" x="20" y="0.0" width="199.5" height="43.5"/>
                         <animations/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tql-Ad-iWO">
+                        <rect key="frame" x="270" y="0.0" width="50" height="43.5"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="fCo-dy-bBP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="TMR"/>
+                        <connections>
+                            <action selector="tomorrowButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="S2v-EA-zsb"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3i-iQ-Aat">
+                        <rect key="frame" x="219" y="0.0" width="50.5" height="43.5"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="TDY"/>
+                        <connections>
+                            <action selector="todayButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OQS-wd-5JL"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="centerY" secondItem="Tql-Ad-iWO" secondAttribute="centerY" id="1Dh-HY-Gm2"/>
+                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="leading" secondItem="F3i-iQ-Aat" secondAttribute="trailing" id="6nL-ue-L5A"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="leading" secondItem="0qk-eC-751" secondAttribute="trailing" id="8Dh-lo-c11"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="width" secondItem="Tql-Ad-iWO" secondAttribute="width" id="MeN-yz-tvT"/>
                     <constraint firstItem="0qk-eC-751" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ThN-E4-Ggy"/>
-                    <constraint firstAttribute="trailing" secondItem="0qk-eC-751" secondAttribute="trailing" constant="20" id="cFH-yr-1Se"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="height" secondItem="Tql-Ad-iWO" secondAttribute="height" id="g26-XS-pDn"/>
+                    <constraint firstAttribute="trailing" secondItem="Tql-Ad-iWO" secondAttribute="trailing" id="hMa-rm-TCs"/>
                     <constraint firstItem="0qk-eC-751" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ia1-ki-4fX"/>
                     <constraint firstAttribute="bottom" secondItem="0qk-eC-751" secondAttribute="bottom" id="l08-Mt-xfH"/>
+                    <constraint firstAttribute="bottom" secondItem="Tql-Ad-iWO" secondAttribute="bottom" id="wTL-gc-Kmw"/>
+                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zPR-3J-ni5"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
                 <outlet property="_labelTextField" destination="0qk-eC-751" id="9yF-Na-y0R"/>
+                <outlet property="_todayButton" destination="F3i-iQ-Aat" id="Khw-9j-Hy2"/>
+                <outlet property="_tomorrowButton" destination="Tql-Ad-iWO" id="EeJ-cS-OBd"/>
             </connections>
-            <point key="canvasLocation" x="239" y="325"/>
+            <point key="canvasLocation" x="106" y="163"/>
         </tableViewCell>
     </objects>
 </document>

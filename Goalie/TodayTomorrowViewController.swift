@@ -16,6 +16,5 @@ class TodayTomorrowViewController: UIViewController, ManagedObjectContextSettabl
    override func viewDidLoad()
    {
       super.viewDidLoad()
-      automaticallyAdjustsScrollViewInsets = false
    }
 }

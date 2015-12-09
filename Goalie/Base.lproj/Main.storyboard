@@ -80,62 +80,41 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm1-0j-upJ">
                                 <rect key="frame" x="0.0" y="271.5" width="320" height="247.5"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKG-IS-FVH" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FV-Jc-hg8">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
                                         <animations/>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <items>
-                                            <navigationItem title="Tomorrow" id="K0j-bH-hCC"/>
-                                        </items>
-                                    </navigationBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gnl-hG-th6">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="203"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
+                                        <connections>
+                                            <segue destination="vul-i3-kqq" kind="embed" id="cAx-eg-iSi"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="gnl-hG-th6" firstAttribute="top" secondItem="tKG-IS-FVH" secondAttribute="bottom" id="0gI-DE-2mC"/>
-                                    <constraint firstAttribute="bottom" secondItem="gnl-hG-th6" secondAttribute="bottom" id="HRt-sT-kon"/>
-                                    <constraint firstItem="tKG-IS-FVH" firstAttribute="leading" secondItem="wm1-0j-upJ" secondAttribute="leading" id="czM-u9-Iep"/>
-                                    <constraint firstItem="tKG-IS-FVH" firstAttribute="top" secondItem="wm1-0j-upJ" secondAttribute="top" id="evc-ig-0IW"/>
-                                    <constraint firstAttribute="trailing" secondItem="tKG-IS-FVH" secondAttribute="trailing" id="fB3-Yi-DY8"/>
-                                    <constraint firstAttribute="trailing" secondItem="gnl-hG-th6" secondAttribute="trailing" id="s99-DS-j4V"/>
-                                    <constraint firstItem="gnl-hG-th6" firstAttribute="leading" secondItem="wm1-0j-upJ" secondAttribute="leading" id="t73-u4-0Jz"/>
+                                    <constraint firstAttribute="trailing" secondItem="6FV-Jc-hg8" secondAttribute="trailing" id="KaL-U2-fqG"/>
+                                    <constraint firstItem="6FV-Jc-hg8" firstAttribute="top" secondItem="wm1-0j-upJ" secondAttribute="top" id="Vva-a0-Rgm"/>
+                                    <constraint firstItem="6FV-Jc-hg8" firstAttribute="leading" secondItem="wm1-0j-upJ" secondAttribute="leading" id="hMc-ha-Adp"/>
+                                    <constraint firstAttribute="bottom" secondItem="6FV-Jc-hg8" secondAttribute="bottom" id="uCr-8w-2re"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5J-Hz-f12">
                                 <rect key="frame" x="0.0" y="20" width="320" height="247.5"/>
                                 <subviews>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bh-Zd-toz" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjP-No-RRZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="VKL-Ne-9wE"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <items>
-                                            <navigationItem title="Today" id="fwj-Vv-OUC"/>
-                                        </items>
-                                    </navigationBar>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5E6-dx-nTM">
-                                        <rect key="frame" x="0.0" y="44" width="320" height="203"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableView>
+                                        <connections>
+                                            <segue destination="Bpl-Dv-xMe" kind="embed" id="h3b-ZQ-hIA"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="5E6-dx-nTM" secondAttribute="bottom" id="370-0N-LTv"/>
-                                    <constraint firstItem="8Bh-Zd-toz" firstAttribute="leading" secondItem="K5J-Hz-f12" secondAttribute="leading" id="7W0-Zc-x74"/>
-                                    <constraint firstItem="5E6-dx-nTM" firstAttribute="leading" secondItem="K5J-Hz-f12" secondAttribute="leading" id="Cib-qt-4RN"/>
-                                    <constraint firstAttribute="trailing" secondItem="5E6-dx-nTM" secondAttribute="trailing" id="RBH-Fo-8AQ"/>
-                                    <constraint firstItem="5E6-dx-nTM" firstAttribute="top" secondItem="8Bh-Zd-toz" secondAttribute="bottom" id="YPI-6b-TYr"/>
-                                    <constraint firstItem="8Bh-Zd-toz" firstAttribute="top" secondItem="K5J-Hz-f12" secondAttribute="top" id="Yba-bF-Zc6"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Bh-Zd-toz" secondAttribute="trailing" id="cjo-Xo-abl"/>
+                                    <constraint firstAttribute="bottom" secondItem="JjP-No-RRZ" secondAttribute="bottom" id="3Up-lL-LZi"/>
+                                    <constraint firstItem="JjP-No-RRZ" firstAttribute="leading" secondItem="K5J-Hz-f12" secondAttribute="leading" id="9C1-CH-MdR"/>
+                                    <constraint firstItem="JjP-No-RRZ" firstAttribute="top" secondItem="K5J-Hz-f12" secondAttribute="top" id="IzQ-oA-O0d"/>
+                                    <constraint firstAttribute="trailing" secondItem="JjP-No-RRZ" secondAttribute="trailing" id="vRo-1K-Wwk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -335,6 +314,83 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J52-8q-8Sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="528" y="340"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vvx-cS-mmc">
+            <objects>
+                <viewController id="Bpl-Dv-xMe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I14-dp-AAB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bl9-Mj-3lx">
+                                <rect key="frame" x="0.0" y="44" width="320" height="203"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-BW-Vly" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Today" id="n2s-6l-oBc"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mbK-BW-Vly" secondAttribute="trailing" id="9EE-ae-k6N"/>
+                            <constraint firstItem="mbK-BW-Vly" firstAttribute="leading" secondItem="I14-dp-AAB" secondAttribute="leading" id="LIY-Au-XhC"/>
+                            <constraint firstAttribute="trailing" secondItem="Bl9-Mj-3lx" secondAttribute="trailing" id="LNK-r2-8O0"/>
+                            <constraint firstItem="Bl9-Mj-3lx" firstAttribute="top" secondItem="mbK-BW-Vly" secondAttribute="bottom" id="N0W-pp-bkn"/>
+                            <constraint firstItem="Bl9-Mj-3lx" firstAttribute="leading" secondItem="I14-dp-AAB" secondAttribute="leading" id="hQd-Rb-JaY"/>
+                            <constraint firstAttribute="bottom" secondItem="Bl9-Mj-3lx" secondAttribute="bottom" id="jtg-bb-6y6"/>
+                            <constraint firstItem="mbK-BW-Vly" firstAttribute="top" secondItem="I14-dp-AAB" secondAttribute="top" id="md2-gU-zdl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jya-kT-7z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808" y="-116.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zMT-xU-1y1">
+            <objects>
+                <viewController id="vul-i3-kqq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RaU-zE-tr3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aex-iU-SRB" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Tomorrow" id="0Jn-Zj-AfZ"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="npY-jU-eAI">
+                                <rect key="frame" x="0.0" y="44" width="320" height="203"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="npY-jU-eAI" firstAttribute="top" secondItem="aex-iU-SRB" secondAttribute="bottom" id="Oqb-Ys-2AB"/>
+                            <constraint firstAttribute="trailing" secondItem="aex-iU-SRB" secondAttribute="trailing" id="PED-pD-WUI"/>
+                            <constraint firstItem="aex-iU-SRB" firstAttribute="top" secondItem="RaU-zE-tr3" secondAttribute="top" id="Sv5-kh-sdT"/>
+                            <constraint firstAttribute="trailing" secondItem="npY-jU-eAI" secondAttribute="trailing" id="ers-Oo-jMd"/>
+                            <constraint firstItem="npY-jU-eAI" firstAttribute="top" secondItem="aex-iU-SRB" secondAttribute="bottom" id="kta-5r-hwb"/>
+                            <constraint firstItem="npY-jU-eAI" firstAttribute="leading" secondItem="RaU-zE-tr3" secondAttribute="leading" id="lAX-np-VEB"/>
+                            <constraint firstItem="aex-iU-SRB" firstAttribute="leading" secondItem="RaU-zE-tr3" secondAttribute="leading" id="q6e-f3-TxT"/>
+                            <constraint firstAttribute="bottom" secondItem="npY-jU-eAI" secondAttribute="bottom" id="r0h-Da-IQp"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMl-Ii-YGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808" y="330.5"/>
         </scene>
     </scenes>
 </document>

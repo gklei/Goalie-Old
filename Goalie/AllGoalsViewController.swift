@@ -85,6 +85,6 @@ extension AllGoalsViewController: TableViewDelegateProtocol
    
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
-      return 55
+      return 86
    }
 }

@@ -268,12 +268,30 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    func returnKeyTypeForCell(cell: SubgoalsTableViewCell) -> UIReturnKeyType
    {
       var returnKeyType = UIReturnKeyType.Next
-      if let subgoal = cell.subgoal,
-         let lastSubgoal = _goal.subgoals.last
-         where subgoal == lastSubgoal {
-               returnKeyType = .Default
+      if let lastSubgoal = _goal.subgoals.last
+         where cell.subgoal == lastSubgoal {
+            returnKeyType = .Default
       }
       return returnKeyType
+   }
+   
+   func subgoalButtonPressedWithState(state: ActiveState, cell: SubgoalsTableViewCell)
+   {
+      var newState: ActiveState = .Idle
+      switch state
+      {
+      case .Today:
+         newState = cell.subgoal.activeState != .Today ? .Today : .Idle
+         break
+      case .Tomorrow:
+         newState = cell.subgoal.activeState != .Tomorrow ? .Tomorrow : .Idle
+         break
+      case .Idle:
+         break
+      }
+      managedObjectContext.performChanges { () -> () in
+         cell.subgoal.activeState = newState
+      }
    }
 }
 
