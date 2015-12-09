@@ -154,9 +154,8 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          nextSubgoalCell.startEditing()
       }
       else {
-         let offset = _subgoalsTableView.contentOffset
-         _subgoalsTableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 1)
-         let nextCellIndexPath = NSIndexPath(forRow: indexPath.row + 1, inSection: 0)
+         _scrollSubgoalsTableViewByOnePoint()
+         // Try one more time:
          if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
             nextSubgoalCell.startEditing()
          }
@@ -164,6 +163,12 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
             _currentSubgoalCell?.stopEditing()
          }
       }
+   }
+   
+   private func _scrollSubgoalsTableViewByOnePoint()
+   {
+      let offset = _subgoalsTableView.contentOffset
+      _subgoalsTableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 1)
    }
    
    internal func dismissKeyboard()
@@ -286,8 +291,8 @@ extension GoalDetailsViewController: DataProviderDelegate
                      return
                }
                else {
-                  let offset = _subgoalsTableView.contentOffset
-                  _subgoalsTableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 1)
+                  _scrollSubgoalsTableViewByOnePoint()
+                  // Try one more time
                   if let newSubgoalCell = _subgoalCellForIndexPath(indexPath) where
                      _indexPathIsLast(indexPath) {
                         newSubgoalCell.startEditing()
