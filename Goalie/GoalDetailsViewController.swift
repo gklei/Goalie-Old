@@ -153,6 +153,17 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
          nextSubgoalCell.startEditing()
       }
+      else {
+         let offset = _subgoalsTableView.contentOffset
+         _subgoalsTableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 1)
+         let nextCellIndexPath = NSIndexPath(forRow: indexPath.row + 1, inSection: 0)
+         if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
+            nextSubgoalCell.startEditing()
+         }
+         else {
+            _currentSubgoalCell?.stopEditing()
+         }
+      }
    }
    
    internal func dismissKeyboard()
@@ -273,6 +284,18 @@ extension GoalDetailsViewController: DataProviderDelegate
                   _indexPathIsLast(indexPath) {
                      newSubgoalCell.startEditing()
                      return
+               }
+               else {
+                  let offset = _subgoalsTableView.contentOffset
+                  _subgoalsTableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 1)
+                  if let newSubgoalCell = _subgoalCellForIndexPath(indexPath) where
+                     _indexPathIsLast(indexPath) {
+                        newSubgoalCell.startEditing()
+                        return
+                  }
+                  else {
+                     _currentSubgoalCell?.stopEditing()
+                  }
                }
             default:
                return
