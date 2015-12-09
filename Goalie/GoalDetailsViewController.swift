@@ -101,7 +101,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _titleTextField.text = _goal?.title
       _summaryTextField.text = _goal?.summary
       
-      let title = (_shouldShowCancelButton == false) ? "Details" : "Create"
+      let title = (_shouldShowCancelButton == false) ? "Details" : "New Goal"
       _topNavigationBar.updateTitle(title)
    }
    
@@ -193,18 +193,23 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    // MARK: - IBActions
    @IBAction private func doneButtonPressed()
    {
-      managedObjectContext.performChanges({() -> () in
-         
-         // we don't need to save here because this entire block will save after it's finished
-         self._goal.deleteEmptySubgoalsAndSave(false)
-         
-         // TODO: validate the input in a way that isn't this:
-         self._goal.title = self._titleTextField.text ?? "Bro, do you even set titles?"
-         self._goal.title = self._goal.title == "" ? "Bro, do you even set titles?" : self._goal.title
-         self._goal.summary = self._summaryTextField.text ?? ""
-         self._goal.month = self._selectedMonth
-      })
-      _dismissSelf()
+      if let currentCell = _currentSubgoalCell {
+         currentCell.stopEditing()
+      }
+      else {
+         managedObjectContext.performChanges({() -> () in
+            
+            // we don't need to save here because this entire block will save after it's finished
+            self._goal.deleteEmptySubgoalsAndSave(false)
+            
+            // TODO: validate the input in a way that isn't this:
+            self._goal.title = self._titleTextField.text ?? "Bro, do you even set titles?"
+            self._goal.title = self._goal.title == "" ? "Bro, do you even set titles?" : self._goal.title
+            self._goal.summary = self._summaryTextField.text ?? ""
+            self._goal.month = self._selectedMonth
+         })
+         _dismissSelf()
+      }
    }
    
    @IBAction private func cancelButtonPressed()

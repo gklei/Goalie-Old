@@ -54,7 +54,7 @@
                                         <constraint firstAttribute="width" secondItem="H6m-hp-RPI" secondAttribute="height" multiplier="2.8:1" id="0q8-HF-cVv"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Summary" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
                                     <rect key="frame" x="20" y="192.5" width="280" height="40"/>
                                     <animations/>
                                     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
