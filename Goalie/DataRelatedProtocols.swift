@@ -46,6 +46,13 @@ extension ManagedObjectType
       return request
    }
    
+   public static var sortedChildrenGoalsFetchRequest: NSFetchRequest {
+      let request = NSFetchRequest(entityName: entityName)
+      request.predicate = NSPredicate(format: "parent != nil")
+      request.sortDescriptors = defaultSortDescriptors
+      return request
+   }
+   
    public static func sortedParentGoalsFetchRequestForMonth(month: Month) -> NSFetchRequest
    {
       let request = NSFetchRequest(entityName: entityName)
@@ -54,6 +61,19 @@ extension ManagedObjectType
       let monthPredicate = NSPredicate(format: "monthValue == \(Int16(month.rawValue))")
       let compoundPredicate = NSCompoundPredicate(type: .AndPredicateType, subpredicates: [parentGoalPredicate, monthPredicate])
 
+      request.predicate = compoundPredicate
+      request.sortDescriptors = defaultSortDescriptors
+      return request
+   }
+   
+   public static func sortedChildrenGoalsFetchRequestForActiveState(state: ActiveState) -> NSFetchRequest
+   {
+      let request = NSFetchRequest(entityName: entityName)
+      
+      let parentGoalPredicate = NSPredicate(format: "parent != nil")
+      let monthPredicate = NSPredicate(format: "activeStateValue == \(Int16(state.rawValue))")
+      let compoundPredicate = NSCompoundPredicate(type: .AndPredicateType, subpredicates: [parentGoalPredicate, monthPredicate])
+      
       request.predicate = compoundPredicate
       request.sortDescriptors = defaultSortDescriptors
       return request

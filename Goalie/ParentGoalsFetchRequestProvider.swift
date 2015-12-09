@@ -33,3 +33,28 @@ class ParentGoalsFetchRequestProvider
       return request
    }
 }
+
+class ChildGoalsFetchRequestProvider
+{
+   private static let _sharedProvider = ChildGoalsFetchRequestProvider()
+   
+   private lazy var fetchRequest: NSFetchRequest = {
+      let request = Goal.sortedChildrenGoalsFetchRequest
+      request.returnsObjectsAsFaults = false
+      request.fetchBatchSize = 20
+      return request
+   }()
+   
+   class var fetchRequest: NSFetchRequest {
+      return _sharedProvider.fetchRequest
+   }
+   
+   class func fetchRequestForActiveState(state: ActiveState) -> NSFetchRequest
+   {
+      let request = Goal.sortedChildrenGoalsFetchRequestForActiveState(state)
+      request.returnsObjectsAsFaults = false
+      request.fetchBatchSize = 20
+      
+      return request
+   }
+}

@@ -84,7 +84,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
                                         <animations/>
                                         <connections>
-                                            <segue destination="vul-i3-kqq" kind="embed" id="cAx-eg-iSi"/>
+                                            <segue destination="vul-i3-kqq" kind="embed" identifier="TomorrowEmbedSegue" id="cAx-eg-iSi"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
                                         <animations/>
                                         <connections>
-                                            <segue destination="Bpl-Dv-xMe" kind="embed" id="h3b-ZQ-hIA"/>
+                                            <segue destination="Bpl-Dv-xMe" kind="embed" identifier="TodayEmbedSegue" id="h3b-ZQ-hIA"/>
                                         </connections>
                                     </containerView>
                                 </subviews>
@@ -315,10 +315,14 @@
             </objects>
             <point key="canvasLocation" x="528" y="340"/>
         </scene>
-        <!--View Controller-->
+        <!--Today View Controller-->
         <scene sceneID="Vvx-cS-mmc">
             <objects>
-                <viewController id="Bpl-Dv-xMe" sceneMemberID="viewController">
+                <viewController id="Bpl-Dv-xMe" customClass="TodayViewController" customModule="Goalie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kf8-WZ-Rsv"/>
+                        <viewControllerLayoutGuide type="bottom" id="RuV-oJ-OgY"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I14-dp-AAB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,6 +342,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mbK-BW-Vly" secondAttribute="trailing" id="9EE-ae-k6N"/>
                             <constraint firstItem="mbK-BW-Vly" firstAttribute="leading" secondItem="I14-dp-AAB" secondAttribute="leading" id="LIY-Au-XhC"/>
@@ -347,16 +352,37 @@
                             <constraint firstAttribute="bottom" secondItem="Bl9-Mj-3lx" secondAttribute="bottom" id="jtg-bb-6y6"/>
                             <constraint firstItem="mbK-BW-Vly" firstAttribute="top" secondItem="I14-dp-AAB" secondAttribute="top" id="md2-gU-zdl"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rvs-65-SnV" appends="YES" id="13x-Yi-BN0"/>
+                            <outletCollection property="gestureRecognizers" destination="95g-Xp-FAl" appends="YES" id="hMQ-oH-JTW"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="_tableView" destination="Bl9-Mj-3lx" id="lhh-0h-K2x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jya-kT-7z7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rvs-65-SnV">
+                    <connections>
+                        <action selector="_tapGestureRecognized:" destination="Bpl-Dv-xMe" id="RPj-Pe-Bqp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="95g-Xp-FAl">
+                    <connections>
+                        <action selector="_longPressGestureRecognized:" destination="Bpl-Dv-xMe" id="gqn-lK-yCT"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1808" y="-116.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Tomorrow View Controller-->
         <scene sceneID="zMT-xU-1y1">
             <objects>
-                <viewController id="vul-i3-kqq" sceneMemberID="viewController">
+                <viewController id="vul-i3-kqq" customClass="TomorrowViewController" customModule="Goalie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Tu-tJ-v2t"/>
+                        <viewControllerLayoutGuide type="bottom" id="bB2-Bj-bBC"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RaU-zE-tr3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="247"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,6 +402,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="npY-jU-eAI" firstAttribute="top" secondItem="aex-iU-SRB" secondAttribute="bottom" id="Oqb-Ys-2AB"/>
                             <constraint firstAttribute="trailing" secondItem="aex-iU-SRB" secondAttribute="trailing" id="PED-pD-WUI"/>
@@ -386,9 +413,20 @@
                             <constraint firstItem="aex-iU-SRB" firstAttribute="leading" secondItem="RaU-zE-tr3" secondAttribute="leading" id="q6e-f3-TxT"/>
                             <constraint firstAttribute="bottom" secondItem="npY-jU-eAI" secondAttribute="bottom" id="r0h-Da-IQp"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yW9-ZH-rpU" appends="YES" id="KVw-kP-mX5"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="_tableView" destination="npY-jU-eAI" id="Esn-m9-Fk6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMl-Ii-YGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="yW9-ZH-rpU">
+                    <connections>
+                        <action selector="_longPressRecognized:" destination="vul-i3-kqq" id="d2B-u8-ohj"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1808" y="330.5"/>
         </scene>

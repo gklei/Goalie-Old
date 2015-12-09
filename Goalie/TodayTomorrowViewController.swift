@@ -17,4 +17,14 @@ class TodayTomorrowViewController: UIViewController, ManagedObjectContextSettabl
    {
       super.viewDidLoad()
    }
+   
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+   {
+      if let todayVC = segue.destinationViewController as? TodayViewController {
+         todayVC.managedObjectContext = managedObjectContext
+      }
+      else if let tomorrowVC = segue.destinationViewController as? TomorrowViewController {
+         tomorrowVC.managedObjectContext = managedObjectContext
+      }
+   }
 }

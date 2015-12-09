@@ -190,6 +190,29 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _titleTextField.becomeFirstResponder()
    }
    
+   func temporarilyHighlightSubgoal(subgoal: Goal)
+   {
+      let subgoalIndexPath = NSIndexPath(goal: subgoal)
+      
+      UIView.animateWithDuration(0.3, animations: { () -> Void in
+         self._subgoalsTableView.scrollToRowAtIndexPath(subgoalIndexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: false)
+         
+         }) { (finished: Bool) -> Void in
+               
+            if let subgoalCell = self._subgoalCellForIndexPath(subgoalIndexPath) {
+               UIView.animateWithDuration(0.3, animations: { () -> Void in
+                  subgoalCell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.16)
+                  
+                  }) { (finished: Bool) -> Void in
+                     
+                     UIView.animateWithDuration(0.3, animations: { () -> Void in
+                        subgoalCell.backgroundColor = UIColor.whiteColor()
+                     })
+               }
+            }
+      }
+   }
+   
    // MARK: - IBActions
    @IBAction private func doneButtonPressed()
    {

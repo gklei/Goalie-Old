@@ -23,6 +23,10 @@
 		F31BAADE1C1224730079C537 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADD1C1224730079C537 /* TableViewDelegate.swift */; };
 		F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */; };
 		F31BAAE21C12415C0079C537 /* GoalDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */; };
+		F3493B9B1C18A4DF000A69C0 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3493B991C18A4DF000A69C0 /* TodayTableViewCell.swift */; };
+		F3493B9C1C18A4DF000A69C0 /* TodayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3493B9A1C18A4DF000A69C0 /* TodayTableViewCell.xib */; };
+		F3493B9F1C18A4F2000A69C0 /* TomorrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3493B9D1C18A4F2000A69C0 /* TomorrowTableViewCell.swift */; };
+		F3493BA01C18A4F2000A69C0 /* TomorrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3493B9E1C18A4F2000A69C0 /* TomorrowTableViewCell.xib */; };
 		F3536E1C1C12520E003A114E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3536E1B1C12520E003A114E /* Assets.xcassets */; };
 		F3536E211C127446003A114E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E1F1C127446003A114E /* Fabric.framework */; };
 		F3536E221C127446003A114E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3536E201C127446003A114E /* Crashlytics.framework */; };
@@ -47,6 +51,8 @@
 		F386BC3D1C178D410099F39E /* MonthGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */; };
 		F386BC3E1C178D410099F39E /* MonthGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */; };
 		F386BC401C1790D60099F39E /* GoalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3F1C1790D60099F39E /* GoalPresenter.swift */; };
+		F3C84B7F1C18986300E7CD3B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C84B7E1C18986300E7CD3B /* TodayViewController.swift */; };
+		F3C84B811C18987E00E7CD3B /* TomorrowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C84B801C18987E00E7CD3B /* TomorrowViewController.swift */; };
 		F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461871C113221002F31A6 /* AppDelegate.swift */; };
 		F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461891C113221002F31A6 /* AllGoalsViewController.swift */; };
 		F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */; };
@@ -102,6 +108,10 @@
 		F31BAADD1C1224730079C537 /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDelegate.swift; path = Goalie/TableViewDelegate.swift; sourceTree = "<group>"; };
 		F31BAADF1C12415C0079C537 /* GoalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailsViewController.swift; sourceTree = "<group>"; };
 		F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GoalDetailsViewController.xib; path = Goalie/GoalDetailsViewController.xib; sourceTree = "<group>"; };
+		F3493B991C18A4DF000A69C0 /* TodayTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayTableViewCell.swift; path = Goalie/TodayTableViewCell.swift; sourceTree = "<group>"; };
+		F3493B9A1C18A4DF000A69C0 /* TodayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodayTableViewCell.xib; path = Goalie/TodayTableViewCell.xib; sourceTree = "<group>"; };
+		F3493B9D1C18A4F2000A69C0 /* TomorrowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TomorrowTableViewCell.swift; path = Goalie/TomorrowTableViewCell.swift; sourceTree = "<group>"; };
+		F3493B9E1C18A4F2000A69C0 /* TomorrowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TomorrowTableViewCell.xib; path = Goalie/TomorrowTableViewCell.xib; sourceTree = "<group>"; };
 		F3536E1B1C12520E003A114E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3536E1F1C127446003A114E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		F3536E201C127446003A114E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -130,6 +140,8 @@
 		F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthGoalsTableViewCell.swift; path = Goalie/MonthGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthGoalsTableViewCell.xib; path = Goalie/MonthGoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F386BC3F1C1790D60099F39E /* GoalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalPresenter.swift; sourceTree = "<group>"; };
+		F3C84B7E1C18986300E7CD3B /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		F3C84B801C18987E00E7CD3B /* TomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomorrowViewController.swift; sourceTree = "<group>"; };
 		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +243,8 @@
 				F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */,
 				F3536E721C13BCA2003A114E /* SubgoalsTableViewCell.swift */,
 				F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */,
+				F3493B991C18A4DF000A69C0 /* TodayTableViewCell.swift */,
+				F3493B9D1C18A4F2000A69C0 /* TomorrowTableViewCell.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -281,6 +295,8 @@
 				F3536E841C1619F5003A114E /* MonthSelectorViewController.swift */,
 				F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */,
 				F386BC3F1C1790D60099F39E /* GoalPresenter.swift */,
+				F3C84B7E1C18986300E7CD3B /* TodayViewController.swift */,
+				F3C84B801C18987E00E7CD3B /* TomorrowViewController.swift */,
 			);
 			name = "View Controllers";
 			path = Goalie;
@@ -322,6 +338,8 @@
 		F3D461B81C115D67002F31A6 /* XIBs and Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				F3493B9E1C18A4F2000A69C0 /* TomorrowTableViewCell.xib */,
+				F3493B9A1C18A4DF000A69C0 /* TodayTableViewCell.xib */,
 				F31BAAD81C1213D40079C537 /* AllGoalsTableViewCell.xib */,
 				F31BAAE01C12415C0079C537 /* GoalDetailsViewController.xib */,
 				F3D4618D1C113221002F31A6 /* Main.storyboard */,
@@ -434,7 +452,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3493B9C1C18A4DF000A69C0 /* TodayTableViewCell.xib in Resources */,
 				F3D461941C113221002F31A6 /* LaunchScreen.storyboard in Resources */,
+				F3493BA01C18A4F2000A69C0 /* TomorrowTableViewCell.xib in Resources */,
 				F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */,
 				F3D4618F1C113221002F31A6 /* Main.storyboard in Resources */,
 				F386BC3E1C178D410099F39E /* MonthGoalsTableViewCell.xib in Resources */,
@@ -477,8 +497,10 @@
 			files = (
 				F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */,
 				F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */,
+				F3C84B7F1C18986300E7CD3B /* TodayViewController.swift in Sources */,
 				F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */,
 				F31BAACE1C11F4650079C537 /* UINavigationBar+Extensions.swift in Sources */,
+				F3493B9B1C18A4DF000A69C0 /* TodayTableViewCell.swift in Sources */,
 				F31BAACC1C11F32B0079C537 /* NSURL+Extensions.swift in Sources */,
 				F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */,
 				F3536E671C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */,
@@ -493,6 +515,7 @@
 				F3536E7A1C14FA8F003A114E /* ManagedObjectObserver.swift in Sources */,
 				F31BAACA1C11F2DF0079C537 /* CoreDataStack.swift in Sources */,
 				F3536E7C1C14FC63003A114E /* NSManagedObjectContext+Observers.swift in Sources */,
+				F3C84B811C18987E00E7CD3B /* TomorrowViewController.swift in Sources */,
 				F31BAAD21C12002B0079C537 /* FetchedResultsDataProvider.swift in Sources */,
 				F3536E691C13A56A003A114E /* TPKeyboardAvoidingTableView.m in Sources */,
 				F3D461AF1C113C69002F31A6 /* UIImage+Extensions.swift in Sources */,
@@ -514,6 +537,7 @@
 				F31BAAC41C11F09A0079C537 /* Goal.xcdatamodeld in Sources */,
 				F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */,
 				F3536E741C13BCA2003A114E /* SubgoalsTableViewCell.swift in Sources */,
+				F3493B9F1C18A4F2000A69C0 /* TomorrowTableViewCell.swift in Sources */,
 				F3536E851C1619F5003A114E /* MonthSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

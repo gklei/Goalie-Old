@@ -70,6 +70,18 @@ extension Array
    }
 }
 
+extension NSIndexPath
+{
+   public convenience init(goal: Goal)
+   {
+      var _row = 0
+      if let parent = goal.parent {
+         _row = parent.subgoals.indexOf(goal)!
+      }
+      self.init(forRow: _row, inSection: 0)
+   }
+}
+
 extension String {
    
    subscript (i: Int) -> Character {

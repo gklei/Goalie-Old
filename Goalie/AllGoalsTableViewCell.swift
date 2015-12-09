@@ -30,19 +30,8 @@ class AllGoalsTableViewCell: UITableViewCell
       }
    }
    
-   @IBOutlet private weak var _todayButton: UIButton! {
-      didSet {
-//         _todayButton.layer.borderWidth = 1
-//         _todayButton.layer.borderColor = UIColor.lightGrayColor().CGColor
-      }
-   }
-   
-   @IBOutlet private weak var _tomorrowButton: UIButton! {
-      didSet {
-//         _tomorrowButton.layer.borderWidth = 1
-//         _tomorrowButton.layer.borderColor = UIColor.lightGrayColor().CGColor
-      }
-   }
+   @IBOutlet private weak var _todayButton: UIButton!
+   @IBOutlet private weak var _tomorrowButton: UIButton!
 
     override func setSelected(selected: Bool, animated: Bool)
     {
@@ -56,6 +45,6 @@ extension AllGoalsTableViewCell: ConfigurableCell
    {
       _titleLabel.text = object.title
       _monthLabel.text = object.month.fullName
-      _subgoalCountLabel.text = "Subgoals: \(object.subgoals.count)"
+      _subgoalCountLabel.text = "\(object.subgoals.count) Sub-goals"
    }
 }

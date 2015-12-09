@@ -25,6 +25,17 @@ class GoalPresenter<Controller: UIViewController where Controller: ManagedObject
       _presentingController.presentViewController(_detailsViewController, animated: true, completion: nil)
    }
    
+   func presentDetailsForSubgoal(subgoal: Goal)
+   {
+      if let parent = subgoal.parent {
+         _detailsViewController.configureWithGoal(parent, allowCancel: false)
+         _presentingController.presentViewController(_detailsViewController, animated: true) { () -> Void in
+            self._detailsViewController.temporarilyHighlightSubgoal(subgoal)
+         }
+
+      }
+   }
+   
    func createAndPresentNewGoal()
    {
       let moc = _presentingController.managedObjectContext
