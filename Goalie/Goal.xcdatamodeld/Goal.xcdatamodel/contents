@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="15B42" minimumToolsVersion="Xcode 7.0">
     <entity name="Goal" representedClassName=".Goal" syncable="YES">
+        <attribute name="activeStateValue" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="completed" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="creationDate" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="monthValue" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="summary" attributeType="String" syncable="YES"/>
@@ -9,6 +11,6 @@
         <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="children" inverseEntity="Goal" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Goal" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Goal" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

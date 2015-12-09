@@ -13,8 +13,10 @@ public final class Goal: ManagedObject
 {
    @NSManaged public var title: String
    @NSManaged public var summary: String
-   @NSManaged public var monthValue: Int16
+   @NSManaged public private(set) var monthValue: Int16
    @NSManaged public private(set) var creationDate: NSDate
+   @NSManaged public private(set) var activeStateValue: Int16
+   @NSManaged public var completed: Bool
    
    @NSManaged public private(set) var parent: Goal?
    @NSManaged public private(set) var children: NSOrderedSet
@@ -51,6 +53,7 @@ public final class Goal: ManagedObject
       title = ""
       summary = ""
       month = .Jan
+      activeState = .Idle
    }
 }
 
@@ -69,6 +72,15 @@ extension Goal
       }
       set {
          monthValue = Int16(newValue.rawValue)
+      }
+   }
+   
+   public var activeState: ActiveState {
+      get {
+         return ActiveState(rawValue: Int(activeStateValue))!
+      }
+      set {
+         activeStateValue = Int16(newValue.rawValue)
       }
    }
    

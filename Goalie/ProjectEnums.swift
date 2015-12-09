@@ -8,8 +8,11 @@
 
 import Foundation
 
-public enum Month: Int
-{
+public enum ActiveState: Int {
+   case Today, Tomorrow, Idle
+}
+
+public enum Month: Int {
    case Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
 }
 
