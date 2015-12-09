@@ -31,7 +31,9 @@ class GoalPresenter<Controller: UIViewController where Controller: ManagedObject
       let newGoal = Goal.insertIntoContext(moc, title: "", summary: "")
       
       _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
-      _presentingController.presentViewController(_detailsViewController, animated: true, completion: nil)
+      _presentingController.presentViewController(_detailsViewController, animated: true) { () -> Void in
+         self._detailsViewController.giveTitleFocus()
+      }
    }
    
    func createAndPresentNewGoalWithMonth(month: Month)
@@ -40,6 +42,8 @@ class GoalPresenter<Controller: UIViewController where Controller: ManagedObject
       let newGoal = Goal.insertIntoContext(moc, month: month)
       
       _detailsViewController.configureWithGoal(newGoal, allowCancel: true)
-      _presentingController.presentViewController(_detailsViewController, animated: true, completion: nil)
+      _presentingController.presentViewController(_detailsViewController, animated: true) { () -> Void in
+         self._detailsViewController.giveTitleFocus()
+      }
    }
 }

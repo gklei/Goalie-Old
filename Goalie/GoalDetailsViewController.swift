@@ -169,6 +169,11 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _shouldShowCancelButton = allowCancel
    }
    
+   func giveTitleFocus()
+   {
+      _titleTextField.becomeFirstResponder()
+   }
+   
    // MARK: - IBActions
    @IBAction private func doneButtonPressed()
    {
