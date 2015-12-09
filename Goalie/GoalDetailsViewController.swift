@@ -199,8 +199,8 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          self._goal.deleteEmptySubgoalsAndSave(false)
          
          // TODO: validate the input in a way that isn't this:
-         self._goal.title = self._titleTextField.text ?? "Why don't you set the title next time bro?"
-         self._goal.title = self._goal.title == "" ? "Why don't you set the title next time bro?" : self._goal.title
+         self._goal.title = self._titleTextField.text ?? "Bro, do you even set titles?"
+         self._goal.title = self._goal.title == "" ? "Bro, do you even set titles?" : self._goal.title
          self._goal.summary = self._summaryTextField.text ?? ""
          self._goal.month = self._selectedMonth
       })

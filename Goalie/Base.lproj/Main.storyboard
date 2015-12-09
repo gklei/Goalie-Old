@@ -85,18 +85,25 @@
                                         <animations/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
-                                            <navigationItem title="Tomorrow" id="K0j-bH-hCC">
-                                                <barButtonItem key="rightBarButtonItem" systemItem="add" id="0H2-7O-ZFd"/>
-                                            </navigationItem>
+                                            <navigationItem title="Tomorrow" id="K0j-bH-hCC"/>
                                         </items>
                                     </navigationBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gnl-hG-th6">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="203"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="gnl-hG-th6" firstAttribute="top" secondItem="tKG-IS-FVH" secondAttribute="bottom" id="0gI-DE-2mC"/>
+                                    <constraint firstAttribute="bottom" secondItem="gnl-hG-th6" secondAttribute="bottom" id="HRt-sT-kon"/>
                                     <constraint firstItem="tKG-IS-FVH" firstAttribute="leading" secondItem="wm1-0j-upJ" secondAttribute="leading" id="czM-u9-Iep"/>
                                     <constraint firstItem="tKG-IS-FVH" firstAttribute="top" secondItem="wm1-0j-upJ" secondAttribute="top" id="evc-ig-0IW"/>
                                     <constraint firstAttribute="trailing" secondItem="tKG-IS-FVH" secondAttribute="trailing" id="fB3-Yi-DY8"/>
+                                    <constraint firstAttribute="trailing" secondItem="gnl-hG-th6" secondAttribute="trailing" id="s99-DS-j4V"/>
+                                    <constraint firstItem="gnl-hG-th6" firstAttribute="leading" secondItem="wm1-0j-upJ" secondAttribute="leading" id="t73-u4-0Jz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5J-Hz-f12">
@@ -110,16 +117,23 @@
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <items>
-                                            <navigationItem title="Today" id="fwj-Vv-OUC">
-                                                <barButtonItem key="rightBarButtonItem" systemItem="add" id="syx-B7-ERC"/>
-                                            </navigationItem>
+                                            <navigationItem title="Today" id="fwj-Vv-OUC"/>
                                         </items>
                                     </navigationBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5E6-dx-nTM">
+                                        <rect key="frame" x="0.0" y="44" width="320" height="203"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5E6-dx-nTM" secondAttribute="bottom" id="370-0N-LTv"/>
                                     <constraint firstItem="8Bh-Zd-toz" firstAttribute="leading" secondItem="K5J-Hz-f12" secondAttribute="leading" id="7W0-Zc-x74"/>
+                                    <constraint firstItem="5E6-dx-nTM" firstAttribute="leading" secondItem="K5J-Hz-f12" secondAttribute="leading" id="Cib-qt-4RN"/>
+                                    <constraint firstAttribute="trailing" secondItem="5E6-dx-nTM" secondAttribute="trailing" id="RBH-Fo-8AQ"/>
+                                    <constraint firstItem="5E6-dx-nTM" firstAttribute="top" secondItem="8Bh-Zd-toz" secondAttribute="bottom" id="YPI-6b-TYr"/>
                                     <constraint firstItem="8Bh-Zd-toz" firstAttribute="top" secondItem="K5J-Hz-f12" secondAttribute="top" id="Yba-bF-Zc6"/>
                                     <constraint firstAttribute="trailing" secondItem="8Bh-Zd-toz" secondAttribute="trailing" id="cjo-Xo-abl"/>
                                 </constraints>
