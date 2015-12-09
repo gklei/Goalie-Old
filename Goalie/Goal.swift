@@ -72,11 +72,10 @@ extension Goal
       }
    }
    
-   public func childGoalForIndexPath(indexPath: NSIndexPath) -> Goal?
+   public func subgoalForIndexPath(indexPath: NSIndexPath) -> Goal?
    {
       var child: Goal?
-      if indexPath.row < children.count
-      {
+      if indexPath.row < children.count {
          child = children.objectAtIndex(indexPath.row) as? Goal
       }
       return child

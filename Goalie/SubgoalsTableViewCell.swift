@@ -12,6 +12,8 @@ protocol SubgoalsTableViewCellDelegate: class
 {
    func subgoalBeganEditing(cell: SubgoalsTableViewCell)
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
+   func titleTextFieldShouldReturnForCell(cell: SubgoalsTableViewCell) -> Bool
+   func returnKeyTypeForCell(cell: SubgoalsTableViewCell) -> UIReturnKeyType
 }
 
 class SubgoalsTableViewCell: UITableViewCell
@@ -25,6 +27,13 @@ class SubgoalsTableViewCell: UITableViewCell
    
    weak var delegate: SubgoalsTableViewCellDelegate?
    weak private var _goal: Goal?
+   
+   var subgoal: Goal? {
+      return _goal
+   }
+   var titleText: String {
+      return _labelTextField.text ?? ""
+   }
    
    func stopEditing()
    {
@@ -42,6 +51,7 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
    func textFieldDidBeginEditing(textField: UITextField)
    {
       delegate?.subgoalBeganEditing(self)
+      _labelTextField.returnKeyType = delegate?.returnKeyTypeForCell(self) ?? .Next
    }
    
    func textFieldDidEndEditing(textField: UITextField)
@@ -54,8 +64,7 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
    
    func textFieldShouldReturn(textField: UITextField) -> Bool
    {
-      _labelTextField.resignFirstResponder()
-      return true
+      return delegate?.titleTextFieldShouldReturnForCell(self) ?? true
    }
 }
 

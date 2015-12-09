@@ -9,8 +9,15 @@
 import UIKit
 import CoreData
 
+private let MonthGoalsCellIdentifier = "MonthGoalsCellIdentifier"
+
 class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
 {
+   @IBOutlet private weak var _monthGoalsTableView: UITableView! {
+      didSet {
+         _monthGoalsTableView.registerNib(UINib(nibName: "MonthGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: MonthGoalsCellIdentifier)
+      }
+   }
    var managedObjectContext: NSManagedObjectContext!
    
    private typealias DataProvider = FetchedResultsDataProvider<MonthGoalsViewController>
@@ -18,25 +25,14 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
    private var _tableViewDataSource: TableViewDataSource<MonthGoalsViewController, DataProvider, MonthGoalsTableViewCell>!
    private var _tableViewDelegate: TableViewDelegate<DataProvider, MonthGoalsViewController>!
    
-   private let _tableViewCellID = "MonthGoalsCellIdentifier"
    private var _goalPresenter: GoalPresenter<MonthGoalsViewController>!
-   
-   @IBOutlet private weak var _monthGoalsTableView: UITableView!
    private var _month: Month = .Jan
-   
-   // MARK: - Init
-   convenience init()
-   {
-      self.init(nibName: nil, bundle: nil)
-   }
    
    // MARK: - Lifecycle
    override func viewDidLoad()
    {  
       super.viewDidLoad()
       automaticallyAdjustsScrollViewInsets = false
-      
-      _monthGoalsTableView.registerNib(UINib(nibName: "MonthGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: _tableViewCellID)
       _goalPresenter = GoalPresenter(presentingController: self)
    }
    
@@ -89,7 +85,7 @@ extension MonthGoalsViewController: DataSourceDelegate
 {
    func cellIdentifierForObject(object: Object) -> String
    {
-      return _tableViewCellID
+      return MonthGoalsCellIdentifier
    }
    
    func configureCell(cell: UITableViewCell)
@@ -105,7 +101,8 @@ extension MonthGoalsViewController: TableViewDelegateProtocol
       _goalPresenter.presentDetailsForGoal(goal)
    }
    
-   func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat {
+   func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
+   {
       return 40
    }
 }

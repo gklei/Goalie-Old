@@ -21,6 +21,7 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
       return _dataProvider.objectAtIndexPath(indexPath)
    }
    var saveOnDelete = true
+   var allowEditingLast = true
    
    required init(tableView: UITableView, dataProvider: Data, delegate: Delegate)
    {
@@ -79,7 +80,7 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
    
    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
       if editingStyle == .Delete
-      {  
+      {
          let goal = _dataProvider.objectAtIndexPath(indexPath)
          if saveOnDelete {
             goal.managedObjectContext?.performChanges({ () -> () in
@@ -94,6 +95,10 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
    
    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
    {
-      return true
+      var canEdit = true
+      if indexPath.row == tableView.numberOfRowsInSection(indexPath.section) - 1 && !allowEditingLast {
+         canEdit = false
+      }
+      return canEdit
    }
 }

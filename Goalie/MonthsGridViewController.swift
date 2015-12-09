@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 private let NumberOfMonths = 12
+private let MonthGridCellIdentifier = "MonthCellIdentifier"
 
 class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
 {
@@ -22,11 +23,10 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    @IBOutlet weak private var _monthGoalsSegue: UIStoryboardSegue!
    @IBOutlet weak private var _monthGridCollectionView: UICollectionView! {
       didSet {
-         _monthGridCollectionView.registerNib(UINib(nibName: "MonthCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: _collectionViewCellID)
+         _monthGridCollectionView.registerNib(UINib(nibName: "MonthCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MonthGridCellIdentifier)
       }
    }
    
-   private let _collectionViewCellID = "MonthCellIdentifier"
    private var _parentGoalsProvider: ParentGoalsDataProvider!
    
    private var _goalPresenter: GoalPresenter<MonthsGridViewController>!
@@ -35,7 +35,6 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    private var _parentGoalsFRC: NSFetchedResultsController {
       return NSFetchedResultsController(fetchRequest: ParentGoalsFetchRequestProvider.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
    }
-   
    
    // MARK: - Lifecycle
    override func viewDidLoad()
@@ -104,7 +103,7 @@ extension MonthsGridViewController: UICollectionViewDataSource
    
    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
    {
-      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(_collectionViewCellID, forIndexPath: indexPath) as! MonthCollectionViewCell
+      let cell = collectionView.dequeueReusableCellWithReuseIdentifier(MonthGridCellIdentifier, forIndexPath: indexPath) as! MonthCollectionViewCell
       
       let month = Month(rawValue: indexPath.row)!
       let goalCount = _parentGoalsProvider.parentGoalsInMonth(month).count

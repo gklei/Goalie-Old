@@ -22,6 +22,13 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
 
    var managedObjectContext: NSManagedObjectContext!
    private var _currentSubgoalCell: SubgoalsTableViewCell?
+   private var _emptySubgoalAtBottom: Bool {
+      var emptySubgoalAtBottom = false
+      if let lastSubgoal = _goal.subgoals.last {
+         emptySubgoalAtBottom = lastSubgoal.title == ""
+      }
+      return emptySubgoalAtBottom
+   }
    
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField!
    @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField!
@@ -42,10 +49,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       didSet {
          let nib = UINib(nibName: "SubgoalsTableViewCell", bundle: nil)
          _subgoalsTableView.registerNib(nib, forCellReuseIdentifier: SubgoalsCellIdentifier)
-         
-         // A trick for making it so that separators don't display for empty cells
-//         let size = CGSize(width: 0, height: 1)
-//         _subgoalsTableView.tableFooterView = UIView(frame: CGRect(origin: CGPoint.zero, size: size))
       }
    }
    
@@ -56,9 +59,10 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private var _tableViewDataSource: TableViewDataSource<GoalDetailsViewController, DataProvider, SubgoalsTableViewCell>!
    private var _dataProvider: DataProvider!
    
+   private var _shouldGiveNextCreatedCellFocus = false
+   
    // MARK: - Init
-   convenience init()
-   {
+   convenience init() {
       self.init(nibName: nil, bundle: nil)
    }
    
@@ -88,10 +92,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _setupSubgoalsTable()
       
       _monthSelectorViewController.selectedMonth = _goal.month
-      // this is sort of a convenience for the user.  since subgoals are created with an empty title, the user will see "add a subgoal"
-      // in the subgoals table view, and all they have to do is tap that to change the text since the "add a subgoal" text is a placeholder
-      // string.  if they do nothing with it, then it'll get deleted since all of the subgoals with empty titles are deleted when the
-      // done button is pressed
       _createNewSubgoal()
    }
    
@@ -117,6 +117,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       _dataProvider = _dataProviderForGoal(_goal)
       _tableViewDataSource = TableViewDataSource(tableView: _subgoalsTableView, dataProvider: _dataProvider, delegate: self)
+      _tableViewDataSource.allowEditingLast = false
    }
    
    private func _dismissSelf()
@@ -134,6 +135,24 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private func _createNewSubgoal()
    {
       Goal.insertIntoContext(managedObjectContext, title: "", parent: _goal)
+   }
+   
+   private func _subgoalCellForIndexPath(indexPath: NSIndexPath) -> SubgoalsTableViewCell?
+   {
+      return _subgoalsTableView.cellForRowAtIndexPath(indexPath) as? SubgoalsTableViewCell
+   }
+   
+   private func _indexPathIsLast(indexPath: NSIndexPath) -> Bool
+   {
+      return indexPath.row == _goal.subgoals.count - 1
+   }
+   
+   private func _advanceCellFocusFromIndexPath(indexPath: NSIndexPath)
+   {
+      let nextCellIndexPath = NSIndexPath(forRow: indexPath.row + 1, inSection: 0)
+      if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
+         nextSubgoalCell.startEditing()
+      }
    }
    
    internal func dismissKeyboard()
@@ -155,6 +174,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       managedObjectContext.performChanges({() -> () in
          
+         // we don't need to save here because this entire block will save after it's finished
          self._goal.deleteEmptySubgoalsAndSave(false)
          
          // TODO: validate the input in a way that isn't this:
@@ -171,11 +191,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       managedObjectContext.rollback()
       _dismissSelf()
    }
-   
-   @IBAction private func addSubgoalsButtonPressed()
-   {
-      _createNewSubgoal()
-   }
 }
 
 extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
@@ -188,11 +203,51 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
    {
       if let indexPath = _subgoalsTableView.indexPathForCell(cell),
-      let child = _goal.childGoalForIndexPath(indexPath) {
+      let child = _goal.subgoalForIndexPath(indexPath) {
          child.managedObjectContext?.saveOrRollback()
       }
       
+      if _emptySubgoalAtBottom == false {
+         _createNewSubgoal()
+      }
+      
       _currentSubgoalCell = nil
+   }
+   
+   // These next two methods are so fucking messy.  They produce the exact behavior that Nico wants though...
+   func titleTextFieldShouldReturnForCell(cell: SubgoalsTableViewCell) -> Bool
+   {
+      var shouldReturn = false
+      if let cellIndexPath = _subgoalsTableView.indexPathForCell(cell) {
+         if _indexPathIsLast(cellIndexPath) {
+            if cell.titleText == "" {
+               shouldReturn = true
+               cell.stopEditing()
+            }
+            else {
+               shouldReturn = false
+               _createNewSubgoal()
+               _shouldGiveNextCreatedCellFocus = true
+            }
+         }
+         else {
+            shouldReturn = false
+            _advanceCellFocusFromIndexPath(cellIndexPath)
+         }
+      }
+      
+      return shouldReturn
+   }
+   
+   func returnKeyTypeForCell(cell: SubgoalsTableViewCell) -> UIReturnKeyType
+   {
+      var returnKeyType = UIReturnKeyType.Next
+      if let subgoal = cell.subgoal,
+         let lastSubgoal = _goal.subgoals.last
+         where subgoal == lastSubgoal {
+               returnKeyType = .Default
+      }
+      return returnKeyType
    }
 }
 
@@ -202,6 +257,23 @@ extension GoalDetailsViewController: DataProviderDelegate
    func dataProviderDidUpdate(updates: [DataProviderUpdate<Goal>]?)
    {
       _tableViewDataSource.processUpdates(updates)
+      
+      if _shouldGiveNextCreatedCellFocus {
+         _shouldGiveNextCreatedCellFocus = false
+         guard let updates = updates else { return }
+         for update in updates {
+            switch update {
+            case .Insert(let indexPath):
+               if let newSubgoalCell = _subgoalCellForIndexPath(indexPath) where
+                  _indexPathIsLast(indexPath) {
+                     newSubgoalCell.startEditing()
+                     return
+               }
+            default:
+               return
+            }
+         }
+      }
    }
 }
 
