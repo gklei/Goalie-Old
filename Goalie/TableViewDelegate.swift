@@ -20,6 +20,7 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
    init(tableView: UITableView, dataProvider: Data, delegate: Delegate)
    {
       _tableView = tableView
+      _tableView.rowHeight = UITableViewAutomaticDimension
       _dataProvider = dataProvider
       _delegate = delegate
       
@@ -36,7 +37,12 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
       _delegate.objectSelected(object)
    }
    
-   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-      return _delegate.heightForRowAtIndexPath(indexPath)
+   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+   {
+      return UITableViewAutomaticDimension
+   }
+   
+   func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+      return UITableViewAutomaticDimension
    }
 }

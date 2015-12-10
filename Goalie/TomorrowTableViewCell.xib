@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -48,8 +49,10 @@
                     <constraint firstItem="xhh-xi-7vT" firstAttribute="leading" secondItem="6c9-Zh-Z3b" secondAttribute="leading" id="DQm-DG-wcF"/>
                     <constraint firstItem="6c9-Zh-Z3b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Gn6-Iv-RZ9"/>
                     <constraint firstItem="6c9-Zh-Z3b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HmU-Xy-2DY"/>
+                    <constraint firstAttribute="topMargin" secondItem="6c9-Zh-Z3b" secondAttribute="top" id="Rpa-YY-Ozr"/>
                     <constraint firstItem="4o9-ep-TVe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="chN-B6-bZW"/>
                     <constraint firstItem="4o9-ep-TVe" firstAttribute="leading" secondItem="6c9-Zh-Z3b" secondAttribute="trailing" id="eBn-Lu-pz5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="xhh-xi-7vT" secondAttribute="bottom" constant="1.5" id="fgw-VE-a6S"/>
                     <constraint firstAttribute="trailing" secondItem="4o9-ep-TVe" secondAttribute="trailing" id="hiB-ZO-vak"/>
                     <constraint firstItem="xhh-xi-7vT" firstAttribute="top" secondItem="6c9-Zh-Z3b" secondAttribute="bottom" constant="6" id="nYV-Dp-9mB"/>
                 </constraints>

@@ -3,29 +3,23 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="SubgoalsTableViewCell" customModule="Goalie" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="72" id="KGk-i7-Jjw" customClass="SubgoalsTableViewCell" customModule="Goalie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a sub-goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
-                        <rect key="frame" x="30" y="0.0" width="189.5" height="43.5"/>
-                        <animations/>
-                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textField>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tql-Ad-iWO">
-                        <rect key="frame" x="270" y="0.0" width="50" height="43.5"/>
+                        <rect key="frame" x="270" y="0.0" width="50" height="71.5"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="fCo-dy-bBP"/>
+                            <constraint firstAttribute="width" constant="50" id="Anz-D3-S9O"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,7 +30,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3i-iQ-Aat">
-                        <rect key="frame" x="219" y="0.0" width="50.5" height="43.5"/>
+                        <rect key="frame" x="219" y="0.0" width="50.5" height="71.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,10 +41,10 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od7-5a-giR">
-                        <rect key="frame" x="0.0" y="0.0" width="30" height="39.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="71.5"/>
                         <animations/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="9uq-Sj-iMy"/>
+                            <constraint firstAttribute="width" constant="30" id="ZkN-jV-1Eu"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="tintColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,24 +53,37 @@
                             <action selector="completeButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pjN-UX-ZB0"/>
                         </connections>
                     </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a sub-goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
+                        <rect key="frame" x="30" y="8" width="189.5" height="55.5"/>
+                        <animations/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textField>
                 </subviews>
                 <animations/>
                 <constraints>
-                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="centerY" secondItem="Tql-Ad-iWO" secondAttribute="centerY" id="1Dh-HY-Gm2"/>
-                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="leading" secondItem="F3i-iQ-Aat" secondAttribute="trailing" id="6nL-ue-L5A"/>
-                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="leading" secondItem="0qk-eC-751" secondAttribute="trailing" id="8Dh-lo-c11"/>
-                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="width" secondItem="Tql-Ad-iWO" secondAttribute="width" id="MeN-yz-tvT"/>
-                    <constraint firstItem="Od7-5a-giR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ok1-OF-CCf"/>
-                    <constraint firstAttribute="bottom" secondItem="Od7-5a-giR" secondAttribute="bottom" constant="4" id="Z4n-tP-1Pe"/>
-                    <constraint firstItem="0qk-eC-751" firstAttribute="leading" secondItem="Od7-5a-giR" secondAttribute="trailing" id="ano-cu-yr9"/>
-                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="height" secondItem="Tql-Ad-iWO" secondAttribute="height" id="g26-XS-pDn"/>
-                    <constraint firstAttribute="trailing" secondItem="Tql-Ad-iWO" secondAttribute="trailing" id="hMa-rm-TCs"/>
-                    <constraint firstItem="0qk-eC-751" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ia1-ki-4fX"/>
-                    <constraint firstAttribute="bottom" secondItem="0qk-eC-751" secondAttribute="bottom" id="l08-Mt-xfH"/>
-                    <constraint firstAttribute="bottom" secondItem="Tql-Ad-iWO" secondAttribute="bottom" id="wTL-gc-Kmw"/>
-                    <constraint firstItem="Od7-5a-giR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xDc-5S-UV1"/>
-                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zPR-3J-ni5"/>
+                    <constraint firstItem="0qk-eC-751" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0LL-lN-5Lc"/>
+                    <constraint firstItem="0qk-eC-751" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0Vm-zY-ZZs"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="centerY" secondItem="Tql-Ad-iWO" secondAttribute="centerY" id="2dm-7c-xFL"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="0qk-eC-751" secondAttribute="bottom" id="2hO-0O-DeQ"/>
+                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="centerY" secondItem="0qk-eC-751" secondAttribute="centerY" id="GlX-sg-IH1"/>
+                    <constraint firstAttribute="trailing" secondItem="Tql-Ad-iWO" secondAttribute="trailing" id="Hwc-Tm-Wr7"/>
+                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="leading" secondItem="F3i-iQ-Aat" secondAttribute="trailing" id="K8V-Tl-MKc"/>
+                    <constraint firstItem="Od7-5a-giR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Q2I-Xv-YWs"/>
+                    <constraint firstItem="Od7-5a-giR" firstAttribute="height" secondItem="Tql-Ad-iWO" secondAttribute="height" id="RSS-9D-DHg"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="width" secondItem="Tql-Ad-iWO" secondAttribute="width" id="cCH-Q0-it3"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="leading" secondItem="0qk-eC-751" secondAttribute="trailing" id="jMC-WU-zzT"/>
+                    <constraint firstItem="0qk-eC-751" firstAttribute="leading" secondItem="Od7-5a-giR" secondAttribute="trailing" id="ljZ-uc-f64"/>
+                    <constraint firstItem="F3i-iQ-Aat" firstAttribute="height" secondItem="Tql-Ad-iWO" secondAttribute="height" id="ma4-yw-dfc"/>
+                    <constraint firstItem="Tql-Ad-iWO" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="tgX-0M-oZD"/>
+                    <constraint firstItem="Od7-5a-giR" firstAttribute="centerY" secondItem="Tql-Ad-iWO" secondAttribute="centerY" id="wYm-Rn-Grf"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="0LL-lN-5Lc"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <connections>
@@ -85,7 +92,7 @@
                 <outlet property="_todayButton" destination="F3i-iQ-Aat" id="Khw-9j-Hy2"/>
                 <outlet property="_tomorrowButton" destination="Tql-Ad-iWO" id="EeJ-cS-OBd"/>
             </connections>
-            <point key="canvasLocation" x="106" y="163"/>
+            <point key="canvasLocation" x="106" y="177"/>
         </tableViewCell>
     </objects>
 </document>
