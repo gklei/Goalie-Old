@@ -37,6 +37,11 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
    // MARK: - IBActions
    @IBAction private func _tapGestureRecognized(recognizer: UIGestureRecognizer)
    {
+      let location = recognizer.locationInView(_tableView)
+      if let indexPath = _tableView.indexPathForRowAtPoint(location) {
+         let subgoal = _dataProvider.objectAtIndexPath(indexPath)
+         subgoal.completed = !subgoal.completed
+      }
    }
    
    @IBAction private func _longPressGestureRecognized(recognizer: UIGestureRecognizer)

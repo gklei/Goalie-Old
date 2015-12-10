@@ -92,6 +92,11 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _setupSubgoalsTable()
       
       _monthSelectorViewController.selectedMonth = _goal.month
+   }
+   
+   override func viewDidAppear(animated: Bool)
+   {
+      super.viewDidAppear(animated)
       _createNewSubgoal()
    }
    

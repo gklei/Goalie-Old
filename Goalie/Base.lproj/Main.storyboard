@@ -415,6 +415,7 @@
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="yW9-ZH-rpU" appends="YES" id="KVw-kP-mX5"/>
+                            <outletCollection property="gestureRecognizers" destination="gwf-QE-RRJ" appends="YES" id="yVX-Pc-sAw"/>
                         </connections>
                     </view>
                     <connections>
@@ -427,6 +428,11 @@
                         <action selector="_longPressRecognized:" destination="vul-i3-kqq" id="d2B-u8-ohj"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="gwf-QE-RRJ">
+                    <connections>
+                        <action selector="_tapGestureRecognized:" destination="vul-i3-kqq" id="W2e-g9-IUf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1808" y="330.5"/>
         </scene>

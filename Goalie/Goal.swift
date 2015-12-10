@@ -44,6 +44,7 @@ public final class Goal: ManagedObject
       
       guard goal != parent else { return goal }
       goal.parent = parent
+      goal.month = parent.month
       
       return goal
    }
@@ -72,6 +73,9 @@ extension Goal
       }
       set {
          monthValue = Int16(newValue.rawValue)
+         for subgoal in subgoals {
+            subgoal.monthValue = monthValue
+         }
       }
    }
    

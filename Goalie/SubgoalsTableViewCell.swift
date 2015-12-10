@@ -31,6 +31,7 @@ class SubgoalsTableViewCell: UITableViewCell
    
    weak var delegate: SubgoalsTableViewCellDelegate?
    weak private var _goal: Goal!
+   private var _currentActiveState: ActiveState = .Idle
    
    var subgoal: Goal {
       return _goal
@@ -51,26 +52,28 @@ class SubgoalsTableViewCell: UITableViewCell
    
    @IBAction private func todayButtonPressed()
    {
-      switch _goal.activeState {
+      switch _currentActiveState {
       case .Today:
-         _goal.activeState = .Idle
+         _currentActiveState = .Idle
          break
       case .Tomorrow, .Idle:
-         _goal.activeState = .Today
+         _currentActiveState = .Today
          break
       }
+      _updateButtonsForState(_currentActiveState)
    }
    
    @IBAction private func tomorrowButtonPressed()
    {
-      switch _goal.activeState {
+      switch _currentActiveState {
       case .Tomorrow:
-         _goal.activeState = .Idle
+         _currentActiveState = .Idle
          break
       case .Today, .Idle:
-         _goal.activeState = .Tomorrow
+         _currentActiveState = .Tomorrow
          break
       }
+      _updateButtonsForState(_currentActiveState)
    }
    
    private func _updateButtonsForState(state: ActiveState)
@@ -94,6 +97,13 @@ class SubgoalsTableViewCell: UITableViewCell
 
 extension SubgoalsTableViewCell: UITextFieldDelegate
 {
+   func textFieldShouldBeginEditing(textField: UITextField) -> Bool
+   {
+      _labelTextField.attributedText = nil
+      _labelTextField.text = _goal.title
+      return true
+   }
+   
    func textFieldDidBeginEditing(textField: UITextField)
    {
       delegate?.subgoalBeganEditing(self)
@@ -105,6 +115,7 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
       if let title = textField.text {
          _goal.title = title
       }
+      _goal.activeState = _currentActiveState
       delegate?.subgoalCellFinishedEditing(self)
    }
    
@@ -119,8 +130,17 @@ extension SubgoalsTableViewCell: ConfigurableCell
    func configureForObject(goal: Goal)
    {
       _goal = goal
+      _currentActiveState = goal.activeState
+      
       _labelTextField.text = goal.title
       
+      let strikeThroughValue = goal.completed == true ? 2 : 0
+      let titleAttributes = [NSFontAttributeName : ThemeSubgoalsLabelFont, NSStrikethroughStyleAttributeName : strikeThroughValue]
+      
+      _labelTextField.attributedText = NSAttributedString(string: goal.title, attributes: titleAttributes)
       _updateButtonsForState(_goal.activeState)
+      
+      _todayButton.hidden = goal.title == ""
+      _tomorrowButton.hidden = goal.title == ""
    }
 }

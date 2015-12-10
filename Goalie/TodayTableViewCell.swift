@@ -30,11 +30,6 @@ class TodayTableViewCell: UITableViewCell
          self._goal.activeState = .Tomorrow
       })
    }
-   
-   @IBAction private func _longPressRecognized()
-   {
-      print("long press!")
-   }
 }
 
 extension TodayTableViewCell: ConfigurableCell
@@ -44,5 +39,13 @@ extension TodayTableViewCell: ConfigurableCell
       _goal = object
       _titleLabel.text = object.title
       _monthLabel.text = object.month.fullName
+      
+      var titleAttributes: [String : AnyObject] = [NSFontAttributeName : ThemeAllGoalsLabelFont]
+      if object.completed == true {
+         titleAttributes[NSStrikethroughStyleAttributeName] = 2
+      }
+      
+      let attributedTitleText = NSAttributedString(string: object.title, attributes: titleAttributes)
+      _titleLabel.attributedText = attributedTitleText
    }
 }
