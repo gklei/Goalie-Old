@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5B61670AA5FFC8CC7D74711D26B9581F11E4D95F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "36B308FA6A7387BD91A181305812465CAC2F9A7B" : 0,
+    "5B61670AA5FFC8CC7D74711D26B9581F11E4D95F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "81A60B38-2C40-49F5-BD9E-A1701441978F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "36B308FA6A7387BD91A181305812465CAC2F9A7B" : "Goalie\/Onboard\/",
+    "5B61670AA5FFC8CC7D74711D26B9581F11E4D95F" : "Goalie\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Goalie",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Goalie.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:mamaral\/Onboard.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36B308FA6A7387BD91A181305812465CAC2F9A7B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:gregoryklein\/Goalie.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5B61670AA5FFC8CC7D74711D26B9581F11E4D95F"
+    }
+  ]
+}
