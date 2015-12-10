@@ -30,6 +30,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       return emptySubgoalAtBottom
    }
    
+   @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField!
    @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField!
    
@@ -252,10 +253,13 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    func subgoalBeganEditing(cell: SubgoalsTableViewCell)
    {
       _currentSubgoalCell = cell
+      _parentKeyboardAvoidingScrollView.scrollEnabled = false
    }
    
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
    {
+      _parentKeyboardAvoidingScrollView.scrollEnabled = true
+      
       if let indexPath = _subgoalsTableView.indexPathForCell(cell),
       let child = _goal.subgoalForIndexPath(indexPath) {
          child.managedObjectContext?.saveOrRollback()

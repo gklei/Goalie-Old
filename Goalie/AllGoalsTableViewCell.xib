@@ -41,8 +41,8 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="bMz-XN-BO2" secondAttribute="trailing" constant="20" id="0yn-vd-s9y"/>
                     <constraint firstItem="4er-6S-qDH" firstAttribute="leading" secondItem="bMz-XN-BO2" secondAttribute="leading" id="145-Pp-Uzb"/>
-                    <constraint firstItem="4er-6S-qDH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="E0s-6Y-1x1"/>
                     <constraint firstItem="pxi-fG-asG" firstAttribute="leading" secondItem="4er-6S-qDH" secondAttribute="leading" id="Gc8-OT-NH9"/>
+                    <constraint firstItem="4er-6S-qDH" firstAttribute="top" secondItem="bMz-XN-BO2" secondAttribute="bottom" constant="5.5" id="MM7-d7-V7q"/>
                     <constraint firstItem="bMz-XN-BO2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="T67-iy-IgO"/>
                     <constraint firstItem="4er-6S-qDH" firstAttribute="top" secondItem="bMz-XN-BO2" secondAttribute="bottom" constant="5.5" id="Ykn-zW-r0c"/>
                     <constraint firstItem="bMz-XN-BO2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="aLx-Bl-sVU"/>
@@ -50,12 +50,14 @@
                     <constraint firstItem="pxi-fG-asG" firstAttribute="top" secondItem="4er-6S-qDH" secondAttribute="bottom" constant="6" id="cPt-3g-Yx6"/>
                     <constraint firstAttribute="bottomMargin" secondItem="pxi-fG-asG" secondAttribute="bottom" constant="4" id="eyX-rh-n7h"/>
                     <constraint firstItem="4er-6S-qDH" firstAttribute="top" secondItem="bMz-XN-BO2" secondAttribute="bottom" constant="6" id="hk8-cq-wqZ"/>
+                    <constraint firstItem="bMz-XN-BO2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="sbR-Px-K5t"/>
                     <constraint firstItem="4er-6S-qDH" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="zps-Mx-J3W"/>
                     <constraint firstItem="bMz-XN-BO2" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zxp-yJ-2tI"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="zxp-yJ-2tI"/>
+                        <exclude reference="Ykn-zW-r0c"/>
                         <exclude reference="c5a-Ll-94e"/>
                         <exclude reference="hk8-cq-wqZ"/>
                         <exclude reference="zps-Mx-J3W"/>
