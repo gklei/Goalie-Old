@@ -28,10 +28,12 @@ class SubgoalsTableViewCell: UITableViewCell
    
    @IBOutlet private weak var _todayButton: UIButton!
    @IBOutlet private weak var _tomorrowButton: UIButton!
+   @IBOutlet private weak var _completeButton: UIButton!
    
    weak var delegate: SubgoalsTableViewCellDelegate?
    weak private var _goal: Goal!
    private var _currentActiveState: ActiveState = .Idle
+   private var _currentlyEditingTitle = false
    
    var subgoal: Goal {
       return _goal
@@ -61,6 +63,10 @@ class SubgoalsTableViewCell: UITableViewCell
          break
       }
       _updateButtonsForState(_currentActiveState)
+      
+      if _currentlyEditingTitle == false {
+         _goal.activeState = _currentActiveState
+      }
    }
    
    @IBAction private func tomorrowButtonPressed()
@@ -74,6 +80,15 @@ class SubgoalsTableViewCell: UITableViewCell
          break
       }
       _updateButtonsForState(_currentActiveState)
+      
+      if _currentlyEditingTitle == false {
+         _goal.activeState = _currentActiveState
+      }
+   }
+   
+   @IBAction private func completeButtonPressed()
+   {
+      _goal.completed = !_goal.completed
    }
    
    private func _updateButtonsForState(state: ActiveState)
@@ -99,8 +114,10 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
 {
    func textFieldShouldBeginEditing(textField: UITextField) -> Bool
    {
+      _currentlyEditingTitle = true
       _labelTextField.attributedText = nil
       _labelTextField.text = _goal.title
+      _completeButton.enabled = false
       return true
    }
    
@@ -112,6 +129,8 @@ extension SubgoalsTableViewCell: UITextFieldDelegate
    
    func textFieldDidEndEditing(textField: UITextField)
    {
+      _currentlyEditingTitle = false
+      _completeButton.enabled = true
       if let title = textField.text {
          _goal.title = title
       }
@@ -142,5 +161,12 @@ extension SubgoalsTableViewCell: ConfigurableCell
       
       _todayButton.hidden = goal.title == ""
       _tomorrowButton.hidden = goal.title == ""
+      _completeButton.enabled = goal.title != ""
+      
+      UIView.setAnimationsEnabled(false)
+      let buttonTitle = goal.completed == true ? "●" : "◦"
+      _completeButton.setTitle(buttonTitle, forState: .Normal)
+      _completeButton.layoutIfNeeded()
+      UIView.setAnimationsEnabled(true);
    }
 }

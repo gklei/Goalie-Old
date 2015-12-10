@@ -14,8 +14,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="• Add a sub-goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
-                        <rect key="frame" x="20" y="0.0" width="199.5" height="43.5"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a sub-goal" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-eC-751">
+                        <rect key="frame" x="30" y="0.0" width="189.5" height="43.5"/>
                         <animations/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -46,6 +46,19 @@
                             <action selector="todayButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OQS-wd-5JL"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Od7-5a-giR">
+                        <rect key="frame" x="0.0" y="0.0" width="30" height="39.5"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="9uq-Sj-iMy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="tintColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <state key="normal" title="◦"/>
+                        <connections>
+                            <action selector="completeButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pjN-UX-ZB0"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -53,17 +66,21 @@
                     <constraint firstItem="Tql-Ad-iWO" firstAttribute="leading" secondItem="F3i-iQ-Aat" secondAttribute="trailing" id="6nL-ue-L5A"/>
                     <constraint firstItem="F3i-iQ-Aat" firstAttribute="leading" secondItem="0qk-eC-751" secondAttribute="trailing" id="8Dh-lo-c11"/>
                     <constraint firstItem="F3i-iQ-Aat" firstAttribute="width" secondItem="Tql-Ad-iWO" secondAttribute="width" id="MeN-yz-tvT"/>
-                    <constraint firstItem="0qk-eC-751" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ThN-E4-Ggy"/>
+                    <constraint firstItem="Od7-5a-giR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ok1-OF-CCf"/>
+                    <constraint firstAttribute="bottom" secondItem="Od7-5a-giR" secondAttribute="bottom" constant="4" id="Z4n-tP-1Pe"/>
+                    <constraint firstItem="0qk-eC-751" firstAttribute="leading" secondItem="Od7-5a-giR" secondAttribute="trailing" id="ano-cu-yr9"/>
                     <constraint firstItem="F3i-iQ-Aat" firstAttribute="height" secondItem="Tql-Ad-iWO" secondAttribute="height" id="g26-XS-pDn"/>
                     <constraint firstAttribute="trailing" secondItem="Tql-Ad-iWO" secondAttribute="trailing" id="hMa-rm-TCs"/>
                     <constraint firstItem="0qk-eC-751" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ia1-ki-4fX"/>
                     <constraint firstAttribute="bottom" secondItem="0qk-eC-751" secondAttribute="bottom" id="l08-Mt-xfH"/>
                     <constraint firstAttribute="bottom" secondItem="Tql-Ad-iWO" secondAttribute="bottom" id="wTL-gc-Kmw"/>
+                    <constraint firstItem="Od7-5a-giR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xDc-5S-UV1"/>
                     <constraint firstItem="Tql-Ad-iWO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zPR-3J-ni5"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <connections>
+                <outlet property="_completeButton" destination="Od7-5a-giR" id="qb3-ep-NI5"/>
                 <outlet property="_labelTextField" destination="0qk-eC-751" id="9yF-Na-y0R"/>
                 <outlet property="_todayButton" destination="F3i-iQ-Aat" id="Khw-9j-Hy2"/>
                 <outlet property="_tomorrowButton" destination="Tql-Ad-iWO" id="EeJ-cS-OBd"/>

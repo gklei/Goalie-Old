@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import DZNEmptyDataSet
 
 class TodayViewController: UIViewController, ManagedObjectContextSettable
 {
@@ -31,7 +32,16 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewDidLoad()
       _setupTableViewDataSourceAndDelegate()
+      _tableView.emptyDataSetDelegate = self
+      _tableView.emptyDataSetSource = self
+      
       _goalPresenter = GoalPresenter(presentingController: self)
+   }
+   
+   override func viewWillAppear(animated: Bool)
+   {
+      super.viewWillAppear(animated)
+      _tableView.reloadEmptyDataSet()
    }
    
    // MARK: - IBActions
@@ -97,5 +107,62 @@ extension TodayViewController: TableViewDelegateProtocol
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
       return 60
+   }
+}
+
+extension TodayViewController: DZNEmptyDataSetSource
+{
+   func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+      let text = "No sub-goals for today."
+      let attribs = [
+         NSFontAttributeName: UIFont(name: "Menlo-Bold", size: 18)!,
+         NSForegroundColorAttributeName: UIColor.darkGrayColor()
+      ]
+      
+      return NSAttributedString(string: text, attributes: attribs)
+   }
+   
+   func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+      let text = "Keep track of sub-goals by adding them to today."
+      
+      let para = NSMutableParagraphStyle()
+      para.lineBreakMode = NSLineBreakMode.ByWordWrapping
+      para.alignment = NSTextAlignment.Center
+      
+      let attribs = [
+         NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 12)!,
+         NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+         NSParagraphStyleAttributeName: para
+      ]
+      
+      return NSAttributedString(string: text, attributes: attribs)
+   }
+   
+   func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
+      let text = "Create a Goal"
+      let attribs = [
+         NSFontAttributeName: UIFont(name: "Menlo-Bold", size: 16)!,
+         NSForegroundColorAttributeName: UIColor.blackColor()
+      ]
+      
+      return NSAttributedString(string: text, attributes: attribs)
+   }
+}
+
+extension TodayViewController: DZNEmptyDataSetDelegate
+{
+   func emptyDataSetDidTapButton(scrollView: UIScrollView!)
+   {
+      _goalPresenter.createAndPresentNewGoal()
+   }
+   
+   func emptyDataSetWillDisappear(scrollView: UIScrollView!)
+   {
+      _tableView.showSeparatorsForEmptyCells(true)
+   }
+   
+   func emptyDataSetWillAppear(scrollView: UIScrollView!)
+   {
+      _tableView.showSeparatorsForEmptyCells(false)
    }
 }
