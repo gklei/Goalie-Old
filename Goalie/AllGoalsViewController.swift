@@ -44,6 +44,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    override func viewWillAppear(animated: Bool)
    {
       super.viewWillAppear(animated)
+      _allGoalsTableView.reloadData()
       _allGoalsTableView.reloadEmptyDataSet()
    }
    

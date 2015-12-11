@@ -199,24 +199,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    func temporarilyHighlightSubgoal(subgoal: Goal)
    {
       let subgoalIndexPath = NSIndexPath(goal: subgoal)
-      
-      UIView.animateWithDuration(0.3, animations: { () -> Void in
-         self._subgoalsTableView.scrollToRowAtIndexPath(subgoalIndexPath, atScrollPosition: UITableViewScrollPosition.Middle, animated: false)
-         
-         }) { (finished: Bool) -> Void in
-               
-            if let subgoalCell = self._subgoalCellForIndexPath(subgoalIndexPath) {
-               UIView.animateWithDuration(0.3, animations: { () -> Void in
-                  subgoalCell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.16)
-                  
-                  }) { (finished: Bool) -> Void in
-                     
-                     UIView.animateWithDuration(0.3, animations: { () -> Void in
-                        subgoalCell.backgroundColor = UIColor.whiteColor()
-                     })
-               }
-            }
-      }
+      _subgoalsTableView.flashCellAtIndexPath(subgoalIndexPath, duration: 0.6)
    }
    
    // MARK: - IBActions
@@ -224,6 +207,10 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       if let currentCell = _currentSubgoalCell {
          currentCell.stopEditing()
+      }
+      else if _titleTextField.isFirstResponder() || _summaryTextField.isFirstResponder() {
+         _titleTextField.resignFirstResponder()
+         _summaryTextField.resignFirstResponder()
       }
       else {
          managedObjectContext.performChanges({() -> () in

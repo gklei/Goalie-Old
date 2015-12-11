@@ -22,8 +22,8 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-MX-4C7">
-                        <rect key="frame" x="20" y="34.5" width="42" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-MX-4C7">
+                        <rect key="frame" x="20" y="34.5" width="249.5" height="20.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -48,14 +48,22 @@
                     <constraint firstAttribute="bottom" secondItem="3pM-a5-4ew" secondAttribute="bottom" id="31G-mA-Qb9"/>
                     <constraint firstItem="3pM-a5-4ew" firstAttribute="leading" secondItem="OHJ-hL-9Wf" secondAttribute="trailing" id="7c7-QJ-SvQ"/>
                     <constraint firstItem="OHJ-hL-9Wf" firstAttribute="leading" secondItem="TcI-nO-8eZ" secondAttribute="leading" constant="20" id="B9a-oc-ifI"/>
+                    <constraint firstItem="3pM-a5-4ew" firstAttribute="leading" secondItem="dqU-MX-4C7" secondAttribute="trailing" id="DkC-9c-XI6"/>
                     <constraint firstAttribute="bottomMargin" secondItem="dqU-MX-4C7" secondAttribute="bottom" constant="1.5" id="JrH-KY-nDm"/>
                     <constraint firstItem="dqU-MX-4C7" firstAttribute="leading" secondItem="OHJ-hL-9Wf" secondAttribute="leading" id="K1p-Yw-mJy"/>
                     <constraint firstAttribute="topMargin" secondItem="OHJ-hL-9Wf" secondAttribute="top" id="LfI-0t-WV7"/>
+                    <constraint firstAttribute="topMargin" secondItem="OHJ-hL-9Wf" secondAttribute="top" id="TMI-Wr-4be"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="dqU-MX-4C7" secondAttribute="bottom" constant="1.5" id="UPK-VL-RMx"/>
                     <constraint firstItem="3pM-a5-4ew" firstAttribute="top" secondItem="TcI-nO-8eZ" secondAttribute="top" id="aDr-WU-3eP"/>
                     <constraint firstItem="OHJ-hL-9Wf" firstAttribute="top" secondItem="TcI-nO-8eZ" secondAttribute="top" constant="8" id="tlW-rf-oKl"/>
                     <constraint firstAttribute="trailing" secondItem="3pM-a5-4ew" secondAttribute="trailing" id="ttq-ct-46f"/>
                     <constraint firstItem="dqU-MX-4C7" firstAttribute="top" secondItem="OHJ-hL-9Wf" secondAttribute="bottom" constant="6" id="uLp-5h-oNn"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="JrH-KY-nDm"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <gestureRecognizers/>

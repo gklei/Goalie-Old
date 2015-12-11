@@ -50,7 +50,10 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
       let location = recognizer.locationInView(_tableView)
       if let indexPath = _tableView.indexPathForRowAtPoint(location) {
          let subgoal = _dataProvider.objectAtIndexPath(indexPath)
-         subgoal.completed = !subgoal.completed
+         
+         self.managedObjectContext.performChanges({ () -> () in
+            subgoal.completed = !subgoal.completed
+         })
       }
    }
    
@@ -72,6 +75,17 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
       _dataProvider = FetchedResultsDataProvider(fetchedResultsController: _defaultFRC, delegate: self)
       _tableViewDataSource = TableViewDataSource(tableView: _tableView, dataProvider: _dataProvider, delegate: self)
       _tableViewDelegate = TableViewDelegate(tableView: _tableView, dataProvider: _dataProvider, delegate: self)
+      
+      let removeAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove", handler: { (rowAction, indexPath) -> Void in
+         
+         let goal = self._dataProvider.objectAtIndexPath(indexPath)
+         
+         self.managedObjectContext.performChanges({ () -> () in
+            goal.activeState = .Idle
+         })
+      })
+      removeAction.backgroundColor = UIColor(red: 25/255.0, green: 140/255.0, blue: 1, alpha: 1)
+      _tableViewDelegate.editActions = [removeAction]
    }
 }
 

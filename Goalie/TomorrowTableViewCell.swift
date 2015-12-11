@@ -18,7 +18,7 @@ class TomorrowTableViewCell: UITableViewCell
    @IBOutlet weak private var _monthLabel: UILabel! {
       didSet {
          _monthLabel.font = ThemeSubgoalsLabelFont
-         _monthLabel.textColor = UIColor.grayColor()
+         _monthLabel.textColor = UIColor.lightGrayColor()
       }
    }
    
@@ -38,7 +38,7 @@ extension TomorrowTableViewCell: ConfigurableCell
    {
       _goal = object
       _titleLabel.text = object.title
-      _monthLabel.text = object.month.fullName
+      _monthLabel.text = object.parent!.title
       
       var titleAttributes: [String : AnyObject] = [NSFontAttributeName : ThemeAllGoalsLabelFont]
       if object.completed == true {

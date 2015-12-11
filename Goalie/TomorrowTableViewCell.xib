@@ -22,11 +22,11 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-xi-7vT">
-                        <rect key="frame" x="20" y="34.5" width="42" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-xi-7vT">
+                        <rect key="frame" x="20" y="34.5" width="249.5" height="20.5"/>
                         <animations/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o9-ep-TVe">
@@ -50,6 +50,7 @@
                     <constraint firstItem="6c9-Zh-Z3b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Gn6-Iv-RZ9"/>
                     <constraint firstItem="6c9-Zh-Z3b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HmU-Xy-2DY"/>
                     <constraint firstAttribute="topMargin" secondItem="6c9-Zh-Z3b" secondAttribute="top" id="Rpa-YY-Ozr"/>
+                    <constraint firstItem="4o9-ep-TVe" firstAttribute="leading" secondItem="xhh-xi-7vT" secondAttribute="trailing" id="aMQ-xY-b8i"/>
                     <constraint firstItem="4o9-ep-TVe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="chN-B6-bZW"/>
                     <constraint firstItem="4o9-ep-TVe" firstAttribute="leading" secondItem="6c9-Zh-Z3b" secondAttribute="trailing" id="eBn-Lu-pz5"/>
                     <constraint firstAttribute="bottomMargin" secondItem="xhh-xi-7vT" secondAttribute="bottom" constant="1.5" id="fgw-VE-a6S"/>

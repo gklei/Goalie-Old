@@ -19,14 +19,14 @@ class AllGoalsTableViewCell: UITableViewCell
    @IBOutlet private weak var _monthLabel: UILabel! {
       didSet {
          _monthLabel.font = ThemeSubgoalsLabelFont
-         _monthLabel.textColor = UIColor.grayColor()
+         _monthLabel.textColor = UIColor.lightGrayColor()
       }
    }
    
    @IBOutlet private weak var _subgoalCountLabel: UILabel! {
       didSet {
          _subgoalCountLabel.font = ThemeSubgoalsLabelFont
-         _subgoalCountLabel.textColor = UIColor.darkGrayColor()
+         _subgoalCountLabel.textColor = UIColor.grayColor()
       }
    }
    
@@ -45,6 +45,6 @@ extension AllGoalsTableViewCell: ConfigurableCell
    {
       _titleLabel.text = object.title
       _monthLabel.text = object.month.fullName
-      _subgoalCountLabel.text = "\(object.subgoals.count) Sub-goals"
+      _subgoalCountLabel.text = "\(object.completedSubgoals.count)/\(object.subgoals.count) sub-goals completed"
    }
 }

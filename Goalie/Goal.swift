@@ -67,6 +67,16 @@ extension Goal
       return subgoalArray
    }
    
+   public var completedSubgoals: Array<Goal> {
+      var completedArray: [Goal] = []
+      for subgoal in subgoals {
+         if subgoal.completed {
+            completedArray.append(subgoal)
+         }
+      }
+      return completedArray
+   }
+   
    public var month: Month {
       get {
          return Month(rawValue: Int(monthValue))!

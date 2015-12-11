@@ -18,6 +18,7 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
    private var _deleteIndexPath: NSIndexPath?
    
    var useAutomaticRowHeight = true
+   var editActions: [UITableViewRowAction]?
    
    init(tableView: UITableView, dataProvider: Data, delegate: Delegate)
    {
@@ -39,12 +40,17 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
       _delegate.objectSelected(object)
    }
    
+   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+      return editActions
+   }
+   
    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
    {
       return useAutomaticRowHeight ? UITableViewAutomaticDimension : _delegate.heightForRowAtIndexPath(indexPath)
    }
    
-   func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+   func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+   {
       return useAutomaticRowHeight ? UITableViewAutomaticDimension : _delegate.heightForRowAtIndexPath(indexPath)
    }
 }
