@@ -79,7 +79,6 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
       let removeAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Remove", handler: { (rowAction, indexPath) -> Void in
          
          let goal = self._dataProvider.objectAtIndexPath(indexPath)
-         
          self.managedObjectContext.performChanges({ () -> () in
             goal.activeState = .Idle
          })
