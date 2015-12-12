@@ -14,7 +14,6 @@ protocol SubgoalsTableViewCellDelegate: class
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
    func titleTextFieldShouldReturnForCell(cell: SubgoalsTableViewCell) -> Bool
    func returnKeyTypeForCell(cell: SubgoalsTableViewCell) -> UIReturnKeyType
-   func subgoalButtonPressedWithState(state: ActiveState, cell: SubgoalsTableViewCell)
 }
 
 class SubgoalsTableViewCell: UITableViewCell

@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension NSIndexPath
+{
+   var next: NSIndexPath {
+      return NSIndexPath(forRow: row + 1, inSection: section)
+   }
+}
+
 extension UITableView
 {
    func showSeparatorsForEmptyCells(show: Bool)

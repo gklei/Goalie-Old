@@ -156,14 +156,13 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    
    private func _advanceCellFocusFromIndexPath(indexPath: NSIndexPath)
    {
-      let nextCellIndexPath = NSIndexPath(forRow: indexPath.row + 1, inSection: 0)
-      if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
+      if let nextSubgoalCell = _subgoalCellForIndexPath(indexPath.next) {
          nextSubgoalCell.startEditing()
       }
       else {
          // Try one more time:
          _subgoalsTableView.scrollByPoints(1)
-         if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
+         if let nextSubgoalCell = _subgoalCellForIndexPath(indexPath.next) {
             nextSubgoalCell.startEditing()
          } else {
             _currentSubgoalCell?.stopEditing()
@@ -286,25 +285,6 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
             returnKeyType = .Default
       }
       return returnKeyType
-   }
-   
-   func subgoalButtonPressedWithState(state: ActiveState, cell: SubgoalsTableViewCell)
-   {
-      var newState: ActiveState = .Idle
-      switch state
-      {
-      case .Today:
-         newState = cell.subgoal.activeState != .Today ? .Today : .Idle
-         break
-      case .Tomorrow:
-         newState = cell.subgoal.activeState != .Tomorrow ? .Tomorrow : .Idle
-         break
-      case .Idle:
-         break
-      }
-      managedObjectContext.performChanges { () -> () in
-         cell.subgoal.activeState = newState
-      }
    }
 }
 
