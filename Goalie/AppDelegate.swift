@@ -28,10 +28,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate
       _passViewControllersManagedObjectContext(managedObjectContext)
       
       window = UIWindow(frame: UIScreen.mainScreen().bounds)
-      
       _setupNormalWindow()
+      
+      // As hacky as this is, I'm cool with it for now.  It's so that the keyboard doesn't lag the first time it shows up
+      _removeInitialKeyboardLag()
       window?.makeKeyAndVisible()
+      
       return true
+   }
+   
+   private func _removeInitialKeyboardLag()
+   {
+      let dummyTextField = UITextField()
+      window?.addSubview(dummyTextField)
+      dummyTextField.becomeFirstResponder()
+      dummyTextField.resignFirstResponder()
+      window?.removeFromSuperview()
    }
    
    private func _passViewControllersManagedObjectContext(moc: NSManagedObjectContext)
