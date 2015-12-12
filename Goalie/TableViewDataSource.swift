@@ -40,6 +40,18 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
       guard let updates = updates else { return _tableView.reloadData() }
       
       _isUpdating = true
+      CATransaction.begin()
+      CATransaction.setCompletionBlock { () -> Void in
+         
+         // This is here before of a strange bug: when in the Today/Tomorrow view, if you swipe left to remove subgoals
+         // too fast (one after another), the app will crash.  So we use _isUpdating to return true or false in the
+         // tableView:canEditRowAtIndexPath: method
+         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC)))
+         dispatch_after(delayTime, dispatch_get_main_queue()) {
+            self._isUpdating = false
+         }
+      }
+      
       _tableView.beginUpdates()
       for update in updates
       {
@@ -60,16 +72,7 @@ class TableViewDataSource<Delegate: DataSourceDelegate, Data: DataProviderProtoc
          }
       }
       _tableView.endUpdates()
-      
-      // This is here before of a strange bug: when in the Today/Tomorrow view, if you swipe left to remove subgoals
-      // too fast (one after another), the app will crash.  So we use _isUpdating to return true or false in the
-      // tableView:canEditRowAtIndexPath: method
-      let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC)))
-      dispatch_after(delayTime, dispatch_get_main_queue()) {
-         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            self._isUpdating = false
-         }
-      }
+      CATransaction.commit()
    }
    
    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
