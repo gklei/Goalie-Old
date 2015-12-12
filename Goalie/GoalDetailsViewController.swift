@@ -137,7 +137,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private func _dismissSelf()
    {
       dismissKeyboard()
-      self.dismissViewControllerAnimated(false, completion: nil)
+      self.dismissViewControllerAnimated(true, completion: nil)
    }
    
    private func _dataProviderForGoal(goal: Goal) -> DataProvider
