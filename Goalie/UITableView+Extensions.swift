@@ -38,4 +38,9 @@ extension UITableView
          }
       }
    }
+   
+   func indexPathIsLast(indexPath: NSIndexPath) -> Bool
+   {
+      return indexPath.row == numberOfRowsInSection(0) - 1
+   }
 }

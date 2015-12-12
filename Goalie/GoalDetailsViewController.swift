@@ -30,6 +30,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       return emptySubgoalAtBottom
    }
    
+   @IBOutlet private weak var _monthSelectorContainer: UIView!
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! {
       didSet {
@@ -41,7 +42,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          _summaryTextField.textColor = ThemeTitleTextColor
       }
    }
-   
    @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! {
       didSet {
          _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem
@@ -53,7 +53,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          _subgoalsNavigationBar.addGestureRecognizer(tapRecognizer)
       }
    }
-   
    @IBOutlet private weak var _subgoalsTableView: UITableView! {
       didSet {
          let nib = UINib(nibName: "SubgoalsTableViewCell", bundle: nil)
@@ -61,7 +60,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       }
    }
    
-   @IBOutlet private weak var _monthSelectorContainer: UIView!
    private var _monthSelectorViewController = MonthSelectorViewController()
    
    private typealias DataProvider = FetchedResultsDataProvider<GoalDetailsViewController>
@@ -154,11 +152,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private func _subgoalCellForIndexPath(indexPath: NSIndexPath) -> SubgoalsTableViewCell?
    {
       return _subgoalsTableView.cellForRowAtIndexPath(indexPath) as? SubgoalsTableViewCell
-   }
-   
-   private func _indexPathIsLast(indexPath: NSIndexPath) -> Bool
-   {
-      return indexPath.row == _goal.subgoals.count - 1
    }
    
    private func _advanceCellFocusFromIndexPath(indexPath: NSIndexPath)
@@ -272,7 +265,7 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    {
       var shouldReturn = false
       if let cellIndexPath = _subgoalsTableView.indexPathForCell(cell) {
-         if _indexPathIsLast(cellIndexPath) {
+         if _subgoalsTableView.indexPathIsLast(cellIndexPath) {
             if cell.titleText == "" {
                shouldReturn = true
                cell.stopEditing()
@@ -336,7 +329,7 @@ extension GoalDetailsViewController: DataProviderDelegate
             switch update {
             case .Insert(let indexPath):
                if let newSubgoalCell = _subgoalCellForIndexPath(indexPath) where
-                  _indexPathIsLast(indexPath) {
+                  _subgoalsTableView.indexPathIsLast(indexPath) {
                      newSubgoalCell.startEditing()
                      return
                }
@@ -344,7 +337,7 @@ extension GoalDetailsViewController: DataProviderDelegate
                   _scrollSubgoalsTableViewByOnePoint()
                   // Try one more time
                   if let newSubgoalCell = _subgoalCellForIndexPath(indexPath) where
-                     _indexPathIsLast(indexPath) {
+                     _subgoalsTableView.indexPathIsLast(indexPath) {
                         newSubgoalCell.startEditing()
                         return
                   }
