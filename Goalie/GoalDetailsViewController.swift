@@ -161,21 +161,14 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          nextSubgoalCell.startEditing()
       }
       else {
-         _scrollSubgoalsTableViewByOnePoint()
          // Try one more time:
+         _subgoalsTableView.scrollByPoints(1)
          if let nextSubgoalCell = _subgoalCellForIndexPath(nextCellIndexPath) {
             nextSubgoalCell.startEditing()
-         }
-         else {
+         } else {
             _currentSubgoalCell?.stopEditing()
          }
       }
-   }
-   
-   private func _scrollSubgoalsTableViewByOnePoint()
-   {
-      let offset = _subgoalsTableView.contentOffset
-      _subgoalsTableView.contentOffset = CGPoint(x: offset.x, y: offset.y + 1)
    }
    
    internal func dismissKeyboard()
@@ -334,8 +327,8 @@ extension GoalDetailsViewController: DataProviderDelegate
                      return
                }
                else {
-                  _scrollSubgoalsTableViewByOnePoint()
                   // Try one more time
+                  _subgoalsTableView.scrollByPoints(1)
                   if let newSubgoalCell = _subgoalCellForIndexPath(indexPath) where
                      _subgoalsTableView.indexPathIsLast(indexPath) {
                         newSubgoalCell.startEditing()
@@ -363,8 +356,6 @@ extension GoalDetailsViewController: DataSourceDelegate
    
    func configureCell(cell: UITableViewCell)
    {
-      if let subgoalsCell = cell as? SubgoalsTableViewCell {
-         subgoalsCell.delegate = self
-      }
+      (cell as? SubgoalsTableViewCell)?.delegate = self
    }
 }

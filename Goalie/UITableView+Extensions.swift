@@ -43,4 +43,10 @@ extension UITableView
    {
       return indexPath.row == numberOfRowsInSection(0) - 1
    }
+   
+   func scrollByPoints(points: CGFloat)
+   {
+      let offset = self.contentOffset
+      self.contentOffset = CGPoint(x: offset.x, y: offset.y + points)
+   }
 }
