@@ -23,6 +23,7 @@ class SubgoalsTableViewCell: UITableViewCell
       didSet {
          _labelTextField.delegate = self
          _labelTextField.font = ThemeSubgoalsLabelFont
+         _labelTextField.textColor = ThemeTitleTextColor
       }
    }
    
@@ -95,16 +96,16 @@ class SubgoalsTableViewCell: UITableViewCell
    {
       switch state {
       case .Today:
-         _tomorrowButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+         _tomorrowButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
          _todayButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
          break
       case .Tomorrow:
-         _todayButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+         _todayButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
          _tomorrowButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
          break
       case .Idle:
-         _todayButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
-         _tomorrowButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+         _todayButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
+         _tomorrowButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
          break
       }
    }

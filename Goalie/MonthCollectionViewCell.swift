@@ -13,6 +13,7 @@ class MonthCollectionViewCell: UICollectionViewCell
    @IBOutlet weak private var _titleLabel: UILabel! {
       didSet {
          _titleLabel.font = ThemeMonthGridLabelFont
+         _titleLabel.textColor = ThemeTitleTextColor
       }
    }
    @IBOutlet weak private var _goalBadgeLabel: UILabel! {

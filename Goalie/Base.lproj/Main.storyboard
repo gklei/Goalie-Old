@@ -75,7 +75,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4c-Ew-ynm">
                                 <rect key="frame" x="0.0" y="267.5" width="320" height="4.5"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.1176470588" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm1-0j-upJ">
                                 <rect key="frame" x="0.0" y="271.5" width="320" height="247.5"/>

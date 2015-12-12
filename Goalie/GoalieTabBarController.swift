@@ -14,7 +14,7 @@ class GoalieTabBarController: UITabBarController
    {
       super.viewDidLoad()
       
-      tabBar.backgroundImage = UIImage.imageWithColor(UIColor.blackColor())
+      tabBar.backgroundImage = UIImage.imageWithColor(UIColor(white: 0.09, alpha: 1))
       tabBar.shadowImage = UIImage.imageWithColor(UIColor.clearColor())
       tabBar.tintColor = ThemeSelectedStateTextColor
 

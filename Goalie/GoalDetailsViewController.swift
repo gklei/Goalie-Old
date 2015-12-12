@@ -31,8 +31,16 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    }
    
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
-   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField!
-   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField!
+   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! {
+      didSet {
+         _titleTextField.textColor = ThemeTitleTextColor
+      }
+   }
+   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! {
+      didSet {
+         _summaryTextField.textColor = ThemeTitleTextColor
+      }
+   }
    
    @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! {
       didSet {
@@ -73,7 +81,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLoad()
       _subgoalsNavigationBar.updateTitleFontSize(18)
       
-      _monthSelectorContainer.backgroundColor = UIColor.blackColor()
+      _monthSelectorContainer.backgroundColor = ThemeTitleTextColor
       _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
    }
    

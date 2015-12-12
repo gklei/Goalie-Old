@@ -153,7 +153,7 @@ extension TomorrowViewController: DZNEmptyDataSetSource
       let text = "Create a Goal"
       let attribs = [
          NSFontAttributeName: UIFont(name: "Menlo-Bold", size: 16)!,
-         NSForegroundColorAttributeName: UIColor.blackColor()
+         NSForegroundColorAttributeName: ThemeTitleTextColor
       ]
       
       return NSAttributedString(string: text, attributes: attribs)

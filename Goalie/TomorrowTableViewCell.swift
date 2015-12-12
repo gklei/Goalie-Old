@@ -13,6 +13,7 @@ class TomorrowTableViewCell: UITableViewCell
    @IBOutlet weak private var _titleLabel: UILabel! {
       didSet {
          _titleLabel.font = ThemeAllGoalsLabelFont
+         _titleLabel.textColor = ThemeTitleTextColor
       }
    }
    @IBOutlet weak private var _monthLabel: UILabel! {

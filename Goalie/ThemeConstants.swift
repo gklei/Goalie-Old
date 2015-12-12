@@ -48,7 +48,7 @@ let ThemeNormalStateTextColor = UIColor.whiteColor()
 let ThemeSelectedStateTextColor = UIColor.cyanColor()
 //let ThemeSelectedStateTextColor = UIColor.redColor()
 
-let ThemeTitleTextColor = UIColor.blackColor()
+let ThemeTitleTextColor = UIColor(white: 0.09, alpha: 1)
 
 enum ThemeUIComponent {
    case TabBar, NavBar, NavBarButtonItem
@@ -77,7 +77,7 @@ struct Theme
    static func titleTextAttributesForComponent(component: ThemeUIComponent, controlState: UIControlState) -> [String : AnyObject]
    {
       let font = fontForComponent(component)
-      var color = UIColor.blackColor()
+      var color = ThemeTitleTextColor
       switch controlState
       {
       case UIControlState.Normal:
