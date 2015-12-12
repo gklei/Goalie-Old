@@ -82,7 +82,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLayoutSubviews()
       
       let insetAmount = _monthSelectorViewController.paddingBetweenMonths * 0.5
-      _monthSelectorViewController.view.frame = _monthSelectorContainer.bounds.insetBy(dx: insetAmount, dy: insetAmount).integral
+      _monthSelectorViewController.view.frame = _monthSelectorContainer.bounds.insetBy(dx: -insetAmount, dy: insetAmount).integral
    }
    
    override func viewWillAppear(animated: Bool)
