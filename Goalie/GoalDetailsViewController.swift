@@ -16,9 +16,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private var _goal: Goal!
    private var _shouldShowCancelButton: Bool!
    private var _cancelBarButtonItem: UIBarButtonItem?
-   private var _selectedMonth: Month {
-      return _monthSelectorViewController.selectedMonth
-   }
 
    var managedObjectContext: NSManagedObjectContext!
    private var _currentSubgoalCell: SubgoalsTableViewCell?
@@ -32,41 +29,26 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    
    @IBOutlet private weak var _monthSelectorContainer: UIView!
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
-   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! {
-      didSet {
-         _titleTextField.textColor = ThemeTitleTextColor
-      }
-   }
-   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! {
-      didSet {
-         _summaryTextField.textColor = ThemeTitleTextColor
-      }
-   }
-   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! {
-      didSet {
-         _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem
-      }
-   }
-   @IBOutlet private weak var _subgoalsNavigationBar: GoalieNavigationBar! {
-      didSet {
+   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! { didSet { _titleTextField.textColor = ThemeTitleTextColor }}
+   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! { didSet { _summaryTextField.textColor = ThemeTitleTextColor }}
+   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! { didSet { _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem }}
+   @IBOutlet private weak var _subgoalsNavigationBar: GoalieNavigationBar! { didSet {
          let tapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
          _subgoalsNavigationBar.addGestureRecognizer(tapRecognizer)
       }
    }
-   @IBOutlet private weak var _subgoalsTableView: UITableView! {
-      didSet {
+   @IBOutlet private weak var _subgoalsTableView: UITableView! { didSet {
          let nib = UINib(nibName: "SubgoalsTableViewCell", bundle: nil)
          _subgoalsTableView.registerNib(nib, forCellReuseIdentifier: SubgoalsCellIdentifier)
       }
    }
    
    private var _monthSelectorViewController = MonthSelectorViewController()
-   
+   private var _shouldGiveNextCreatedCellFocus = false
+
    private typealias DataProvider = FetchedResultsDataProvider<GoalDetailsViewController>
    private var _tableViewDataSource: TableViewDataSource<GoalDetailsViewController, DataProvider, SubgoalsTableViewCell>!
    private var _dataProvider: DataProvider!
-   
-   private var _shouldGiveNextCreatedCellFocus = false
    
    // MARK: - Init
    convenience init() {
@@ -78,7 +60,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewDidLoad()
       _subgoalsNavigationBar.updateTitleFontSize(18)
-      
       _monthSelectorContainer.backgroundColor = ThemeTitleTextColor
       _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
    }
@@ -86,7 +67,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    override func viewDidLayoutSubviews()
    {
       super.viewDidLayoutSubviews()
-      
       let insetAmount = _monthSelectorViewController.paddingBetweenMonths * 0.5
       _monthSelectorViewController.view.frame = _monthSelectorContainer.bounds.insetBy(dx: -insetAmount, dy: insetAmount).integral
    }
@@ -117,8 +97,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _topNavigationBar.updateTitle(title)
    }
    
-   // when a new goal is created, we want to show the cancel button, but when viewing the details of a goal that has already been
-   // created, we don't want to show it
    private func _hideOrShowCancelButton()
    {
       let leftBarButtonItem: UIBarButtonItem? = (_shouldShowCancelButton == true) ? _cancelBarButtonItem : nil
@@ -135,7 +113,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    private func _dismissSelf()
    {
       dismissKeyboard()
-      self.dismissViewControllerAnimated(true, completion: nil)
+      dismissViewControllerAnimated(true, completion: nil)
    }
    
    private func _dataProviderForGoal(goal: Goal) -> DataProvider
@@ -215,7 +193,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
             self._goal.title = self._titleTextField.text ?? "Bro, do you even set titles?"
             self._goal.title = self._goal.title == "" ? "Bro, do you even set titles?" : self._goal.title
             self._goal.summary = self._summaryTextField.text ?? ""
-            self._goal.month = self._selectedMonth
+            self._goal.month = self._monthSelectorViewController.selectedMonth
          })
          _dismissSelf()
       }
@@ -248,7 +226,6 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
       if _emptySubgoalAtBottom == false {
          _createNewSubgoal()
       }
-      
       _currentSubgoalCell = nil
    }
    
@@ -256,22 +233,21 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    func titleTextFieldShouldReturnForCell(cell: SubgoalsTableViewCell) -> Bool
    {
       var shouldReturn = false
-      if let cellIndexPath = _subgoalsTableView.indexPathForCell(cell) {
-         if _subgoalsTableView.indexPathIsLast(cellIndexPath) {
-            if cell.titleText == "" {
-               shouldReturn = true
-               cell.stopEditing()
-            }
-            else {
-               shouldReturn = false
-               _createNewSubgoal()
-               _shouldGiveNextCreatedCellFocus = true
-            }
+      guard let cellIndexPath = _subgoalsTableView.indexPathForCell(cell) else { return shouldReturn }
+      if _subgoalsTableView.indexPathIsLast(cellIndexPath) {
+         if cell.titleText == "" {
+            shouldReturn = true
+            cell.stopEditing()
          }
          else {
             shouldReturn = false
-            _advanceCellFocusFromIndexPath(cellIndexPath)
+            _createNewSubgoal()
+            _shouldGiveNextCreatedCellFocus = true
          }
+      }
+      else {
+         shouldReturn = false
+         _advanceCellFocusFromIndexPath(cellIndexPath)
       }
       
       return shouldReturn
