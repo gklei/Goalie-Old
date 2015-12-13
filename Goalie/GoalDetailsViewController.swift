@@ -26,6 +26,9 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       }
       return emptySubgoalAtBottom
    }
+   private var _keyboardIsShowing: Bool {
+      return (_currentSubgoalCell != nil) || _titleTextField.isFirstResponder() || _summaryTextField.isFirstResponder()
+   }
    
    @IBOutlet private weak var _monthSelectorContainer: UIView!
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
@@ -112,7 +115,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    
    private func _dismissSelf()
    {
-      dismissKeyboard()
       dismissViewControllerAnimated(true, completion: nil)
    }
    
@@ -176,16 +178,11 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    // MARK: - IBActions
    @IBAction private func doneButtonPressed()
    {
-      if let currentCell = _currentSubgoalCell {
-         currentCell.stopEditing()
-      }
-      else if _titleTextField.isFirstResponder() || _summaryTextField.isFirstResponder() {
-         _titleTextField.resignFirstResponder()
-         _summaryTextField.resignFirstResponder()
+      if _keyboardIsShowing {
+         dismissKeyboard()
       }
       else {
          managedObjectContext.performChanges({() -> () in
-            
             // we don't need to save here because this entire block will save after it's finished
             self._goal.deleteEmptySubgoalsAndSave(false)
             
@@ -201,8 +198,13 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    
    @IBAction private func cancelButtonPressed()
    {
-      managedObjectContext.rollback()
-      _dismissSelf()
+      if _keyboardIsShowing {
+         dismissKeyboard()
+      }
+      else {
+         _goal.delete()
+         _dismissSelf()
+      }
    }
 }
 
@@ -216,8 +218,6 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
    
    func subgoalCellFinishedEditing(cell: SubgoalsTableViewCell)
    {
-      _parentKeyboardAvoidingScrollView.scrollEnabled = true
-      
       if let indexPath = _subgoalsTableView.indexPathForCell(cell),
       let child = _goal.subgoalForIndexPath(indexPath) {
          child.managedObjectContext?.saveOrRollback()
@@ -227,6 +227,7 @@ extension GoalDetailsViewController: SubgoalsTableViewCellDelegate
          _createNewSubgoal()
       }
       _currentSubgoalCell = nil
+      _parentKeyboardAvoidingScrollView.scrollEnabled = true
    }
    
    // These next two methods are so fucking messy.  They produce the exact behavior that Nico wants though...
