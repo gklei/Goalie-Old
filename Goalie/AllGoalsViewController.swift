@@ -26,6 +26,7 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    }
    
    private var _goalPresenter: GoalPresenter<AllGoalsViewController>!
+   private var _emptyTableViewDataSourceDelegate: EmptyTableViewDataSourceDelegate!
    private let _tableViewCellID = "AllGoalsCellIdentifier"
    
    // MARK: - Lifecycle
@@ -35,8 +36,6 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       navigationItem.title = "All Goals"
       automaticallyAdjustsScrollViewInsets = false
       
-      _allGoalsTableView.emptyDataSetSource = self
-      _allGoalsTableView.emptyDataSetDelegate = self
       _goalPresenter = GoalPresenter(presentingController: self)
       setupTableViewDataSourceAndDelegate()
    }
@@ -44,8 +43,16 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
    override func viewWillAppear(animated: Bool)
    {
       super.viewWillAppear(animated)
+      _setupEmptyDataSourceDelegate()
       _allGoalsTableView.reloadData()
       _allGoalsTableView.reloadEmptyDataSet()
+   }
+   
+   private func _setupEmptyDataSourceDelegate()
+   {
+      _emptyTableViewDataSourceDelegate = EmptyTableViewDataSourceDelegate(tableView: _allGoalsTableView, title: "No goals are set.", description: "Set goals to stay on top of your life.", buttonTappedBlock: { () -> Void in
+         self._goalPresenter.createAndPresentNewGoal()
+      })
    }
    
    private func setupTableViewDataSourceAndDelegate()
@@ -96,62 +103,5 @@ extension AllGoalsViewController: TableViewDelegateProtocol
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
       return 86
-   }
-}
-
-extension AllGoalsViewController: DZNEmptyDataSetSource
-{
-   func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = "No Goals are set."
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 18)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-   
-   func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = "Add new goals to keep track of your life!"
-      
-      let para = NSMutableParagraphStyle()
-      para.lineBreakMode = NSLineBreakMode.ByWordWrapping
-      para.alignment = NSTextAlignment.Center
-      
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 14)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 0.6),
-         NSParagraphStyleAttributeName: para
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-   
-   func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-      let text = "Create a Goal"
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeFontName, size: 16)!,
-         NSForegroundColorAttributeName: UIColor.whiteColor()
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-}
-
-extension AllGoalsViewController: DZNEmptyDataSetDelegate
-{
-   func emptyDataSetDidTapButton(scrollView: UIScrollView!)
-   {
-      _goalPresenter.createAndPresentNewGoal()
-   }
-   
-   func emptyDataSetWillDisappear(scrollView: UIScrollView!)
-   {
-      _allGoalsTableView.showSeparatorsForEmptyCells(true)
-   }
-   
-   func emptyDataSetWillAppear(scrollView: UIScrollView!)
-   {
-      _allGoalsTableView.showSeparatorsForEmptyCells(false)
    }
 }

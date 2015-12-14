@@ -27,6 +27,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
    private var _tableViewDelegate: TableViewDelegate<DataProvider, MonthGoalsViewController>!
    
    private var _goalPresenter: GoalPresenter<MonthGoalsViewController>!
+   private var _emptyTableViewDataSourceDelegate: EmptyTableViewDataSourceDelegate!
    private var _month: Month = .Jan
    
    // MARK: - Lifecycle
@@ -35,8 +36,6 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLoad()
       automaticallyAdjustsScrollViewInsets = false
       
-      _monthGoalsTableView.emptyDataSetSource = self
-      _monthGoalsTableView.emptyDataSetDelegate = self
       _goalPresenter = GoalPresenter(presentingController: self)
    }
    
@@ -46,6 +45,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       navigationItem.title = "\(_month.fullName) Goals"
       
       _setupTableView()
+      _setupEmptyDataSourceDelegate()
       _monthGoalsTableView.reloadEmptyDataSet()
    }
    
@@ -55,6 +55,13 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       _dataProvider = _dataProviderForMonth(_month)
       _tableViewDataSource = TableViewDataSource(tableView: _monthGoalsTableView, dataProvider: _dataProvider, delegate: self)
       _tableViewDelegate = TableViewDelegate(tableView: _monthGoalsTableView, dataProvider: _dataProvider, delegate: self)
+   }
+   
+   private func _setupEmptyDataSourceDelegate()
+   {
+      _emptyTableViewDataSourceDelegate = EmptyTableViewDataSourceDelegate(tableView: _monthGoalsTableView, title: "No goals set for \(_month.fullName).", description: "Set goals and their target month.", buttonTappedBlock: { () -> Void in
+         self._goalPresenter.createAndPresentNewGoalWithMonth(self._month)
+      })
    }
    
    private func _dataProviderForMonth(month: Month) -> DataProvider
@@ -109,62 +116,5 @@ extension MonthGoalsViewController: TableViewDelegateProtocol
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
       return 86
-   }
-}
-
-extension MonthGoalsViewController: DZNEmptyDataSetSource
-{
-   func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = "No Goals are set for \(_month.fullName)."
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 18)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-   
-   func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = "Add new goals and set the target month."
-      
-      let para = NSMutableParagraphStyle()
-      para.lineBreakMode = NSLineBreakMode.ByWordWrapping
-      para.alignment = NSTextAlignment.Center
-      
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 14)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 0.6),
-         NSParagraphStyleAttributeName: para
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-   
-   func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-      let text = "Create a Goal"
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeFontName, size: 16)!,
-         NSForegroundColorAttributeName: UIColor.whiteColor()
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-}
-
-extension MonthGoalsViewController: DZNEmptyDataSetDelegate
-{
-   func emptyDataSetDidTapButton(scrollView: UIScrollView!)
-   {
-      _goalPresenter.createAndPresentNewGoalWithMonth(_month)
-   }
-   
-   func emptyDataSetWillDisappear(scrollView: UIScrollView!)
-   {
-      _monthGoalsTableView.showSeparatorsForEmptyCells(true)
-   }
-   
-   func emptyDataSetWillAppear(scrollView: UIScrollView!)
-   {
-      _monthGoalsTableView.showSeparatorsForEmptyCells(false)
    }
 }

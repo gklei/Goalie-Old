@@ -52,6 +52,7 @@
 		F3536E8E1C174443003A114E /* ParentGoalsFetchRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */; };
 		F3536E901C1746B7003A114E /* ParentGoalsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */; };
 		F3536E921C176CC1003A114E /* MonthGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */; };
+		F378A29E1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */; };
 		F386BC3D1C178D410099F39E /* MonthGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */; };
 		F386BC3E1C178D410099F39E /* MonthGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */; };
 		F386BC401C1790D60099F39E /* GoalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3F1C1790D60099F39E /* GoalPresenter.swift */; };
@@ -146,6 +147,7 @@
 		F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsFetchRequestProvider.swift; path = Goalie/ParentGoalsFetchRequestProvider.swift; sourceTree = "<group>"; };
 		F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsDataProvider.swift; path = Goalie/ParentGoalsDataProvider.swift; sourceTree = "<group>"; };
 		F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthGoalsViewController.swift; sourceTree = "<group>"; };
+		F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyTableViewDataSourceDelegate.swift; path = Goalie/EmptyTableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthGoalsTableViewCell.swift; path = Goalie/MonthGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthGoalsTableViewCell.xib; path = Goalie/MonthGoalsTableViewCell.xib; sourceTree = "<group>"; };
 		F386BC3F1C1790D60099F39E /* GoalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalPresenter.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				F31BAAD51C1210B10079C537 /* TableViewDataSource.swift */,
 				F31BAADD1C1224730079C537 /* TableViewDelegate.swift */,
 				F3536E8B1C1652A9003A114E /* CollectionViewDataSource.swift */,
+				F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */,
 			);
 			name = "Generic Data Source & Delegate Files";
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				F3536E7C1C14FC63003A114E /* NSManagedObjectContext+Observers.swift in Sources */,
 				F3C84B811C18987E00E7CD3B /* TomorrowViewController.swift in Sources */,
 				F31BAAD21C12002B0079C537 /* FetchedResultsDataProvider.swift in Sources */,
+				F378A29E1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift in Sources */,
 				F3536E691C13A56A003A114E /* TPKeyboardAvoidingTableView.m in Sources */,
 				F3D461AF1C113C69002F31A6 /* UIImage+Extensions.swift in Sources */,
 				F31BAADE1C1224730079C537 /* TableViewDelegate.swift in Sources */,

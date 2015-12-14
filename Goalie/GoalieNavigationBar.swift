@@ -12,7 +12,7 @@ class GoalieNavigationBar: UINavigationBar
 {
    override func awakeFromNib()
    {
-      hideBottomHairline()
+//      hideBottomHairline()
       tintColor = ThemeTitleTextColor
       titleTextAttributes = Theme.titleTextAttributesForComponent(.NavBar)
       

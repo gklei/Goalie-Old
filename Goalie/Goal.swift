@@ -51,9 +51,9 @@ public final class Goal: ManagedObject
    
    public override func awakeFromInsert() {
       creationDate = NSDate()
+      month = Month(date: creationDate)
       title = ""
       summary = ""
-      month = .Jan
       activeState = .Idle
    }
 }
@@ -84,7 +84,7 @@ extension Goal
       set {
          monthValue = Int16(newValue.rawValue)
          for subgoal in subgoals {
-            subgoal.monthValue = monthValue
+            subgoal.month = newValue
          }
       }
    }
@@ -150,7 +150,7 @@ extension Goal: ManagedObjectType
    
    public func delete()
    {
-      self.managedObjectContext?.performChanges({ () -> () in
+      managedObjectContext?.performChanges({ () -> () in
          self.managedObjectContext?.deleteObject(self)
       })
    }

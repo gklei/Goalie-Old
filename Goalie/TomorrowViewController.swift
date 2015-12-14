@@ -25,6 +25,7 @@ class TomorrowViewController: UIViewController, ManagedObjectContextSettable
    }
    
    private var _goalPresenter: GoalPresenter<TomorrowViewController>!
+   private var _emptyTableViewDataSourceDelegate: EmptyTableViewDataSourceDelegate!
    
    // MARK: - Lifecycle
    override func viewDidLoad()
@@ -32,8 +33,10 @@ class TomorrowViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLoad()
       _setupTableViewDataSourceAndDelegate()
       _goalPresenter = GoalPresenter(presentingController: self)
-      _tableView.emptyDataSetSource = self
-      _tableView.emptyDataSetDelegate = self
+      
+      _emptyTableViewDataSourceDelegate = EmptyTableViewDataSourceDelegate(tableView: _tableView, title: "No sub-goals for tomorrow.", description: "Keep track of sub-goals by adding them to tomorrow.", buttonTappedBlock: { () -> Void in
+         self._goalPresenter.createAndPresentNewGoal()
+      })
    }
    
    override func viewWillAppear(animated: Bool)
@@ -118,62 +121,5 @@ extension TomorrowViewController: TableViewDelegateProtocol
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
       return 60
-   }
-}
-
-extension TomorrowViewController: DZNEmptyDataSetSource
-{
-   func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = "No sub-goals for tomorrow."
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 18)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-   
-   func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = "Keep track of sub-goals by adding them to tomorrow."
-      
-      let para = NSMutableParagraphStyle()
-      para.lineBreakMode = NSLineBreakMode.ByWordWrapping
-      para.alignment = NSTextAlignment.Center
-      
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 14)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 0.6),
-         NSParagraphStyleAttributeName: para
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-   
-   func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-      let text = "Create a Goal"
-      let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeFontName, size: 16)!,
-         NSForegroundColorAttributeName: UIColor.whiteColor()
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
-   }
-}
-
-extension TomorrowViewController: DZNEmptyDataSetDelegate
-{
-   func emptyDataSetDidTapButton(scrollView: UIScrollView!)
-   {
-      _goalPresenter.createAndPresentNewGoal()
-   }
-   
-   func emptyDataSetWillDisappear(scrollView: UIScrollView!)
-   {
-      _tableView.showSeparatorsForEmptyCells(true)
-   }
-   
-   func emptyDataSetWillAppear(scrollView: UIScrollView!)
-   {
-      _tableView.showSeparatorsForEmptyCells(false)
    }
 }

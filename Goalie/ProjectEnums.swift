@@ -8,12 +8,27 @@
 
 import Foundation
 
+extension NSDate {
+   var month: Int {
+      return NSCalendar.currentCalendar().components((.Month), fromDate: self).month
+   }
+}
+
 public enum ActiveState: Int {
    case Today, Tomorrow, Idle
 }
 
 public enum Month: Int {
    case Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
+   
+   init(date: NSDate)
+   {
+      var rawValue = date.month - 1
+      if rawValue < 0 || rawValue >= 12 {
+         rawValue = 0
+      }
+      self.init(rawValue: rawValue)!
+   }
 }
 
 extension Month
