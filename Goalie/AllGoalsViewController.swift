@@ -104,8 +104,8 @@ extension AllGoalsViewController: DZNEmptyDataSetSource
    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
       let text = "No Goals are set."
       let attribs = [
-         NSFontAttributeName: UIFont(name: "Menlo-Bold", size: 18)!,
-         NSForegroundColorAttributeName: UIColor.darkGrayColor()
+         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 18)!,
+         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
       ]
       
       return NSAttributedString(string: text, attributes: attribs)
@@ -119,8 +119,8 @@ extension AllGoalsViewController: DZNEmptyDataSetSource
       para.alignment = NSTextAlignment.Center
       
       let attribs = [
-         NSFontAttributeName: UIFont(name: "Menlo-Regular", size: 12)!,
-         NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 14)!,
+         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 0.6),
          NSParagraphStyleAttributeName: para
       ]
       
@@ -130,8 +130,8 @@ extension AllGoalsViewController: DZNEmptyDataSetSource
    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
       let text = "Create a Goal"
       let attribs = [
-         NSFontAttributeName: UIFont(name: "Menlo-Bold", size: 16)!,
-         NSForegroundColorAttributeName: ThemeTitleTextColor
+         NSFontAttributeName: UIFont(name: ThemeFontName, size: 16)!,
+         NSForegroundColorAttributeName: UIColor.whiteColor()
       ]
       
       return NSAttributedString(string: text, attributes: attribs)

@@ -142,7 +142,7 @@ extension TomorrowViewController: DZNEmptyDataSetSource
       
       let attribs = [
          NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 14)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1),
+         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 0.6),
          NSParagraphStyleAttributeName: para
       ]
       

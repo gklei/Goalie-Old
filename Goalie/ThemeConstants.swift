@@ -30,9 +30,9 @@ let ThemeNavigationFontName = "AvenirNext-Medium"
 //let ThemeFontName = "Menlo-Bold"
 //let ThemeFontName = "Chalkduster"
 
-let ThemeTabBarItemFont = UIFont(name: ThemeFontName, size: ThemeTabBarItemFontSize)!
+let ThemeTabBarItemFont = UIFont(name: ThemeNavigationFontName, size: ThemeTabBarItemFontSize)!
 let ThemeNavigationBarFont = UIFont(name: ThemeNavigationFontName, size: ThemeNavigationBarFontSize)!
-let ThemeNavigationBarButtonItemFont = UIFont(name: ThemeFontName, size: ThemeNavigationBarButtonItemFontSize)!
+let ThemeNavigationBarButtonItemFont = UIFont(name: ThemeNavigationFontName, size: ThemeNavigationBarButtonItemFontSize)!
 let ThemeMonthGridLabelFont = UIFont(name: ThemeFontName, size: ThemeMonthGridFontSize)!
 let ThemeMonthBadgeFont = UIFont(name: ThemeFontName, size: ThemeMonthBadgeFontSize)!
 let ThemeAllGoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeAllGoalsLabelFontSize)!
