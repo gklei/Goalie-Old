@@ -61,10 +61,10 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    {
       let collectionViewLayout = _monthGridCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
       
-      let padding: CGFloat = 6.0
+      let padding: CGFloat = 10.0
       let width: CGFloat = (view.bounds.width / 3.0) - (padding * 2.0)
       
-      collectionViewLayout.minimumInteritemSpacing = 0
+      collectionViewLayout.minimumInteritemSpacing = padding
       collectionViewLayout.itemSize = CGSizeMake(width, width)
       collectionViewLayout.sectionInset = UIEdgeInsets(top: padding * 3, left: padding * 1.5, bottom: padding * 1.5, right: padding * 1.5)
    }

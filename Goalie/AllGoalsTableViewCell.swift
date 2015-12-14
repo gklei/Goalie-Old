@@ -8,26 +8,26 @@
 
 import UIKit
 
-class AllGoalsTableViewCell: UITableViewCell
+class AllGoalsTableViewCell: GoalieTableViewCell
 {
    @IBOutlet private weak var _titleLabel: UILabel! {
       didSet {
          _titleLabel.font = ThemeAllGoalsLabelFont
-         _titleLabel.textColor = ThemeTitleTextColor
+         _titleLabel.textColor = ThemeTabBarColor
       }
    }
    
    @IBOutlet private weak var _monthLabel: UILabel! {
       didSet {
          _monthLabel.font = ThemeSubgoalsLabelFont
-         _monthLabel.textColor = UIColor.lightGrayColor()
+         _monthLabel.textColor = ThemeTabBarColor.colorWithAlphaComponent(0.4)
       }
    }
    
    @IBOutlet private weak var _subgoalCountLabel: UILabel! {
       didSet {
          _subgoalCountLabel.font = ThemeSubgoalsLabelFont
-         _subgoalCountLabel.textColor = UIColor.grayColor()
+         _subgoalCountLabel.textColor = ThemeTabBarColor.colorWithAlphaComponent(0.6)
       }
    }
    

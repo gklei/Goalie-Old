@@ -20,8 +20,10 @@ class GoalieNavigationBar: UINavigationBar
       leftBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
       rightBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
       
-      let backgroundImage = UIImage.imageWithColor(UIColor.whiteColor())
-      setBackgroundImage(backgroundImage, forBarMetrics: UIBarMetrics.Default)
+//      let backgroundImage = UIImage.imageWithColor(UIColor.whiteColor())
+//      setBackgroundImage(backgroundImage, forBarMetrics: UIBarMetrics.Default)
+      
+      makeTransparent()
    }
    
    func updateTitleFontSize(size: CGFloat)

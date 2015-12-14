@@ -32,13 +32,15 @@ extension UITableView
             }) { (finished: Bool) -> Void in
                
                if let subgoalCell = self.cellForRowAtIndexPath(indexPath) {
+                  
+                  let originalBackgroundColor = subgoalCell.backgroundColor
                   UIView.animateWithDuration(duration * 0.5, animations: { () -> Void in
-                     subgoalCell.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.16)
+                     subgoalCell.backgroundColor = ThemeTabBarColor
                      
                      }) { (finished: Bool) -> Void in
                         
                         UIView.animateWithDuration(duration * 0.5, animations: { () -> Void in
-                           subgoalCell.backgroundColor = UIColor.whiteColor()
+                           subgoalCell.backgroundColor = originalBackgroundColor
                         })
                   }
                }

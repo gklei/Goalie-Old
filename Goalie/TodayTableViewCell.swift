@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodayTableViewCell: UITableViewCell
+class TodayTableViewCell: GoalieTableViewCell
 {
    @IBOutlet weak private var _titleLabel: UILabel! {
       didSet {
@@ -19,7 +19,7 @@ class TodayTableViewCell: UITableViewCell
    @IBOutlet weak private var _monthLabel: UILabel! {
       didSet {
          _monthLabel.font = ThemeSubgoalsLabelFont
-         _monthLabel.textColor = UIColor.lightGrayColor()
+         _monthLabel.textColor = ThemeTabBarColor
       }
    }
    
@@ -43,7 +43,7 @@ extension TodayTableViewCell: ConfigurableCell
       
       var titleAttributes: [String : AnyObject] = [NSFontAttributeName : ThemeAllGoalsLabelFont]
       if object.completed == true {
-         titleAttributes[NSStrikethroughStyleAttributeName] = 2
+         titleAttributes[NSStrikethroughStyleAttributeName] = 1
       }
       
       let attributedTitleText = NSAttributedString(string: object.title, attributes: titleAttributes)

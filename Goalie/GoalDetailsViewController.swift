@@ -32,8 +32,16 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    
    @IBOutlet private weak var _monthSelectorContainer: UIView!
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
-   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! { didSet { _titleTextField.textColor = ThemeTitleTextColor }}
-   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! { didSet { _summaryTextField.textColor = ThemeTitleTextColor }}
+   @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! { didSet {
+      _titleTextField.textColor = UIColor.whiteColor()
+      _titleTextField.attributedPlaceholder = NSAttributedString(string: "Title", attributes: [NSForegroundColorAttributeName : ThemeTabBarColor.colorWithAlphaComponent(0.8)])
+      }
+   }
+   @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! { didSet {
+      _summaryTextField.textColor = UIColor.whiteColor()
+      _summaryTextField.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSForegroundColorAttributeName : ThemeTabBarColor.colorWithAlphaComponent(0.8)])
+      }
+   }
    @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! { didSet { _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem }}
    @IBOutlet private weak var _subgoalsNavigationBar: GoalieNavigationBar! { didSet {
          let tapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -63,7 +71,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewDidLoad()
       _subgoalsNavigationBar.updateTitleFontSize(18)
-      _monthSelectorContainer.backgroundColor = ThemeTitleTextColor
+      _monthSelectorContainer.backgroundColor = ThemeTabBarColor
       _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
    }
    

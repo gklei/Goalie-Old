@@ -28,8 +28,8 @@ class MonthSelectorMonthView: UIView
       }
    }
    
-   var selectedBackgroundColor = ThemeSelectedStateTextColor
-   var unselectedBackgroundColor = UIColor.whiteColor()
+   var selectedBackgroundColor = ThemeTitleTextColor
+   var unselectedBackgroundColor = ThemeNormalStateTextColor
    
    private var _monthLabel: UILabel
    
@@ -43,6 +43,7 @@ class MonthSelectorMonthView: UIView
       self.month = month
       self.selected = false
       _monthLabel = UILabel(month: month)
+      _monthLabel.textColor = ThemeTabBarColor
       
       super.init(frame:CGRect.zero)
       addSubview(_monthLabel)

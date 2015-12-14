@@ -22,22 +22,23 @@ let ThemeSubgoalsLabelFontSize: CGFloat = 12
 //let ThemeFontName = "Noteworthy-Bold"
 //let ThemeFontName = "Thonburi-Bold"
 //let ThemeFontName = "Thonburi"
-//let ThemeFontName = "AvenirNext-DemiBold"
+let ThemeFontName = "AvenirNext-Bold"
+let ThemeNavigationFontName = "AvenirNext-Medium"
 //let ThemeFontName = "AvenirNextCondensed-Heavy"
 //let ThemeFontName = "BradleyHandITCTT-Bold"
 //let ThemeFontName = "Courier-Bold"
-let ThemeFontName = "Menlo-Bold"
+//let ThemeFontName = "Menlo-Bold"
 //let ThemeFontName = "Chalkduster"
 
 let ThemeTabBarItemFont = UIFont(name: ThemeFontName, size: ThemeTabBarItemFontSize)!
-let ThemeNavigationBarFont = UIFont(name: ThemeFontName, size: ThemeNavigationBarFontSize)!
+let ThemeNavigationBarFont = UIFont(name: ThemeNavigationFontName, size: ThemeNavigationBarFontSize)!
 let ThemeNavigationBarButtonItemFont = UIFont(name: ThemeFontName, size: ThemeNavigationBarButtonItemFontSize)!
 let ThemeMonthGridLabelFont = UIFont(name: ThemeFontName, size: ThemeMonthGridFontSize)!
 let ThemeMonthBadgeFont = UIFont(name: ThemeFontName, size: ThemeMonthBadgeFontSize)!
 let ThemeAllGoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeAllGoalsLabelFontSize)!
 let ThemeSubgoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeSubgoalsLabelFontSize)!
 
-let ThemeNormalStateTextColor = UIColor.whiteColor()
+let ThemeNormalStateTextColor = UIColor(red: 46/255.0, green: 49/255.0, blue: 79/255.0, alpha: 1)
 
 //let ThemeSelectedStateTextColor = UIColor(red: 0, green: 1, blue: 0.9, alpha: 1)
 //let ThemeSelectedStateTextColor = UIColor(red: 1, green: 0.5, blue: 0.1, alpha: 1)
@@ -48,7 +49,8 @@ let ThemeNormalStateTextColor = UIColor.whiteColor()
 let ThemeSelectedStateTextColor = UIColor.cyanColor()
 //let ThemeSelectedStateTextColor = UIColor.redColor()
 
-let ThemeTitleTextColor = UIColor(white: 0.09, alpha: 1)
+let ThemeTitleTextColor = UIColor(red: 115/255.0, green: 222/255.0, blue: 236/255.0, alpha: 1)
+let ThemeTabBarColor = UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
 
 enum ThemeUIComponent {
    case TabBar, NavBar, NavBarButtonItem

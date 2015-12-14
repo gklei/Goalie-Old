@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
       _removeInitialKeyboardLag()
       window?.makeKeyAndVisible()
       
+      let selectionView = UIView()
+      selectionView.backgroundColor = ThemeTabBarColor
+      UITableViewCell.appearance().selectedBackgroundView = selectionView
+      
       return true
    }
    

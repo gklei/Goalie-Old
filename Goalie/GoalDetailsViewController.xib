@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -25,7 +25,6 @@
             <subviews>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97a-LG-zcC" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                    <animations/>
                     <items>
                         <navigationItem title="Create Goal" id="2fw-hC-wAB">
                             <barButtonItem key="leftBarButtonItem" title="Cancel" id="HOp-xh-4Y1">
@@ -49,7 +48,6 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6m-hp-RPI">
                                     <rect key="frame" x="0.0" y="8" width="320" height="114.5"/>
-                                    <animations/>
                                     <color key="backgroundColor" red="1" green="0.86551997398928004" blue="0.71199611460499601" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="H6m-hp-RPI" secondAttribute="height" multiplier="2.8:1" id="0q8-HF-cVv"/>
@@ -57,52 +55,54 @@
                                 </view>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
                                     <rect key="frame" x="20" y="192.5" width="280" height="40"/>
-                                    <animations/>
-                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="tintColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Umi-Sr-7Aw"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
                                             <real key="value" value="0.0"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
-                                            <color key="value" red="0.31129641006972958" green="0.31735321969696972" blue="0.31086358320881119" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
+                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-Oe-CkO" customClass="JVFloatLabeledTextField">
                                     <rect key="frame" x="20" y="138.5" width="280" height="40"/>
-                                    <animations/>
-                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="tintColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="BjQ-X3-wEi"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
-                                            <color key="value" red="0.31129641006972958" green="0.31735321969696972" blue="0.31086358320881119" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
+                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="0.5" colorSpace="calibratedRGB"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
                                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-AX-iG6" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="232.5" width="320" height="44"/>
-                                    <animations/>
                                     <items>
                                         <navigationItem title="Sub-goals" id="6Dc-RG-Lqc"/>
                                     </items>
                                 </navigationBar>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aON-Mw-vjP">
                                     <rect key="frame" x="0.0" y="276.5" width="320" height="227.5"/>
-                                    <animations/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="separatorColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableView>
                             </subviews>
-                            <animations/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="mQb-Oe-CkO" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" constant="20" id="1po-Qb-CxF"/>
                                 <constraint firstItem="5Bw-KF-wS2" firstAttribute="top" secondItem="mQb-Oe-CkO" secondAttribute="bottom" constant="14" id="33T-YG-u47"/>
@@ -123,7 +123,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <animations/>
                     <constraints>
                         <constraint firstItem="gqh-2V-VYI" firstAttribute="width" secondItem="nwM-hr-82s" secondAttribute="width" id="FTd-qx-lsQ"/>
                         <constraint firstItem="gqh-2V-VYI" firstAttribute="top" secondItem="nwM-hr-82s" secondAttribute="top" id="FYA-so-lUt"/>
@@ -134,8 +133,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
-            <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="nwM-hr-82s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3U1-Yp-Fuz"/>
                 <constraint firstItem="97a-LG-zcC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8G6-jk-Kxe"/>
