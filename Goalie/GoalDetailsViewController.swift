@@ -210,8 +210,9 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
          dismissKeyboard()
       }
       else {
-         _goal.delete()
-         _dismissSelf()
+         _goal.deleteWithCompletion {
+            self._dismissSelf()
+         }
       }
    }
 }

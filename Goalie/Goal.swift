@@ -154,4 +154,12 @@ extension Goal: ManagedObjectType
          self.managedObjectContext?.deleteObject(self)
       })
    }
+   
+   public func deleteWithCompletion(completion: (() -> Void)?)
+   {
+      managedObjectContext?.performChanges({ () -> () in
+         self.managedObjectContext?.deleteObject(self)
+         completion?()
+      })
+   }
 }
