@@ -29,14 +29,6 @@ class MonthCollectionViewCell: UICollectionViewCell
    
    var gradientLayer = CAGradientLayer()
    
-//   override var selected: Bool {
-//      didSet {
-//         let selectedColor = selected ? UIColor.whiteColor() : ThemeTabBarColor
-//         layer.borderColor = selectedColor.CGColor
-//         _goalBadgeLabel.backgroundColor = selectedColor
-//      }
-//   }
-   
    override var highlighted: Bool {
       didSet {
          let highlightedColor = highlighted ? UIColor.whiteColor() : ThemeTabBarColor

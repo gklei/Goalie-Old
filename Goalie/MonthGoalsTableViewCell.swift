@@ -13,7 +13,7 @@ class MonthGoalsTableViewCell: GoalieTableViewCell
    @IBOutlet private weak var _titleLabel: UILabel! {
       didSet {
          _titleLabel.font = ThemeAllGoalsLabelFont
-         _titleLabel.textColor = ThemeTabBarColor
+         _titleLabel.textColor = ThemeSelectedStateTextColor
       }
    }
    

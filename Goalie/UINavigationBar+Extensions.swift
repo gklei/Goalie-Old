@@ -35,6 +35,7 @@ extension UINavigationBar
    {
       let navigationBarImageView = hairlineImageViewInNavigationBar(self)
       navigationBarImageView!.hidden = false
+      navigationBarImageView!.backgroundColor = UIColor.redColor()
    }
    
    private func hairlineImageViewInNavigationBar(view: UIView) -> UIImageView?
@@ -43,7 +44,7 @@ extension UINavigationBar
          return (view as! UIImageView)
       }
       
-      let subviews = (view.subviews )
+      let subviews = (view.subviews)
       for subview: UIView in subviews {
          if let imageView: UIImageView = hairlineImageViewInNavigationBar(subview) {
             return imageView
