@@ -35,7 +35,6 @@ extension UINavigationBar
    {
       let navigationBarImageView = hairlineImageViewInNavigationBar(self)
       navigationBarImageView!.hidden = false
-      navigationBarImageView!.backgroundColor = UIColor.redColor()
    }
    
    private func hairlineImageViewInNavigationBar(view: UIView) -> UIImageView?
