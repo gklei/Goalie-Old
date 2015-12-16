@@ -42,6 +42,7 @@ struct MonthGoalsTableCellVM
          let completed = _goal?.completedSubgoals.count ?? 0
          let total = _goal?.subgoals.count ?? 0
          title = "\(completed)/\(total) sub-goals completed"
+         title = (_goal!.title == "") ? "" : title
       }
       return title
    }
