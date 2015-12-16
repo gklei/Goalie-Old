@@ -44,4 +44,14 @@ extension UIColor
    {
       return UIColor(r: 46, g: 49, b: 79)
    }
+   
+   static func darkCellAlternateColor() -> UIColor
+   {
+      return UIColor(r: 45, g: 49, b: 78)
+   }
+   
+   static func lightCellAlternateColor() -> UIColor
+   {
+      return UIColor(r: 55, g: 57, b: 86)
+   }
 }
