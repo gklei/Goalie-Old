@@ -15,6 +15,7 @@ class GoalieTableViewCell: UITableViewCell {
       super.awakeFromNib()
       // Initialization code
       
-      backgroundColor = ThemeNormalStateTextColor
+//      backgroundColor = ThemeNormalStateTextColor
+      backgroundColor = UIColor.clearColor()
    }
 }

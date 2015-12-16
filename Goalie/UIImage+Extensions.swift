@@ -24,6 +24,24 @@ extension UIImage
       return image
    }
    
+   class func sampleAlternatingColorImageWithSize(size: CGSize) -> UIImage
+   {
+      UIGraphicsBeginImageContextWithOptions(size, false, 0)
+      
+      UIColor(red: 45/255.0, green: 49/255.0, blue: 78/255.0, alpha: 1).setFill()
+      let topHalf = CGRect(x: 0, y: size.height * 0.5, width: size.width, height: size.height * 0.5)
+      UIRectFill(topHalf)
+      
+      UIColor(red: 55/255.0, green: 57/255.0, blue: 86/255.0, alpha: 1).setFill()
+      let bottomHalf = CGRect(x: 0, y: 0, width: size.width, height: size.height * 0.5)
+      UIRectFill(bottomHalf)
+      
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+      
+      return image
+   }
+   
    // Meant for tiling
    class func imageWithColor(color: UIColor) -> UIImage
    {
