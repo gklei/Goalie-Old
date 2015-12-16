@@ -14,22 +14,25 @@ class GoalieTabBarController: UITabBarController
    {
       super.viewDidLoad()
       
-      let tabBarColor = UIColor(red: 39/255.0, green: 44/255.0, blue: 67/255.0, alpha: 1)
-      tabBar.backgroundImage = UIImage.imageWithColor(tabBarColor)
+      tabBar.backgroundImage = UIImage.imageWithColor(UIColor.mainTabBarColor())
       tabBar.shadowImage = UIImage.imageWithColor(UIColor.clearColor())
       tabBar.tintColor = UIColor.lightBlueTextColor()
 
       if let tabBarItems = tabBar.items
       {
-         var normalAttrs = ThemeConstants.titleTextAttributesForComponent(.TabBar, controlState: .Normal)
-         normalAttrs[NSForegroundColorAttributeName] = UIColor.lightPurpleTextColor()
-         
-         let selectedAttrs = ThemeConstants.titleTextAttributesForComponent(.TabBar, controlState: .Selected)
+         let normalAttributes = [
+            NSFontAttributeName : UIFont.mediumGoalieFontWithSize(14),
+            NSForegroundColorAttributeName : UIColor.lightPurpleTextColor()
+         ]
+         let selectedAttributes = [
+            NSFontAttributeName : UIFont.mediumGoalieFontWithSize(14),
+            NSForegroundColorAttributeName : UIColor.lightBlueTextColor()
+         ]
          
          for item in tabBarItems
          {
-            item.setTitleTextAttributes(normalAttrs, forState: .Normal)
-            item.setTitleTextAttributes(selectedAttrs, forState: .Selected)
+            item.setTitleTextAttributes(normalAttributes, forState: .Normal)
+            item.setTitleTextAttributes(selectedAttributes, forState: .Selected)
             item.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -15)
          }
       }

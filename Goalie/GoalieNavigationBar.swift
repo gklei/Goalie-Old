@@ -13,26 +13,27 @@ class GoalieNavigationBar: UINavigationBar
    override func awakeFromNib()
    {
       hideBottomHairline()
-      tintColor = UIColor.lightBlueTextColor()
-      titleTextAttributes = ThemeConstants.titleTextAttributesForComponent(.NavBar)
+      tintColor = UIColor.whiteColor()
       
-      let barButtonItemAttrs = ThemeConstants.titleTextAttributesForComponent(.NavBarButtonItem)
+      titleTextAttributes = [
+         NSFontAttributeName : UIFont.mediumGoalieFontWithSize(16),
+         NSForegroundColorAttributeName : UIColor.lightBlueTextColor()
+      ]
+      
+      let barButtonItemAttrs = [
+         NSFontAttributeName : UIFont.mediumGoalieFontWithSize(16),
+         NSForegroundColorAttributeName : UIColor.lightBlueTextColor()
+      ]
       leftBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
       rightBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
 
-      let backgroundColor = UIColor.mainNavBarColor()
-      let backgroundImage = UIImage.imageWithColor(backgroundColor)
+      let backgroundImage = UIImage.imageWithColor(UIColor.mainNavBarColor())
       setBackgroundImage(backgroundImage, forBarMetrics: UIBarMetrics.Default)
    }
    
    func updateTitleFontSize(size: CGFloat)
    {
-      titleTextAttributes = ThemeConstants.titleTextAttributesForComponent(.NavBar)
-      if let font = titleTextAttributes?[NSFontAttributeName] as? UIFont
-      {
-         let newFont = UIFont(name: font.fontName, size: size)!
-         titleTextAttributes?[NSFontAttributeName] = newFont
-      }
+      titleTextAttributes?[NSFontAttributeName] = UIFont.mediumGoalieFontWithSize(size)
    }
    
    func updateTitleFont(font: UIFont)

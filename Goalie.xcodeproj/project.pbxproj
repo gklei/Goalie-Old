@@ -74,7 +74,6 @@
 		F3D461B11C1144A1002F31A6 /* GoalieNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461B01C1144A1002F31A6 /* GoalieNavigationBar.swift */; };
 		F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */; };
 		F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */; };
-		F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */; };
 		F3EB860F1C21CB7C00AAFCF7 /* AllGoalsTableCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB860E1C21CB7C00AAFCF7 /* AllGoalsTableCellVM.swift */; };
 		F3EB86121C21CE5200AAFCF7 /* MonthGoalsTableCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EB86111C21CE5200AAFCF7 /* MonthGoalsTableCellVM.swift */; };
 		F3F22DB41C21BEE300223956 /* TodayTomorrowTableCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F22DB31C21BEE300223956 /* TodayTomorrowTableCellVM.swift */; };
@@ -179,7 +178,6 @@
 		F3D461B01C1144A1002F31A6 /* GoalieNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalieNavigationBar.swift; path = Goalie/GoalieNavigationBar.swift; sourceTree = "<group>"; };
 		F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthCollectionViewCell.swift; path = Goalie/MonthCollectionViewCell.swift; sourceTree = "<group>"; };
 		F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthCollectionViewCell.xib; path = Goalie/MonthCollectionViewCell.xib; sourceTree = "<group>"; };
-		F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeConstants.swift; path = Goalie/ThemeConstants.swift; sourceTree = "<group>"; };
 		F3EB860E1C21CB7C00AAFCF7 /* AllGoalsTableCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllGoalsTableCellVM.swift; path = Goalie/AllGoalsTableCellVM.swift; sourceTree = "<group>"; };
 		F3EB86111C21CE5200AAFCF7 /* MonthGoalsTableCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthGoalsTableCellVM.swift; path = Goalie/MonthGoalsTableCellVM.swift; sourceTree = "<group>"; };
 		F3F22DB31C21BEE300223956 /* TodayTomorrowTableCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayTomorrowTableCellVM.swift; path = Goalie/TodayTomorrowTableCellVM.swift; sourceTree = "<group>"; };
@@ -393,7 +391,6 @@
 		F3D461BA1C116A9E002F31A6 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */,
 				F3601C9A1C21D043000B1687 /* ThemeColorProvider.swift */,
 			);
 			name = Theme;
@@ -569,7 +566,6 @@
 				F3536E671C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				F31BAAD91C1213D40079C537 /* AllGoalsTableViewCell.swift in Sources */,
 				F3601C9B1C21D043000B1687 /* ThemeColorProvider.swift in Sources */,
-				F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */,
 				F386BC401C1790D60099F39E /* GoalPresenter.swift in Sources */,
 				F31BAAD61C1210B10079C537 /* TableViewDataSource.swift in Sources */,
 				F32C94CB1C1A1BB600103212 /* UIStoryboard+Extensions.swift in Sources */,

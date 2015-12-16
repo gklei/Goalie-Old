@@ -21,7 +21,7 @@ class SubgoalsTableViewCell: GoalieTableViewCell
    @IBOutlet weak private var _labelTextField: UITextField! {
       didSet {
          _labelTextField.delegate = self
-         _labelTextField.font = ThemeSubgoalsLabelFont
+         _labelTextField.font = UIFont.boldGoalieFontWithSize(12)
          _labelTextField.textColor = UIColor.whiteColor()
          
          _labelTextField.attributedPlaceholder = NSAttributedString(string: "Add a sub-goal", attributes: [NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8)])
@@ -156,7 +156,10 @@ extension SubgoalsTableViewCell: ConfigurableCell
       _labelTextField.text = goal.title
       
       let strikeThroughValue = goal.completed == true ? 1 : 0
-      let titleAttributes = [NSFontAttributeName : ThemeSubgoalsLabelFont, NSStrikethroughStyleAttributeName : strikeThroughValue]
+      let titleAttributes = [
+         NSFontAttributeName : UIFont.boldGoalieFontWithSize(12),
+         NSStrikethroughStyleAttributeName : strikeThroughValue
+      ]
       
       _labelTextField.attributedText = NSAttributedString(string: goal.title, attributes: titleAttributes)
       _updateButtonsForState(_goal.activeState)
