@@ -38,7 +38,8 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
       _navBar.updateTitleColor(UIColor.lightPurpleTextColor())
       
       let backgroundColor = UIColor(red: 59/255.0, green: 63/255.0, blue: 90/255.0, alpha: 1)
-      _navBar.updateBackgroundColor(backgroundColor)
+      _navBar.updateBackgroundColor(UIColor.clearColor())
+      view.backgroundColor = backgroundColor
       _tableView.backgroundColor = backgroundColor
       let navBarFont = UIFont(name: "AvenirNext-Bold", size: 14)!
       _navBar.updateTitleFont(navBarFont)
