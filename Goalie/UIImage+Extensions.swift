@@ -66,6 +66,52 @@ extension UIImage
       return image
    }
    
+   class func patternImageForFrames(frames: [CGRect], width: CGFloat, firstColor: UIColor, secondColor: UIColor, extraRows: Int, defaultHeight: CGFloat) -> UIImage
+   {
+      var imageHeight: CGFloat = 0
+      var extraRowHeight = defaultHeight
+      for frame in frames {
+         imageHeight += frame.height
+         extraRowHeight = frame == frames.last ? frame.height : extraRowHeight
+      }
+      
+      imageHeight += (CGFloat(extraRows) * extraRowHeight)
+      
+      let size = CGSize(width: width, height: imageHeight + 500)
+      UIGraphicsBeginImageContextWithOptions(size, false, 0)
+      
+      var yPosition: CGFloat = 0
+      var useFirstColor = true
+      for frame in frames {
+         let fillColor = (useFirstColor == true) ? firstColor : secondColor
+         fillColor.set()
+         useFirstColor = !useFirstColor
+         
+         let rect = CGRect(x: 0, y: yPosition, width: width, height: frame.height)
+         UIRectFill(rect)
+         yPosition += frame.height
+      }
+      
+      for _ in 0..<extraRows {
+         let fillColor = (useFirstColor == true) ? firstColor : secondColor
+         fillColor.set()
+         useFirstColor = !useFirstColor
+         
+         let rect = CGRect(x: 0, y: yPosition, width: width, height: extraRowHeight)
+         UIRectFill(rect)
+         yPosition += extraRowHeight
+      }
+      
+      firstColor.set()
+      let paddingRect = CGRect(x: 0, y: yPosition, width: width, height: 500)
+      UIRectFill(paddingRect)
+      
+      let image = UIGraphicsGetImageFromCurrentImageContext()
+      UIGraphicsEndImageContext()
+      
+      return image
+   }
+   
    // Meant for tiling
    class func imageWithColor(color: UIColor) -> UIImage
    {
