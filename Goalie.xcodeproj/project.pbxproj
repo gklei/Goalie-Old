@@ -54,6 +54,7 @@
 		F3536E921C176CC1003A114E /* MonthGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */; };
 		F3601C9B1C21D043000B1687 /* ThemeColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3601C9A1C21D043000B1687 /* ThemeColorProvider.swift */; };
 		F3601C9D1C21D210000B1687 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3601C9C1C21D210000B1687 /* UIColor+Extensions.swift */; };
+		F3601CA11C21DCD4000B1687 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3601CA01C21DCD4000B1687 /* UIFont+Extensions.swift */; };
 		F378A29E1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */; };
 		F386BC3D1C178D410099F39E /* MonthGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */; };
 		F386BC3E1C178D410099F39E /* MonthGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */; };
@@ -154,6 +155,7 @@
 		F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthGoalsViewController.swift; sourceTree = "<group>"; };
 		F3601C9A1C21D043000B1687 /* ThemeColorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeColorProvider.swift; path = Goalie/ThemeColorProvider.swift; sourceTree = "<group>"; };
 		F3601C9C1C21D210000B1687 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Goalie/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F3601CA01C21DCD4000B1687 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIFont+Extensions.swift"; path = "Goalie/UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyTableViewDataSourceDelegate.swift; path = Goalie/EmptyTableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthGoalsTableViewCell.swift; path = Goalie/MonthGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthGoalsTableViewCell.xib; path = Goalie/MonthGoalsTableViewCell.xib; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				F32C94021C1A061500103212 /* UITableView+Extensions.swift */,
 				F32C94CA1C1A1BB600103212 /* UIStoryboard+Extensions.swift */,
 				F3601C9C1C21D210000B1687 /* UIColor+Extensions.swift */,
+				F3601CA01C21DCD4000B1687 /* UIFont+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				F3D461AA1C113698002F31A6 /* TodayTomorrowViewController.swift in Sources */,
 				F3536E741C13BCA2003A114E /* SubgoalsTableViewCell.swift in Sources */,
 				F3493B9F1C18A4F2000A69C0 /* TomorrowTableViewCell.swift in Sources */,
+				F3601CA11C21DCD4000B1687 /* UIFont+Extensions.swift in Sources */,
 				F3536E851C1619F5003A114E /* MonthSelectorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

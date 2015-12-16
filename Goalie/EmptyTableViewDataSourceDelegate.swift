@@ -35,8 +35,8 @@ extension EmptyTableViewDataSourceDelegate: DZNEmptyDataSetSource
    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
       let text = _title
       let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 18)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
+         NSFontAttributeName: UIFont.mediumGoalieFontWithSize(18),
+         NSForegroundColorAttributeName: UIColor.lightPurpleTextColor()
       ]
       
       return NSAttributedString(string: text, attributes: attribs)
@@ -50,8 +50,8 @@ extension EmptyTableViewDataSourceDelegate: DZNEmptyDataSetSource
       para.alignment = NSTextAlignment.Center
       
       let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeNavigationFontName, size: 14)!,
-         NSForegroundColorAttributeName: UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 0.6),
+         NSFontAttributeName: UIFont.mediumGoalieFontWithSize(14),
+         NSForegroundColorAttributeName: UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.6),
          NSParagraphStyleAttributeName: para
       ]
       
@@ -61,7 +61,7 @@ extension EmptyTableViewDataSourceDelegate: DZNEmptyDataSetSource
    func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
       let text = "Create a Goal"
       let attribs = [
-         NSFontAttributeName: UIFont(name: ThemeFontName, size: 16)!,
+         NSFontAttributeName: UIFont.boldGoalieFontWithSize(16),
          NSForegroundColorAttributeName: state == .Normal ? UIColor.whiteColor() : UIColor.whiteColor().colorWithAlphaComponent(0.6)
       ]
       

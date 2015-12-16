@@ -8,24 +8,10 @@
 
 import UIKit
 
-let ThemeNavigationBarFontSize: CGFloat = 20.0
-let ThemeTabBarItemFontSize: CGFloat = 16
-let ThemeNavigationBarButtonItemFontSize: CGFloat = 18
-let ThemeMonthGridFontSize: CGFloat = 32
-let ThemeMonthBadgeFontSize: CGFloat = 20
-let ThemeAllGoalsLabelFontSize: CGFloat = 14
-let ThemeSubgoalsLabelFontSize: CGFloat = 12
-
-let ThemeFontName = "AvenirNext-Bold"
-let ThemeNavigationFontName = "AvenirNext-Medium"
-
-let ThemeTabBarItemFont = UIFont(name: ThemeNavigationFontName, size: ThemeTabBarItemFontSize)!
-let ThemeNavigationBarFont = UIFont(name: ThemeNavigationFontName, size: ThemeNavigationBarFontSize)!
-let ThemeNavigationBarButtonItemFont = UIFont(name: ThemeNavigationFontName, size: ThemeNavigationBarButtonItemFontSize)!
-let ThemeMonthGridLabelFont = UIFont(name: ThemeFontName, size: ThemeMonthGridFontSize)!
-let ThemeMonthBadgeFont = UIFont(name: ThemeFontName, size: ThemeMonthBadgeFontSize)!
-let ThemeAllGoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeAllGoalsLabelFontSize)!
-let ThemeSubgoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeSubgoalsLabelFontSize)!
+let ThemeTabBarItemFont = UIFont.mediumGoalieFontWithSize(16)
+let ThemeNavigationBarFont = UIFont.mediumGoalieFontWithSize(18)
+let ThemeNavigationBarButtonItemFont = UIFont.mediumGoalieFontWithSize(18)
+let ThemeSubgoalsLabelFont = UIFont.boldGoalieFontWithSize(12)
 
 enum ThemeUIComponent {
    case TabBar, NavBar, NavBarButtonItem

@@ -14,7 +14,7 @@ extension UILabel
    {
       self.init(frame: CGRect.zero)
       self.text = month.text
-      self.font = ThemeAllGoalsLabelFont
+      self.font = UIFont(name: "AvenirNext-Bold", size: 12)!
       self.sizeToFit()
    }
 }

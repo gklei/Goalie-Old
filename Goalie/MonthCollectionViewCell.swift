@@ -12,7 +12,7 @@ class MonthCollectionViewCell: UICollectionViewCell
 {
    @IBOutlet weak private var _titleLabel: UILabel! {
       didSet {
-         _titleLabel.font = ThemeMonthGridLabelFont
+         _titleLabel.font = UIFont(name: "AvenirNext-Bold", size: 32)!
          _titleLabel.textColor = UIColor.lightBlueTextColor()
       }
    }
@@ -20,7 +20,7 @@ class MonthCollectionViewCell: UICollectionViewCell
       didSet {
          _goalBadgeLabel.textColor = UIColor.whiteColor()
          _goalBadgeLabel.layer.masksToBounds = true
-         _goalBadgeLabel.font = ThemeMonthBadgeFont
+         _goalBadgeLabel.font = UIFont(name: "AvenirNext-Bold", size: 20)!
          _goalBadgeLabel.backgroundColor = UIColor.lightPurpleTextColor()
          _goalBadgeLabel.layer.cornerRadius = 3
       }
