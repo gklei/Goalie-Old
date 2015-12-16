@@ -59,8 +59,8 @@ class MonthSelectorViewController: UIViewController
       {
          let month = Month(rawValue: monthValue)!
          let monthView = MonthSelectorMonthView(month: month)
-         monthView.backgroundColor = ThemeNormalStateTextColor
-         monthView.layer.borderColor = ThemeTabBarColor.CGColor
+         monthView.backgroundColor = UIColor.mainBackgroundColor()
+         monthView.layer.borderColor = UIColor.lightPurpleTextColor().CGColor
          monthView.layer.borderWidth = paddingBetweenMonths * 0.5
          
          _monthViews.append(monthView)

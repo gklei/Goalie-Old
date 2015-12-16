@@ -16,19 +16,8 @@ let ThemeMonthBadgeFontSize: CGFloat = 20
 let ThemeAllGoalsLabelFontSize: CGFloat = 14
 let ThemeSubgoalsLabelFontSize: CGFloat = 12
 
-//let ThemeFontName = "MarkerFelt-Wide"
-//let ThemeFontName = "ChalkboardSE-Bold"
-//let ThemeFontName = "Optima-ExtraBlack"
-//let ThemeFontName = "Noteworthy-Bold"
-//let ThemeFontName = "Thonburi-Bold"
-//let ThemeFontName = "Thonburi"
 let ThemeFontName = "AvenirNext-Bold"
 let ThemeNavigationFontName = "AvenirNext-Medium"
-//let ThemeFontName = "AvenirNextCondensed-Heavy"
-//let ThemeFontName = "BradleyHandITCTT-Bold"
-//let ThemeFontName = "Courier-Bold"
-//let ThemeFontName = "Menlo-Bold"
-//let ThemeFontName = "Chalkduster"
 
 let ThemeTabBarItemFont = UIFont(name: ThemeNavigationFontName, size: ThemeTabBarItemFontSize)!
 let ThemeNavigationBarFont = UIFont(name: ThemeNavigationFontName, size: ThemeNavigationBarFontSize)!
@@ -38,25 +27,11 @@ let ThemeMonthBadgeFont = UIFont(name: ThemeFontName, size: ThemeMonthBadgeFontS
 let ThemeAllGoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeAllGoalsLabelFontSize)!
 let ThemeSubgoalsLabelFont = UIFont(name: ThemeFontName, size: ThemeSubgoalsLabelFontSize)!
 
-let ThemeNormalStateTextColor = UIColor(red: 46/255.0, green: 49/255.0, blue: 79/255.0, alpha: 1)
-
-//let ThemeSelectedStateTextColor = UIColor(red: 0, green: 1, blue: 0.9, alpha: 1)
-//let ThemeSelectedStateTextColor = UIColor(red: 1, green: 0.5, blue: 0.1, alpha: 1)
-//let ThemeSelectedStateTextColor = UIColor(red: 0, green: 0.9, blue: 1, alpha: 1)
-//let ThemeSelectedStateTextColor = UIColor(red: 0.5, green: 1, blue: 0.2, alpha: 1)
-//let ThemeSelectedStateTextColor = UIColor.magentaColor()
-//let ThemeSelectedStateTextColor = UIColor.orangeColor()
-let ThemeSelectedStateTextColor = UIColor.cyanColor()
-//let ThemeSelectedStateTextColor = UIColor.redColor()
-
-let ThemeTitleTextColor = UIColor(red: 115/255.0, green: 222/255.0, blue: 236/255.0, alpha: 1)
-let ThemeTabBarColor = UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
-
 enum ThemeUIComponent {
    case TabBar, NavBar, NavBarButtonItem
 }
 
-struct Theme
+struct ThemeConstants
 {
    static func fontForComponent(component: ThemeUIComponent) -> UIFont
    {
@@ -79,14 +54,14 @@ struct Theme
    static func titleTextAttributesForComponent(component: ThemeUIComponent, controlState: UIControlState) -> [String : AnyObject]
    {
       let font = fontForComponent(component)
-      var color = ThemeTitleTextColor
+      var color = UIColor.lightBlueTextColor()
       switch controlState
       {
       case UIControlState.Normal:
-         color = ThemeNormalStateTextColor
+         color = UIColor.mainBackgroundColor()
          break
       case UIControlState.Selected:
-         color = ThemeTitleTextColor
+         color = UIColor.lightBlueTextColor()
          break
       default:
          break
@@ -97,7 +72,7 @@ struct Theme
    static func titleTextAttributesForComponent(component: ThemeUIComponent) -> [String : AnyObject]
    {
       let font = fontForComponent(component)
-      let color = ThemeTitleTextColor
+      let color = UIColor.lightBlueTextColor()
       return [NSFontAttributeName : font, NSForegroundColorAttributeName : color]
    }
 }

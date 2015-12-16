@@ -13,7 +13,7 @@ class MonthCollectionViewCell: UICollectionViewCell
    @IBOutlet weak private var _titleLabel: UILabel! {
       didSet {
          _titleLabel.font = ThemeMonthGridLabelFont
-         _titleLabel.textColor = ThemeTitleTextColor
+         _titleLabel.textColor = UIColor.lightBlueTextColor()
       }
    }
    @IBOutlet weak private var _goalBadgeLabel: UILabel! {
@@ -21,7 +21,7 @@ class MonthCollectionViewCell: UICollectionViewCell
          _goalBadgeLabel.textColor = UIColor.whiteColor()
          _goalBadgeLabel.layer.masksToBounds = true
          _goalBadgeLabel.font = ThemeMonthBadgeFont
-         _goalBadgeLabel.backgroundColor = ThemeTabBarColor
+         _goalBadgeLabel.backgroundColor = UIColor.lightPurpleTextColor()
          _goalBadgeLabel.layer.cornerRadius = 3
       }
    }
@@ -30,18 +30,18 @@ class MonthCollectionViewCell: UICollectionViewCell
    
    override var highlighted: Bool {
       didSet {
-         let highlightedColor = highlighted ? UIColor.whiteColor() : ThemeTabBarColor
+         let highlightedColor = highlighted ? UIColor.whiteColor() : UIColor.lightPurpleTextColor()
          layer.borderColor = highlightedColor.CGColor
          _goalBadgeLabel.backgroundColor = highlightedColor
-         _goalBadgeLabel.textColor = highlighted ? ThemeTabBarColor : UIColor.whiteColor()
-         _titleLabel.textColor = highlighted ? UIColor.whiteColor() : ThemeTitleTextColor
+         _goalBadgeLabel.textColor = highlighted ? UIColor.lightPurpleTextColor() : UIColor.whiteColor()
+         _titleLabel.textColor = highlighted ? UIColor.whiteColor() : UIColor.lightBlueTextColor()
       }
    }
    
    override func awakeFromNib()
    {
       backgroundColor = UIColor(red: 59/255.0, green: 63/255.0, blue: 90/255.0, alpha: 1)
-      layer.borderColor = ThemeTabBarColor.CGColor
+      layer.borderColor = UIColor.lightPurpleTextColor().CGColor
       layer.borderWidth = 4.0
       layer.cornerRadius = 3.0
       layer.masksToBounds = true

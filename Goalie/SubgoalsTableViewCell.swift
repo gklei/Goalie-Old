@@ -24,7 +24,7 @@ class SubgoalsTableViewCell: GoalieTableViewCell
          _labelTextField.font = ThemeSubgoalsLabelFont
          _labelTextField.textColor = UIColor.whiteColor()
          
-         _labelTextField.attributedPlaceholder = NSAttributedString(string: "Add a sub-goal", attributes: [NSForegroundColorAttributeName : ThemeTabBarColor.colorWithAlphaComponent(0.8)])
+         _labelTextField.attributedPlaceholder = NSAttributedString(string: "Add a sub-goal", attributes: [NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8)])
       }
    }
    
@@ -97,16 +97,16 @@ class SubgoalsTableViewCell: GoalieTableViewCell
    {
       switch state {
       case .Today:
-         _tomorrowButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
+         _tomorrowButton.setTitleColor(UIColor.lightBlueTextColor(), forState: .Normal)
          _todayButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
          break
       case .Tomorrow:
-         _todayButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
+         _todayButton.setTitleColor(UIColor.lightBlueTextColor(), forState: .Normal)
          _tomorrowButton.setTitleColor(UIColor.orangeColor(), forState: .Normal)
          break
       case .Idle:
-         _todayButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
-         _tomorrowButton.setTitleColor(ThemeTitleTextColor, forState: .Normal)
+         _todayButton.setTitleColor(UIColor.lightBlueTextColor(), forState: .Normal)
+         _tomorrowButton.setTitleColor(UIColor.lightBlueTextColor(), forState: .Normal)
          break
       }
    }

@@ -35,7 +35,7 @@ extension UITableView
                   
                   let originalBackgroundColor = subgoalCell.backgroundColor
                   UIView.animateWithDuration(duration * 0.5, animations: { () -> Void in
-                     subgoalCell.backgroundColor = ThemeTabBarColor
+                     subgoalCell.backgroundColor = UIColor.lightPurpleTextColor()
                      
                      }) { (finished: Bool) -> Void in
                         

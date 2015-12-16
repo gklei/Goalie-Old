@@ -15,7 +15,7 @@ extension UINavigationBar
          return self.items?.first?.leftBarButtonItem
       }
       set {
-         let barButtonItemAttrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
+         let barButtonItemAttrs = ThemeConstants.titleTextAttributesForComponent(.NavBarButtonItem)
          newValue?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
          self.items?.first?.leftBarButtonItem = newValue
       }

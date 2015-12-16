@@ -34,12 +34,12 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! { didSet {
       _titleTextField.textColor = UIColor.whiteColor()
-      _titleTextField.attributedPlaceholder = NSAttributedString(string: "Title", attributes: [NSForegroundColorAttributeName : ThemeTabBarColor.colorWithAlphaComponent(0.8)])
+      _titleTextField.attributedPlaceholder = NSAttributedString(string: "Title", attributes: [NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8)])
       }
    }
    @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! { didSet {
       _summaryTextField.textColor = UIColor.whiteColor()
-      _summaryTextField.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSForegroundColorAttributeName : ThemeTabBarColor.colorWithAlphaComponent(0.8)])
+      _summaryTextField.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8)])
       }
    }
    @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! { didSet { _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem }}
@@ -71,7 +71,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewDidLoad()
       _subgoalsNavigationBar.updateTitleFontSize(18)
-      _monthSelectorContainer.backgroundColor = ThemeTabBarColor
+      _monthSelectorContainer.backgroundColor = UIColor.lightPurpleTextColor()
       _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
    }
    

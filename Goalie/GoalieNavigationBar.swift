@@ -13,23 +13,21 @@ class GoalieNavigationBar: UINavigationBar
    override func awakeFromNib()
    {
       hideBottomHairline()
-      tintColor = ThemeTitleTextColor
-      titleTextAttributes = Theme.titleTextAttributesForComponent(.NavBar)
+      tintColor = UIColor.lightBlueTextColor()
+      titleTextAttributes = ThemeConstants.titleTextAttributesForComponent(.NavBar)
       
-      let barButtonItemAttrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
+      let barButtonItemAttrs = ThemeConstants.titleTextAttributesForComponent(.NavBarButtonItem)
       leftBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
       rightBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
 
-      let backgroundColor = UIColor(red: 39/255.0, green: 44/255.0, blue: 67/255.0, alpha: 1)
+      let backgroundColor = UIColor.mainNavBarColor()
       let backgroundImage = UIImage.imageWithColor(backgroundColor)
       setBackgroundImage(backgroundImage, forBarMetrics: UIBarMetrics.Default)
-      
-//      makeTransparent()
    }
    
    func updateTitleFontSize(size: CGFloat)
    {
-      titleTextAttributes = Theme.titleTextAttributesForComponent(.NavBar)
+      titleTextAttributes = ThemeConstants.titleTextAttributesForComponent(.NavBar)
       if let font = titleTextAttributes?[NSFontAttributeName] as? UIFont
       {
          let newFont = UIFont(name: font.fontName, size: size)!

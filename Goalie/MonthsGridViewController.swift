@@ -72,7 +72,7 @@ class MonthsGridViewController: UIViewController, ManagedObjectContextSettable
    private func _updateBackBarButtonItem()
    {
       let updatedButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
-      let attrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
+      let attrs = ThemeConstants.titleTextAttributesForComponent(.NavBarButtonItem)
       updatedButtonItem.setTitleTextAttributes(attrs, forState: .Normal)
       navigationItem.backBarButtonItem = updatedButtonItem
    }

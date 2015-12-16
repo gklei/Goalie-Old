@@ -52,6 +52,8 @@
 		F3536E8E1C174443003A114E /* ParentGoalsFetchRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */; };
 		F3536E901C1746B7003A114E /* ParentGoalsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */; };
 		F3536E921C176CC1003A114E /* MonthGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */; };
+		F3601C9B1C21D043000B1687 /* ThemeColorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3601C9A1C21D043000B1687 /* ThemeColorProvider.swift */; };
+		F3601C9D1C21D210000B1687 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3601C9C1C21D210000B1687 /* UIColor+Extensions.swift */; };
 		F378A29E1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */; };
 		F386BC3D1C178D410099F39E /* MonthGoalsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */; };
 		F386BC3E1C178D410099F39E /* MonthGoalsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */; };
@@ -150,6 +152,8 @@
 		F3536E8D1C174443003A114E /* ParentGoalsFetchRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsFetchRequestProvider.swift; path = Goalie/ParentGoalsFetchRequestProvider.swift; sourceTree = "<group>"; };
 		F3536E8F1C1746B7003A114E /* ParentGoalsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentGoalsDataProvider.swift; path = Goalie/ParentGoalsDataProvider.swift; sourceTree = "<group>"; };
 		F3536E911C176CC1003A114E /* MonthGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthGoalsViewController.swift; sourceTree = "<group>"; };
+		F3601C9A1C21D043000B1687 /* ThemeColorProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeColorProvider.swift; path = Goalie/ThemeColorProvider.swift; sourceTree = "<group>"; };
+		F3601C9C1C21D210000B1687 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Goalie/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F378A29D1C1E8BC400748258 /* EmptyTableViewDataSourceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyTableViewDataSourceDelegate.swift; path = Goalie/EmptyTableViewDataSourceDelegate.swift; sourceTree = "<group>"; };
 		F386BC3B1C178D410099F39E /* MonthGoalsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthGoalsTableViewCell.swift; path = Goalie/MonthGoalsTableViewCell.swift; sourceTree = "<group>"; };
 		F386BC3C1C178D410099F39E /* MonthGoalsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthGoalsTableViewCell.xib; path = Goalie/MonthGoalsTableViewCell.xib; sourceTree = "<group>"; };
@@ -342,6 +346,7 @@
 				F3536E7B1C14FC63003A114E /* NSManagedObjectContext+Observers.swift */,
 				F32C94021C1A061500103212 /* UITableView+Extensions.swift */,
 				F32C94CA1C1A1BB600103212 /* UIStoryboard+Extensions.swift */,
+				F3601C9C1C21D210000B1687 /* UIColor+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */,
+				F3601C9A1C21D043000B1687 /* ThemeColorProvider.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				F31BAAC81C11F1C80079C537 /* ManagedObject.swift in Sources */,
 				F393249F1C1E6F78009A525A /* GoalieTableViewCell.swift in Sources */,
 				F3D4618C1C113221002F31A6 /* MonthsGridViewController.swift in Sources */,
+				F3601C9D1C21D210000B1687 /* UIColor+Extensions.swift in Sources */,
 				F3C84B7F1C18986300E7CD3B /* TodayViewController.swift in Sources */,
 				F31BAAE11C12415C0079C537 /* GoalDetailsViewController.swift in Sources */,
 				F31BAACE1C11F4650079C537 /* UINavigationBar+Extensions.swift in Sources */,
@@ -558,6 +565,7 @@
 				F3D461881C113221002F31A6 /* AppDelegate.swift in Sources */,
 				F3536E671C13A56A003A114E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				F31BAAD91C1213D40079C537 /* AllGoalsTableViewCell.swift in Sources */,
+				F3601C9B1C21D043000B1687 /* ThemeColorProvider.swift in Sources */,
 				F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */,
 				F386BC401C1790D60099F39E /* GoalPresenter.swift in Sources */,
 				F31BAAD61C1210B10079C537 /* TableViewDataSource.swift in Sources */,

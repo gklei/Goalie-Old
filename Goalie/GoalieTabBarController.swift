@@ -17,14 +17,14 @@ class GoalieTabBarController: UITabBarController
       let tabBarColor = UIColor(red: 39/255.0, green: 44/255.0, blue: 67/255.0, alpha: 1)
       tabBar.backgroundImage = UIImage.imageWithColor(tabBarColor)
       tabBar.shadowImage = UIImage.imageWithColor(UIColor.clearColor())
-      tabBar.tintColor = ThemeSelectedStateTextColor
+      tabBar.tintColor = UIColor.lightBlueTextColor()
 
       if let tabBarItems = tabBar.items
       {
-         var normalAttrs = Theme.titleTextAttributesForComponent(.TabBar, controlState: .Normal)
-         normalAttrs[NSForegroundColorAttributeName] = ThemeTabBarColor
+         var normalAttrs = ThemeConstants.titleTextAttributesForComponent(.TabBar, controlState: .Normal)
+         normalAttrs[NSForegroundColorAttributeName] = UIColor.lightPurpleTextColor()
          
-         let selectedAttrs = Theme.titleTextAttributesForComponent(.TabBar, controlState: .Selected)
+         let selectedAttrs = ThemeConstants.titleTextAttributesForComponent(.TabBar, controlState: .Selected)
          
          for item in tabBarItems
          {

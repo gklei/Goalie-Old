@@ -40,7 +40,7 @@ class TomorrowViewController: UIViewController, ManagedObjectContextSettable
       _tableView.backgroundColor = backgroundColor
       
       _navBar.updateTitleFontSize(14)
-      _navBar.updateTitleColor(ThemeTabBarColor)
+      _navBar.updateTitleColor(UIColor.lightPurpleTextColor())
       
       let navBarFont = UIFont(name: "AvenirNext-Bold", size: 14)!
       _navBar.updateTitleFont(navBarFont)

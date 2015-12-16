@@ -35,7 +35,7 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
       _setupTableViewDataSourceAndDelegate()
       
       _navBar.updateTitleFontSize(14)
-      _navBar.updateTitleColor(ThemeTabBarColor)
+      _navBar.updateTitleColor(UIColor.lightPurpleTextColor())
       
       let backgroundColor = UIColor(red: 59/255.0, green: 63/255.0, blue: 90/255.0, alpha: 1)
       _navBar.updateBackgroundColor(backgroundColor)
