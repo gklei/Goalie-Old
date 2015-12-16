@@ -35,13 +35,18 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
    
    func updateBackgroundPattern()
    {
-//      let height = _delegate.heightForRowAtIndexPath(NSIndexPath())
-//      let image = UIImage.sampleAlternatingColorImageWithSize(CGSize(width: _tableView.bounds.width, height: (height + 1.5) * 2.0))
-//      
-////      let anotherImage = UIImage.alternateImageWithWidth(_tableView.bounds.width, height: 2 * (height + 1.5), topPadding: 284)
-////      _tableView.backgroundColor = UIColor(patternImage: anotherImage)
-//      _tableView.backgroundColor = UIColor(patternImage: image)
-//      _tableView.separatorStyle = .None
+      var rowFrames: [CGRect] = []
+      for cellIndex in 0..<_dataProvider.numberOfItemsInSection(0) {
+         let indexPath = NSIndexPath(forRow: cellIndex, inSection: 0)
+         if let cell = _tableView.cellForRowAtIndexPath(indexPath) {
+            cell.layoutIfNeeded()
+            rowFrames.append(cell.frame)
+         }
+      }
+      
+      let defaultHeight = _delegate.heightForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0))
+      let patternImage = UIImage.patternImageForFrames(rowFrames, width: _tableView.bounds.width, firstColor: UIColor.lightCellAlternateColor(), secondColor: UIColor.darkCellAlternateColor(), extraRows: 10, defaultHeight: defaultHeight)
+      _tableView.backgroundColor = UIColor(patternImage: patternImage)
    }
    
    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
