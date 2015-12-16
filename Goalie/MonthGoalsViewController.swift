@@ -36,6 +36,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLoad()
       automaticallyAdjustsScrollViewInsets = false
       
+      _monthGoalsTableView.separatorStyle = .None
       _goalPresenter = GoalPresenter(presentingController: self)
    }
    
@@ -46,11 +47,14 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       
       _setupTableView()
       _setupEmptyDataSourceDelegate()
+      
+      _tableViewDelegate.updateBackgroundPattern()
       _monthGoalsTableView.reloadEmptyDataSet()
    }
    
-   override func viewDidLayoutSubviews() {
-      super.viewDidLayoutSubviews()
+   override func viewDidAppear(animated: Bool)
+   {
+      super.viewDidAppear(animated)
       _tableViewDelegate.updateBackgroundPattern()
    }
    
@@ -60,6 +64,7 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       _dataProvider = _dataProviderForMonth(_month)
       _tableViewDataSource = TableViewDataSource(tableView: _monthGoalsTableView, dataProvider: _dataProvider, delegate: self)
       _tableViewDelegate = TableViewDelegate(tableView: _monthGoalsTableView, dataProvider: _dataProvider, delegate: self)
+      _tableViewDelegate.useAutomaticRowHeight = true
    }
    
    private func _setupEmptyDataSourceDelegate()
@@ -94,6 +99,7 @@ extension MonthGoalsViewController: DataProviderDelegate
    func dataProviderDidUpdate(updates: [DataProviderUpdate<Goal>]?)
    {
       _tableViewDataSource.processUpdates(updates)
+      _tableViewDelegate.updateBackgroundPattern()
    }
 }
 
@@ -120,6 +126,6 @@ extension MonthGoalsViewController: TableViewDelegateProtocol
    
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
-      return 87
+      return 88
    }
 }

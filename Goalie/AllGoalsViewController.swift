@@ -37,6 +37,8 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       automaticallyAdjustsScrollViewInsets = false
       
       _goalPresenter = GoalPresenter(presentingController: self)
+      _allGoalsTableView.separatorStyle = .None
+      
       setupTableViewDataSourceAndDelegate()
    }
    
@@ -46,6 +48,13 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       _setupEmptyDataSourceDelegate()
       _allGoalsTableView.reloadData()
       _allGoalsTableView.reloadEmptyDataSet()
+      _tableViewDelegate.updateBackgroundPattern()
+   }
+   
+   override func viewDidAppear(animated: Bool)
+   {
+      super.viewDidAppear(animated)
+      _tableViewDelegate.updateBackgroundPattern()
    }
    
    private func _setupEmptyDataSourceDelegate()
@@ -63,12 +72,6 @@ class AllGoalsViewController: UIViewController, ManagedObjectContextSettable, UI
       _tableViewDelegate = TableViewDelegate(tableView: _allGoalsTableView, dataProvider: _dataProvider, delegate: self)
    }
    
-   override func viewDidLayoutSubviews()
-   {
-      super.viewDidLayoutSubviews()
-      _tableViewDelegate.updateBackgroundPattern()
-   }
-   
    // MARK: - IBActions
    @IBAction func addNewGoal()
    {
@@ -82,6 +85,7 @@ extension AllGoalsViewController: DataProviderDelegate
    func dataProviderDidUpdate(updates: [DataProviderUpdate<Goal>]?)
    {
       _tableViewDataSource.processUpdates(updates)
+      _tableViewDelegate.updateBackgroundPattern()
    }
 }
 
@@ -108,6 +112,6 @@ extension AllGoalsViewController: TableViewDelegateProtocol
    
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
-      return 87
+      return 88
    }
 }
