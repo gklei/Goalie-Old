@@ -8,14 +8,11 @@
 
 import UIKit
 
-class GoalieTableViewCell: UITableViewCell {
-   
+class GoalieTableViewCell: UITableViewCell
+{
    override func awakeFromNib()
    {
       super.awakeFromNib()
-      // Initialization code
-      
-//      backgroundColor = ThemeNormalStateTextColor
       backgroundColor = UIColor.clearColor()
    }
 }

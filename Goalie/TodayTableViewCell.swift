@@ -10,13 +10,8 @@ import UIKit
 
 class TodayTableViewCell: GoalieTableViewCell
 {
-   @IBOutlet weak private var _titleLabel: UILabel!
-   @IBOutlet weak private var _monthLabel: UILabel! {
-      didSet {
-         _monthLabel.font = ThemeSubgoalsLabelFont
-         _monthLabel.textColor = ThemeTabBarColor
-      }
-   }
+   @IBOutlet weak private var _mainTitleLabel: UILabel!
+   @IBOutlet weak private var _subTitleLabel: UILabel!
    
    private weak var _goal: Goal!
    
@@ -33,16 +28,9 @@ extension TodayTableViewCell: ConfigurableCell
    func configureForObject(object: Goal)
    {
       _goal = object
-      _titleLabel.text = object.title
-      _monthLabel.text = object.parent!.title
       
-      var titleAttributes: [String : AnyObject] = [NSFontAttributeName : ThemeAllGoalsLabelFont]
-      if object.completed == true {
-         titleAttributes[NSStrikethroughStyleAttributeName] = 1
-      }
-      
-      let attributedTitleText = NSAttributedString(string: object.title, attributes: titleAttributes)
-      _titleLabel.attributedText = attributedTitleText
-      _titleLabel.textColor = ThemeTitleTextColor
+      let viewModel = TodayTomorrowTableCellVM(goal: _goal)
+      _mainTitleLabel.attributedText = viewModel.attributedTextForComponent(.MainTitle)
+      _subTitleLabel.attributedText = viewModel.attributedTextForComponent(.SubTitle)
    }
 }

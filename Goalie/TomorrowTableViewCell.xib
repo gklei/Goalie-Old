@@ -18,7 +18,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c9-Zh-Z3b">
                         <rect key="frame" x="20" y="8" width="249.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-xi-7vT">
@@ -56,8 +56,8 @@
             </tableViewCellContentView>
             <gestureRecognizers/>
             <connections>
-                <outlet property="_monthLabel" destination="xhh-xi-7vT" id="toB-aN-kSO"/>
-                <outlet property="_titleLabel" destination="6c9-Zh-Z3b" id="5HL-fk-MAD"/>
+                <outlet property="_mainTitleLabel" destination="6c9-Zh-Z3b" id="EeE-5G-Hzs"/>
+                <outlet property="_subTitleLabel" destination="xhh-xi-7vT" id="rVK-nx-UlL"/>
             </connections>
             <point key="canvasLocation" x="248" y="350.5"/>
         </tableViewCell>
