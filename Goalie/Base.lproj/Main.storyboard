@@ -70,10 +70,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5J-Hz-f12">
-                                <rect key="frame" x="20" y="79" width="280" height="207.5"/>
+                                <rect key="frame" x="24" y="88" width="272" height="191.5"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JjP-No-RRZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="207.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="191.5"/>
                                         <connections>
                                             <segue destination="Bpl-Dv-xMe" kind="embed" identifier="TodayEmbedSegue" id="h3b-ZQ-hIA"/>
                                         </connections>
@@ -88,10 +88,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm1-0j-upJ">
-                                <rect key="frame" x="20" y="302.5" width="280" height="208"/>
+                                <rect key="frame" x="24" y="303.5" width="272" height="192"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FV-Jc-hg8">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="208"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="272" height="192"/>
                                         <connections>
                                             <segue destination="vul-i3-kqq" kind="embed" identifier="TomorrowEmbedSegue" id="cAx-eg-iSi"/>
                                         </connections>
@@ -109,18 +109,20 @@
                         <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wm1-0j-upJ" firstAttribute="height" secondItem="K5J-Hz-f12" secondAttribute="height" id="23L-LK-a2l"/>
-                            <constraint firstItem="K5J-Hz-f12" firstAttribute="height" secondItem="Rmc-5y-qyC" secondAttribute="height" multiplier="0.4" id="38J-JX-HOY"/>
-                            <constraint firstItem="wm1-0j-upJ" firstAttribute="top" secondItem="K5J-Hz-f12" secondAttribute="bottom" constant="16" id="3BW-GE-VKA"/>
-                            <constraint firstItem="K5J-Hz-f12" firstAttribute="top" secondItem="oxG-8x-LWO" secondAttribute="bottom" constant="15" id="RWz-0K-5Z2"/>
-                            <constraint firstAttribute="trailing" secondItem="K5J-Hz-f12" secondAttribute="trailing" constant="20" id="TuO-tN-HoW"/>
+                            <constraint firstItem="K5J-Hz-f12" firstAttribute="height" secondItem="Rmc-5y-qyC" secondAttribute="height" multiplier="0.5" constant="-68" id="38J-JX-HOY"/>
+                            <constraint firstItem="wm1-0j-upJ" firstAttribute="top" secondItem="K5J-Hz-f12" secondAttribute="bottom" constant="24" id="3BW-GE-VKA"/>
+                            <constraint firstItem="K5J-Hz-f12" firstAttribute="top" secondItem="oxG-8x-LWO" secondAttribute="bottom" constant="24" id="RWz-0K-5Z2"/>
+                            <constraint firstAttribute="trailing" secondItem="K5J-Hz-f12" secondAttribute="trailing" constant="24" id="TuO-tN-HoW"/>
                             <constraint firstItem="wm1-0j-upJ" firstAttribute="centerX" secondItem="K5J-Hz-f12" secondAttribute="centerX" id="hc9-Rb-Qrw"/>
-                            <constraint firstItem="K5J-Hz-f12" firstAttribute="leading" secondItem="Rmc-5y-qyC" secondAttribute="leading" constant="20" id="qmA-6s-l9w"/>
+                            <constraint firstItem="K5J-Hz-f12" firstAttribute="leading" secondItem="Rmc-5y-qyC" secondAttribute="leading" constant="24" id="qmA-6s-l9w"/>
                             <constraint firstItem="wm1-0j-upJ" firstAttribute="width" secondItem="K5J-Hz-f12" secondAttribute="width" id="ucJ-Q4-hB2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LCu-3n-n6w">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Vd-hI-MAd"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="_bottomContainerView" destination="wm1-0j-upJ" id="cn1-tS-zEY"/>
                         <outlet property="_topContainerView" destination="K5J-Hz-f12" id="UpJ-Hd-o9Z"/>
@@ -306,17 +308,17 @@
                         <viewControllerLayoutGuide type="bottom" id="RuV-oJ-OgY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I14-dp-AAB">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="207.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="272" height="191.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-BW-Vly" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="44"/>
                                 <items>
                                     <navigationItem title="Today" id="n2s-6l-oBc"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bl9-Mj-3lx">
-                                <rect key="frame" x="0.0" y="44" width="280" height="163.5"/>
+                                <rect key="frame" x="0.0" y="44" width="272" height="147.5"/>
                                 <color key="backgroundColor" red="0.23137254901960785" green="0.24705882352941178" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
@@ -365,17 +367,17 @@
                         <viewControllerLayoutGuide type="bottom" id="bB2-Bj-bBC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RaU-zE-tr3">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="208"/>
+                        <rect key="frame" x="0.0" y="0.0" width="272" height="192"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aex-iU-SRB" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="272" height="44"/>
                                 <items>
                                     <navigationItem title="Tomorrow" id="0Jn-Zj-AfZ"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="npY-jU-eAI">
-                                <rect key="frame" x="0.0" y="44" width="280" height="164"/>
+                                <rect key="frame" x="0.0" y="44" width="272" height="148"/>
                                 <color key="backgroundColor" red="0.23137254900000001" green="0.2470588235" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
