@@ -18,10 +18,9 @@ class MonthCollectionViewCell: UICollectionViewCell
    }
    @IBOutlet weak private var _goalBadgeLabel: UILabel! {
       didSet {
-         _goalBadgeLabel.textColor = ThemeSelectedStateTextColor
+         _goalBadgeLabel.textColor = UIColor.whiteColor()
          _goalBadgeLabel.layer.masksToBounds = true
          _goalBadgeLabel.font = ThemeMonthBadgeFont
-         _goalBadgeLabel.textColor = ThemeNormalStateTextColor
          _goalBadgeLabel.backgroundColor = ThemeTabBarColor
          _goalBadgeLabel.layer.cornerRadius = 3
       }
@@ -34,6 +33,8 @@ class MonthCollectionViewCell: UICollectionViewCell
          let highlightedColor = highlighted ? UIColor.whiteColor() : ThemeTabBarColor
          layer.borderColor = highlightedColor.CGColor
          _goalBadgeLabel.backgroundColor = highlightedColor
+         _goalBadgeLabel.textColor = highlighted ? ThemeTabBarColor : UIColor.whiteColor()
+         _titleLabel.textColor = highlighted ? UIColor.whiteColor() : ThemeTitleTextColor
       }
    }
    

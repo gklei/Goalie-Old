@@ -72,6 +72,7 @@
 		F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */; };
 		F3D461B61C115259002F31A6 /* MonthCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */; };
 		F3D461BC1C116ABD002F31A6 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */; };
+		F3F22DB41C21BEE300223956 /* TodayTableCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F22DB31C21BEE300223956 /* TodayTableCellVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,7 @@
 		F3D461B31C115259002F31A6 /* MonthCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonthCollectionViewCell.swift; path = Goalie/MonthCollectionViewCell.swift; sourceTree = "<group>"; };
 		F3D461B41C115259002F31A6 /* MonthCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MonthCollectionViewCell.xib; path = Goalie/MonthCollectionViewCell.xib; sourceTree = "<group>"; };
 		F3D461BB1C116ABD002F31A6 /* ThemeConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThemeConstants.swift; path = Goalie/ThemeConstants.swift; sourceTree = "<group>"; };
+		F3F22DB31C21BEE300223956 /* TodayTableCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayTableCellVM.swift; path = Goalie/TodayTableCellVM.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 				F3493B991C18A4DF000A69C0 /* TodayTableViewCell.swift */,
 				F3493B9D1C18A4F2000A69C0 /* TomorrowTableViewCell.swift */,
 				F393249E1C1E6F78009A525A /* GoalieTableViewCell.swift */,
+				F3F22DB31C21BEE300223956 /* TodayTableCellVM.swift */,
 			);
 			name = "Custom Cells";
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				F3536E7E1C14FC9C003A114E /* Utilities.swift in Sources */,
 				F31BAAD01C11F5080079C537 /* DataRelatedProtocols.swift in Sources */,
 				F3D461B51C115259002F31A6 /* MonthCollectionViewCell.swift in Sources */,
+				F3F22DB41C21BEE300223956 /* TodayTableCellVM.swift in Sources */,
 				F3D4618A1C113221002F31A6 /* AllGoalsViewController.swift in Sources */,
 				F3536E871C163491003A114E /* MonthSelectorMonthView.swift in Sources */,
 				F31BAADC1C121A2B0079C537 /* NSManagedObjectContext+Extensions.swift in Sources */,

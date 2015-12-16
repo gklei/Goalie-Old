@@ -8,7 +8,7 @@
 
 import UIKit
 
-let ThemeNavigationBarFontSize: CGFloat = 22.0
+let ThemeNavigationBarFontSize: CGFloat = 20.0
 let ThemeTabBarItemFontSize: CGFloat = 16
 let ThemeNavigationBarButtonItemFontSize: CGFloat = 18
 let ThemeMonthGridFontSize: CGFloat = 32
@@ -86,7 +86,7 @@ struct Theme
          color = ThemeNormalStateTextColor
          break
       case UIControlState.Selected:
-         color = ThemeSelectedStateTextColor
+         color = ThemeTitleTextColor
          break
       default:
          break

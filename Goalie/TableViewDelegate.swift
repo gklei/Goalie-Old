@@ -35,9 +35,13 @@ class TableViewDelegate<Data: DataProviderProtocol, Delegate: TableViewDelegateP
    
    func updateBackgroundPattern()
    {
-      let height = _delegate.heightForRowAtIndexPath(NSIndexPath())
-      let image = UIImage.sampleAlternatingColorImageWithSize(CGSize(width: _tableView.bounds.width, height: (height + 1.5) * 2.0))
-      _tableView.backgroundColor = UIColor(patternImage: image)
+//      let height = _delegate.heightForRowAtIndexPath(NSIndexPath())
+//      let image = UIImage.sampleAlternatingColorImageWithSize(CGSize(width: _tableView.bounds.width, height: (height + 1.5) * 2.0))
+//      
+////      let anotherImage = UIImage.alternateImageWithWidth(_tableView.bounds.width, height: 2 * (height + 1.5), topPadding: 284)
+////      _tableView.backgroundColor = UIColor(patternImage: anotherImage)
+//      _tableView.backgroundColor = UIColor(patternImage: image)
+//      _tableView.separatorStyle = .None
    }
    
    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)

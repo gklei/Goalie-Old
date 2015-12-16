@@ -13,9 +13,24 @@ class TodayTomorrowViewController: UIViewController, ManagedObjectContextSettabl
 {
    var managedObjectContext: NSManagedObjectContext!
    
+   @IBOutlet weak private var _topContainerView: UIView! {
+      didSet {
+         _topContainerView.layer.masksToBounds = true
+         _topContainerView.layer.cornerRadius = 6
+      }
+   }
+   @IBOutlet weak private var _bottomContainerView: UIView! {
+      didSet {
+         _bottomContainerView.layer.masksToBounds = true
+         _bottomContainerView.layer.cornerRadius = 6
+      }
+   }
+   
    override func viewDidLoad()
    {
       super.viewDidLoad()
+      navigationItem.title = "Active"
+      automaticallyAdjustsScrollViewInsets = false
    }
    
    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

@@ -19,11 +19,12 @@ class GoalieNavigationBar: UINavigationBar
       let barButtonItemAttrs = Theme.titleTextAttributesForComponent(.NavBarButtonItem)
       leftBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
       rightBarButtonItem?.setTitleTextAttributes(barButtonItemAttrs, forState: .Normal)
+
+      let backgroundColor = UIColor(red: 39/255.0, green: 44/255.0, blue: 67/255.0, alpha: 1)
+      let backgroundImage = UIImage.imageWithColor(backgroundColor)
+      setBackgroundImage(backgroundImage, forBarMetrics: UIBarMetrics.Default)
       
-//      let backgroundImage = UIImage.imageWithColor(UIColor.whiteColor())
-//      setBackgroundImage(backgroundImage, forBarMetrics: UIBarMetrics.Default)
-      
-      makeTransparent()
+//      makeTransparent()
    }
    
    func updateTitleFontSize(size: CGFloat)
@@ -36,9 +37,24 @@ class GoalieNavigationBar: UINavigationBar
       }
    }
    
+   func updateTitleFont(font: UIFont)
+   {
+      titleTextAttributes?[NSFontAttributeName] = font
+   }
+   
+   func updateTitleColor(color: UIColor)
+   {
+      titleTextAttributes?[NSForegroundColorAttributeName] = color
+   }
+   
    func updateTitle(title: String)
    {
       items?.first?.title = title
+   }
+   
+   func updateBackgroundColor(color: UIColor)
+   {
+      setBackgroundImage(UIImage.imageWithColor(color), forBarMetrics: .Default)
    }
    
    func updateLeftBarButtonItemTitle(title: String)

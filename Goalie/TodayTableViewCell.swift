@@ -10,12 +10,7 @@ import UIKit
 
 class TodayTableViewCell: GoalieTableViewCell
 {
-   @IBOutlet weak private var _titleLabel: UILabel! {
-      didSet {
-         _titleLabel.font = ThemeAllGoalsLabelFont
-         _titleLabel.textColor = ThemeTitleTextColor
-      }
-   }
+   @IBOutlet weak private var _titleLabel: UILabel!
    @IBOutlet weak private var _monthLabel: UILabel! {
       didSet {
          _monthLabel.font = ThemeSubgoalsLabelFont
@@ -48,5 +43,6 @@ extension TodayTableViewCell: ConfigurableCell
       
       let attributedTitleText = NSAttributedString(string: object.title, attributes: titleAttributes)
       _titleLabel.attributedText = attributedTitleText
+      _titleLabel.textColor = ThemeTitleTextColor
    }
 }

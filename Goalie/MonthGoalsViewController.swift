@@ -49,6 +49,11 @@ class MonthGoalsViewController: UIViewController, ManagedObjectContextSettable
       _monthGoalsTableView.reloadEmptyDataSet()
    }
    
+   override func viewDidLayoutSubviews() {
+      super.viewDidLayoutSubviews()
+      _tableViewDelegate.updateBackgroundPattern()
+   }
+   
    // MARK: - Private
    private func _setupTableView()
    {
@@ -115,6 +120,6 @@ extension MonthGoalsViewController: TableViewDelegateProtocol
    
    func heightForRowAtIndexPath(indexPath: NSIndexPath) -> CGFloat
    {
-      return 86
+      return 87
    }
 }

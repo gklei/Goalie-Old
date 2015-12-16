@@ -14,9 +14,9 @@ class GoalieTabBarController: UITabBarController
    {
       super.viewDidLoad()
       
-      let tabBarColor = ThemeNormalStateTextColor
+      let tabBarColor = UIColor(red: 39/255.0, green: 44/255.0, blue: 67/255.0, alpha: 1)
       tabBar.backgroundImage = UIImage.imageWithColor(tabBarColor)
-//      tabBar.shadowImage = UIImage.imageWithColor(UIColor.clearColor())
+      tabBar.shadowImage = UIImage.imageWithColor(UIColor.clearColor())
       tabBar.tintColor = ThemeSelectedStateTextColor
 
       if let tabBarItems = tabBar.items

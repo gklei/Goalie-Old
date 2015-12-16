@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
       window?.makeKeyAndVisible()
       
       let selectionView = UIView()
-      selectionView.backgroundColor = ThemeTabBarColor
+      selectionView.backgroundColor = ThemeTabBarColor.colorWithAlphaComponent(0.3)
       UITableViewCell.appearance().selectedBackgroundView = selectionView
       
       return true

@@ -99,7 +99,7 @@
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aON-Mw-vjP">
                                     <rect key="frame" x="0.0" y="276.5" width="320" height="227.5"/>
                                     <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="separatorColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="separatorColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -132,6 +132,10 @@
                         <constraint firstItem="gqh-2V-VYI" firstAttribute="leading" secondItem="nwM-hr-82s" secondAttribute="leading" id="xY1-4g-amt"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md1-gg-ksD">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                    <color key="backgroundColor" red="0.15686274509803921" green="0.1764705882352941" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -140,8 +144,12 @@
                 <constraint firstAttribute="bottom" secondItem="nwM-hr-82s" secondAttribute="bottom" id="GMD-SC-k2d"/>
                 <constraint firstItem="nwM-hr-82s" firstAttribute="top" secondItem="97a-LG-zcC" secondAttribute="bottom" id="JGq-nw-UcP"/>
                 <constraint firstAttribute="trailing" secondItem="nwM-hr-82s" secondAttribute="trailing" id="TmP-a8-I9l"/>
+                <constraint firstAttribute="trailing" secondItem="Md1-gg-ksD" secondAttribute="trailing" id="VDu-hc-hFU"/>
+                <constraint firstItem="97a-LG-zcC" firstAttribute="top" secondItem="Md1-gg-ksD" secondAttribute="bottom" id="VuQ-BM-pJQ"/>
                 <constraint firstAttribute="trailing" secondItem="97a-LG-zcC" secondAttribute="trailing" id="big-RY-I4d"/>
                 <constraint firstItem="97a-LG-zcC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="fow-Os-5NO"/>
+                <constraint firstItem="Md1-gg-ksD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wRJ-mQ-om2"/>
+                <constraint firstItem="Md1-gg-ksD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zxw-td-f02"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="23" y="200"/>

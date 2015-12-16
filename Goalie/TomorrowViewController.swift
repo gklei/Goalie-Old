@@ -14,6 +14,7 @@ class TomorrowViewController: UIViewController, ManagedObjectContextSettable
 {
    var managedObjectContext: NSManagedObjectContext!
    @IBOutlet weak private var _tableView: UITableView!
+   @IBOutlet weak private var _navBar: GoalieNavigationBar!
    
    private typealias DataProvider = FetchedResultsDataProvider<TomorrowViewController>
    private var _tableViewDataSource: TableViewDataSource<TomorrowViewController, DataProvider, TomorrowTableViewCell>!
@@ -33,6 +34,16 @@ class TomorrowViewController: UIViewController, ManagedObjectContextSettable
       super.viewDidLoad()
       _setupTableViewDataSourceAndDelegate()
       _goalPresenter = GoalPresenter(presentingController: self)
+      
+      let backgroundColor = UIColor(red: 59/255.0, green: 63/255.0, blue: 90/255.0, alpha: 1)
+      _navBar.updateBackgroundColor(backgroundColor)
+      _tableView.backgroundColor = backgroundColor
+      
+      _navBar.updateTitleFontSize(14)
+      _navBar.updateTitleColor(ThemeTabBarColor)
+      
+      let navBarFont = UIFont(name: "AvenirNext-Bold", size: 14)!
+      _navBar.updateTitleFont(navBarFont)
       
       _emptyTableViewDataSourceDelegate = EmptyTableViewDataSourceDelegate(tableView: _tableView, title: "No sub-goals for tomorrow.", description: "Keep track of sub-goals by adding them to tomorrow.", buttonTappedBlock: { () -> Void in
          self._goalPresenter.createAndPresentNewGoal()
