@@ -34,12 +34,12 @@ extension UITableView
                if let subgoalCell = self.cellForRowAtIndexPath(indexPath) {
                   
                   let originalBackgroundColor = subgoalCell.backgroundColor
-                  UIView.animateWithDuration(duration * 0.5, animations: { () -> Void in
-                     subgoalCell.backgroundColor = UIColor.lightPurpleTextColor()
+                  UIView.animateWithDuration(duration * 0.6, animations: { () -> Void in
+                     subgoalCell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.2)
                      
                      }) { (finished: Bool) -> Void in
                         
-                        UIView.animateWithDuration(duration * 0.5, animations: { () -> Void in
+                        UIView.animateWithDuration(duration * 0.4, animations: { () -> Void in
                            subgoalCell.backgroundColor = originalBackgroundColor
                         })
                   }

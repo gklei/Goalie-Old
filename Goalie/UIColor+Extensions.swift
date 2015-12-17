@@ -35,6 +35,11 @@ extension UIColor
       return UIColor(r: 124, g: 124, b: 163)
    }
    
+   static func lightPurpleBackgroundColor() -> UIColor
+   {
+      return UIColor(r: 59, g: 63, b: 90)
+   }
+   
    static func todayTomorrowTableBackgroundColor() -> UIColor
    {
       return UIColor(r: 59, g: 63, b: 90)

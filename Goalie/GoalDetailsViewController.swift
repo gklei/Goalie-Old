@@ -180,7 +180,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    func temporarilyHighlightSubgoal(subgoal: Goal)
    {
       let subgoalIndexPath = NSIndexPath(goal: subgoal)
-      _subgoalsTableView.flashCellAtIndexPath(subgoalIndexPath, duration: 0.6)
+      self._subgoalsTableView.flashCellAtIndexPath(subgoalIndexPath, duration: 1)
    }
    
    // MARK: - IBActions

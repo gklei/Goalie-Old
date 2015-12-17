@@ -41,6 +41,11 @@ class GoalieNavigationBar: UINavigationBar
       titleTextAttributes?[NSFontAttributeName] = font
    }
    
+   func updateKerningValue(value: Int)
+   {
+      titleTextAttributes?[NSKernAttributeName] = value
+   }
+   
    func updateTitleColor(color: UIColor)
    {
       titleTextAttributes?[NSForegroundColorAttributeName] = color

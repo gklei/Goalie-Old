@@ -32,28 +32,41 @@ class TodayViewController: UIViewController, ManagedObjectContextSettable
    override func viewDidLoad()
    {
       super.viewDidLoad()
+      _setupNavigationBar()
+      _setupBackgroundColors()
       _setupTableViewDataSourceAndDelegate()
-      
-      _navBar.updateTitleFontSize(14)
-      _navBar.updateTitleColor(UIColor.lightPurpleTextColor())
-      
-      let backgroundColor = UIColor(red: 59/255.0, green: 63/255.0, blue: 90/255.0, alpha: 1)
-      _navBar.updateBackgroundColor(UIColor.clearColor())
-      view.backgroundColor = backgroundColor
-      _tableView.backgroundColor = backgroundColor
-      let navBarFont = UIFont(name: "AvenirNext-Bold", size: 14)!
-      _navBar.updateTitleFont(navBarFont)
-      
+      _setupEmptyDataSourceDelegate()
       _goalPresenter = GoalPresenter(presentingController: self)
-      _emptyTableViewDataSourceDelegate = EmptyTableViewDataSourceDelegate(tableView: _tableView, title: "No sub-goals for today.", description: "Keep track of sub-goals by adding them to today.", buttonTappedBlock: { () -> Void in
-         self._goalPresenter.createAndPresentNewGoal()
-      })
    }
    
    override func viewWillAppear(animated: Bool)
    {
       super.viewWillAppear(animated)
       _tableView.reloadEmptyDataSet()
+   }
+   
+   // MARK: - Private
+   private func _setupNavigationBar()
+   {
+      let navBarFont = UIFont.boldGoalieFontWithSize(13)
+      _navBar.updateTitleFont(navBarFont)
+      _navBar.updateTitle("TODAY")
+      _navBar.updateTitleColor(UIColor.lightPurpleTextColor())
+      _navBar.makeTransparent()
+   }
+   
+   private func _setupBackgroundColors()
+   {
+      view.backgroundColor = UIColor.lightPurpleBackgroundColor()
+      _tableView.backgroundColor = UIColor.lightPurpleBackgroundColor()
+   }
+   
+   private func _setupEmptyDataSourceDelegate()
+   {
+      _emptyTableViewDataSourceDelegate = EmptyTableViewDataSourceDelegate(tableView: _tableView, title: "Goals or sub-goals due today will show up here. Try adding some to stay organized.", description: "Keep track of sub-goals by adding them to tomorrow.", buttonTappedBlock: { () -> Void in
+         self._goalPresenter.createAndPresentNewGoal()
+      })
+      _emptyTableViewDataSourceDelegate.useImage = true
    }
    
    // MARK: - IBActions

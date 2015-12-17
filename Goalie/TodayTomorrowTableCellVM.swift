@@ -48,12 +48,12 @@ struct TodayTomorrowTableCellVM
       switch component
       {
       case .MainTitle:
-         attributes[NSFontAttributeName] = UIFont(name: "AvenirNext-Bold", size: 14)!
+         attributes[NSFontAttributeName] = UIFont.boldGoalieFontWithSize(14)
          attributes[NSForegroundColorAttributeName] = UIColor(red: 115/255.0, green: 222/255.0, blue: 236/255.0, alpha: 1)
          attributes[NSStrikethroughStyleAttributeName] = _goal?.completed == true ? 1 : 0
          break
       case .SubTitle:
-         attributes[NSFontAttributeName] = UIFont(name: "AvenirNext-Bold", size: 12)!
+         attributes[NSFontAttributeName] = UIFont.boldGoalieFontWithSize(12)
          attributes[NSForegroundColorAttributeName] = UIColor(red: 124/255.0, green: 124/255.0, blue: 164/255.0, alpha: 1)
          break
       }

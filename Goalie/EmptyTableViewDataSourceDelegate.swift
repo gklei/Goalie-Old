@@ -16,6 +16,9 @@ class EmptyTableViewDataSourceDelegate: NSObject
    private var _description: String
    private var _buttonTappedBlock: (() -> Void)?
    
+   // FOR NOW!
+   var useImage = false
+   
    init(tableView: UITableView, title: String, description: String, buttonTappedBlock: (() -> Void)?)
    {
       _tableView = tableView
@@ -35,7 +38,7 @@ extension EmptyTableViewDataSourceDelegate: DZNEmptyDataSetSource
    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
       let text = _title
       let attribs = [
-         NSFontAttributeName: UIFont.mediumGoalieFontWithSize(18),
+         NSFontAttributeName: UIFont.mediumGoalieFontWithSize(useImage ? 14 : 18),
          NSForegroundColorAttributeName: UIColor.lightPurpleTextColor()
       ]
       
@@ -43,29 +46,49 @@ extension EmptyTableViewDataSourceDelegate: DZNEmptyDataSetSource
    }
    
    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-      let text = _description
+      var text = _description
       
       let para = NSMutableParagraphStyle()
       para.lineBreakMode = NSLineBreakMode.ByWordWrapping
       para.alignment = NSTextAlignment.Center
       
       let attribs = [
-         NSFontAttributeName: UIFont.mediumGoalieFontWithSize(14),
+         NSFontAttributeName: UIFont.mediumGoalieFontWithSize(useImage ? 14 : 16),
          NSForegroundColorAttributeName: UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.6),
          NSParagraphStyleAttributeName: para
+      ]
+      
+      if useImage {
+         text = ""
+      }
+      return NSAttributedString(string: text, attributes: attribs)
+   }
+   
+   func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat
+   {
+      return useImage ? -15 : 0
+   }
+   
+   func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString!
+   {
+      let text = "ADD A NEW GOAL"
+      let attribs = [
+         NSFontAttributeName: UIFont.boldGoalieFontWithSize(12),
+         NSForegroundColorAttributeName: state == .Normal ? UIColor.whiteColor() : UIColor.whiteColor().colorWithAlphaComponent(0.6),
+         NSKernAttributeName : 4
       ]
       
       return NSAttributedString(string: text, attributes: attribs)
    }
    
-   func buttonTitleForEmptyDataSet(scrollView: UIScrollView!, forState state: UIControlState) -> NSAttributedString! {
-      let text = "Create a Goal"
-      let attribs = [
-         NSFontAttributeName: UIFont.boldGoalieFontWithSize(16),
-         NSForegroundColorAttributeName: state == .Normal ? UIColor.whiteColor() : UIColor.whiteColor().colorWithAlphaComponent(0.6)
-      ]
-      
-      return NSAttributedString(string: text, attributes: attribs)
+   func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage!
+   {
+      return useImage ? UIImage(named: "Empty")! : UIImage.imageWithColor(UIColor.clearColor())
+   }
+   
+   func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat
+   {
+      return 6
    }
 }
 

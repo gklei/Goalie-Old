@@ -12,6 +12,7 @@ import CoreData
 class TodayTomorrowViewController: UIViewController, ManagedObjectContextSettable
 {
    var managedObjectContext: NSManagedObjectContext!
+   private var _goalPresenter: GoalPresenter<TodayTomorrowViewController>!
    
    @IBOutlet weak private var _topContainerView: UIView! {
       didSet {
@@ -26,11 +27,13 @@ class TodayTomorrowViewController: UIViewController, ManagedObjectContextSettabl
       }
    }
    
+   // MARK: - Lifecycle
    override func viewDidLoad()
    {
       super.viewDidLoad()
       navigationItem.title = "Active"
       automaticallyAdjustsScrollViewInsets = false
+      _goalPresenter = GoalPresenter(presentingController: self)
    }
    
    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -41,5 +44,11 @@ class TodayTomorrowViewController: UIViewController, ManagedObjectContextSettabl
       else if let tomorrowVC = segue.destinationViewController as? TomorrowViewController {
          tomorrowVC.managedObjectContext = managedObjectContext
       }
+   }
+   
+   // IBActions
+   @IBAction private func _addNewGoalButtonPressed()
+   {
+      _goalPresenter.createAndPresentNewGoal()
    }
 }

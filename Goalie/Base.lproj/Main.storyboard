@@ -119,7 +119,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LCu-3n-n6w">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Vd-hI-MAd"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Vd-hI-MAd">
+                            <connections>
+                                <action selector="_addNewGoalButtonPressed" destination="CjY-1i-dbD" id="Wq0-T5-95D"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
