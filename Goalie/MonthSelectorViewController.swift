@@ -40,7 +40,6 @@ class MonthSelectorViewController: UIViewController
       super.viewDidLoad()
       
       view.multipleTouchEnabled = false
-      view.backgroundColor = UIColor.clearColor()
       _setupMonthViews()
       
       _updateCurrentMonthView(_monthViews[0])
@@ -60,7 +59,7 @@ class MonthSelectorViewController: UIViewController
          let month = Month(rawValue: monthValue)!
          let monthView = MonthSelectorMonthView(month: month)
          monthView.backgroundColor = UIColor.mainBackgroundColor()
-         monthView.layer.borderColor = UIColor.lightPurpleTextColor().CGColor
+         monthView.layer.borderColor = UIColor.mainTabBarColor().CGColor
          monthView.layer.borderWidth = paddingBetweenMonths * 0.5
          
          _monthViews.append(monthView)
@@ -81,7 +80,7 @@ class MonthSelectorViewController: UIViewController
             let x: CGFloat = CGFloat(rowIndex) * (width + 0)
             let y: CGFloat = CGFloat(colIndex) * (height + 0)
             
-            _monthViews[index++].frame = CGRectMake(x, y, width, height)
+            _monthViews[index++].frame = CGRectMake(x, y, width, height).integral
          }
       }
    }

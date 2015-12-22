@@ -43,11 +43,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       }
    }
    @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! { didSet { _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem }}
-   @IBOutlet private weak var _subgoalsNavigationBar: GoalieNavigationBar! { didSet {
-         let tapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-         _subgoalsNavigationBar.addGestureRecognizer(tapRecognizer)
-      }
-   }
    @IBOutlet private weak var _subgoalsTableView: UITableView! { didSet {
          let nib = UINib(nibName: "SubgoalsTableViewCell", bundle: nil)
          _subgoalsTableView.registerNib(nib, forCellReuseIdentifier: SubgoalsCellIdentifier)
@@ -70,8 +65,9 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    override func viewDidLoad()
    {
       super.viewDidLoad()
-      _subgoalsNavigationBar.updateTitleFontSize(18)
-      _monthSelectorContainer.backgroundColor = UIColor.lightPurpleTextColor()
+      _monthSelectorContainer.backgroundColor = UIColor.mainTabBarColor()
+      _monthSelectorContainer.layer.masksToBounds = true
+      _monthSelectorContainer.layer.cornerRadius = 3
       _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
    }
    
@@ -79,7 +75,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewDidLayoutSubviews()
       let insetAmount = _monthSelectorViewController.paddingBetweenMonths * 0.5
-      _monthSelectorViewController.view.frame = _monthSelectorContainer.bounds.insetBy(dx: -insetAmount, dy: insetAmount).integral
+      _monthSelectorViewController.view.frame = _monthSelectorContainer.bounds.insetBy(dx: insetAmount, dy: insetAmount).integral
    }
    
    override func viewWillAppear(animated: Bool)

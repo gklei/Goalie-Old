@@ -10,7 +10,6 @@
             <connections>
                 <outlet property="_monthSelectorContainer" destination="H6m-hp-RPI" id="wwZ-9b-m3f"/>
                 <outlet property="_parentKeyboardAvoidingScrollView" destination="nwM-hr-82s" id="Bbd-YJ-ONf"/>
-                <outlet property="_subgoalsNavigationBar" destination="TAH-AX-iG6" id="fjk-6J-R7h"/>
                 <outlet property="_subgoalsTableView" destination="aON-Mw-vjP" id="ulA-pK-R9W"/>
                 <outlet property="_summaryTextField" destination="5Bw-KF-wS2" id="xmu-zT-H8k"/>
                 <outlet property="_titleTextField" destination="mQb-Oe-CkO" id="OWw-mz-AVR"/>
@@ -32,7 +31,7 @@
                                     <action selector="cancelButtonPressed" destination="-1" id="xXu-xA-ljt"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem key="rightBarButtonItem" title="Done" id="z2a-ji-7Ce">
+                            <barButtonItem key="rightBarButtonItem" title="Add" id="z2a-ji-7Ce">
                                 <connections>
                                     <action selector="doneButtonPressed" destination="-1" id="Yld-EO-iZf"/>
                                 </connections>
@@ -47,78 +46,115 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H6m-hp-RPI">
-                                    <rect key="frame" x="0.0" y="8" width="320" height="114.5"/>
+                                    <rect key="frame" x="11" y="12" width="298" height="99.5"/>
                                     <color key="backgroundColor" red="1" green="0.86551997398928004" blue="0.71199611460499601" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="H6m-hp-RPI" secondAttribute="height" multiplier="2.8:1" id="0q8-HF-cVv"/>
+                                        <constraint firstAttribute="width" secondItem="H6m-hp-RPI" secondAttribute="height" multiplier="3:1" id="0q8-HF-cVv"/>
                                     </constraints>
                                 </view>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
-                                    <rect key="frame" x="20" y="192.5" width="280" height="40"/>
-                                    <color key="tintColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Umi-Sr-7Aw"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
-                                            <real key="value" value="0.0"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
-                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
-                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-Oe-CkO" customClass="JVFloatLabeledTextField">
-                                    <rect key="frame" x="20" y="138.5" width="280" height="40"/>
-                                    <color key="tintColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="BjQ-X3-wEi"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
-                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
-                                            <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="0.5" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </textField>
-                                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-AX-iG6" customClass="GoalieNavigationBar" customModule="Goalie" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="232.5" width="320" height="44"/>
-                                    <items>
-                                        <navigationItem title="Sub-goals" id="6Dc-RG-Lqc"/>
-                                    </items>
-                                </navigationBar>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aON-Mw-vjP">
-                                    <rect key="frame" x="0.0" y="276.5" width="320" height="227.5"/>
-                                    <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="aON-Mw-vjP">
+                                    <rect key="frame" x="0.0" y="273" width="320" height="231"/>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="separatorColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ccc-nR-HNL">
+                                    <rect key="frame" x="0.0" y="127" width="320" height="126"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E58-Rc-rph" userLabel="Top Separator">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                                            <color key="backgroundColor" red="0.1529411765" green="0.17254901959999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="pck-Cw-fL1"/>
+                                            </constraints>
+                                        </view>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-Oe-CkO" customClass="JVFloatLabeledTextField">
+                                            <rect key="frame" x="10" y="10" width="300" height="50"/>
+                                            <color key="tintColor" red="0.42745098039215684" green="0.792156862745098" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="BjQ-X3-wEi"/>
+                                                <constraint firstAttribute="height" constant="50" id="csg-wR-jZq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
+                                                    <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
+                                                    <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-mG-X4t" userLabel="Separator">
+                                            <rect key="frame" x="10" y="61" width="310" height="1"/>
+                                            <color key="backgroundColor" red="0.1529411765" green="0.17254901959999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="5UH-0l-D9Y"/>
+                                            </constraints>
+                                        </view>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
+                                            <rect key="frame" x="10" y="72" width="300" height="50"/>
+                                            <color key="tintColor" red="0.42745098040000001" green="0.79215686269999996" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Umi-Sr-7Aw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelActiveTextColor">
+                                                    <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="floatingLabelTextColor">
+                                                    <color key="value" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycc-X4-hiC" userLabel="Bottom Separator">
+                                            <rect key="frame" x="0.0" y="125" width="320" height="1"/>
+                                            <color key="backgroundColor" red="0.1529411765" green="0.17254901959999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="akT-cE-M61"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.21960784310000001" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="mQb-Oe-CkO" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" constant="10" id="6cI-QS-JjM"/>
+                                        <constraint firstItem="ycc-X4-hiC" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" id="7wm-ls-HzM"/>
+                                        <constraint firstItem="E58-Rc-rph" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" id="CYl-Xr-h7x"/>
+                                        <constraint firstAttribute="trailing" secondItem="qJq-mG-X4t" secondAttribute="trailing" id="LZP-uu-DXF"/>
+                                        <constraint firstAttribute="bottom" secondItem="ycc-X4-hiC" secondAttribute="bottom" id="RLs-Nh-BfU"/>
+                                        <constraint firstItem="E58-Rc-rph" firstAttribute="top" secondItem="Ccc-nR-HNL" secondAttribute="top" id="SSh-rb-0wd"/>
+                                        <constraint firstAttribute="height" constant="126" id="TK8-tM-f6C"/>
+                                        <constraint firstItem="5Bw-KF-wS2" firstAttribute="top" secondItem="mQb-Oe-CkO" secondAttribute="bottom" constant="12" id="Vi4-qZ-uO5"/>
+                                        <constraint firstItem="mQb-Oe-CkO" firstAttribute="top" secondItem="Ccc-nR-HNL" secondAttribute="top" constant="10" id="bu5-4n-Eb1"/>
+                                        <constraint firstAttribute="trailing" secondItem="E58-Rc-rph" secondAttribute="trailing" id="gQJ-YN-G1H"/>
+                                        <constraint firstItem="5Bw-KF-wS2" firstAttribute="centerX" secondItem="mQb-Oe-CkO" secondAttribute="centerX" id="h4g-3t-MEu"/>
+                                        <constraint firstItem="5Bw-KF-wS2" firstAttribute="width" secondItem="mQb-Oe-CkO" secondAttribute="width" id="nqV-Mz-W4V"/>
+                                        <constraint firstAttribute="trailing" secondItem="mQb-Oe-CkO" secondAttribute="trailing" constant="10" id="p6a-ni-hsN"/>
+                                        <constraint firstAttribute="trailing" secondItem="ycc-X4-hiC" secondAttribute="trailing" id="pUl-GT-IpP"/>
+                                        <constraint firstItem="qJq-mG-X4t" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" constant="10" id="sXm-Ie-Zap"/>
+                                        <constraint firstItem="qJq-mG-X4t" firstAttribute="top" secondItem="mQb-Oe-CkO" secondAttribute="bottom" constant="1" id="z9S-Wy-NKW"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" red="0.18039215689999999" green="0.19215686269999999" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="mQb-Oe-CkO" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" constant="20" id="1po-Qb-CxF"/>
-                                <constraint firstItem="5Bw-KF-wS2" firstAttribute="top" secondItem="mQb-Oe-CkO" secondAttribute="bottom" constant="14" id="33T-YG-u47"/>
-                                <constraint firstItem="mQb-Oe-CkO" firstAttribute="top" secondItem="H6m-hp-RPI" secondAttribute="bottom" constant="16" id="53W-bh-zpX"/>
                                 <constraint firstAttribute="trailing" secondItem="aON-Mw-vjP" secondAttribute="trailing" id="BOz-sW-0by"/>
-                                <constraint firstAttribute="trailing" secondItem="mQb-Oe-CkO" secondAttribute="trailing" constant="20" id="DO5-D1-PfL"/>
                                 <constraint firstItem="aON-Mw-vjP" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" id="F8l-8U-WJY"/>
-                                <constraint firstAttribute="trailing" secondItem="H6m-hp-RPI" secondAttribute="trailing" id="LL7-zV-eCE"/>
-                                <constraint firstItem="H6m-hp-RPI" firstAttribute="top" secondItem="gqh-2V-VYI" secondAttribute="top" constant="8" id="LQW-Fb-CqC"/>
-                                <constraint firstAttribute="trailing" secondItem="TAH-AX-iG6" secondAttribute="trailing" id="O9s-Pk-m4r"/>
-                                <constraint firstItem="5Bw-KF-wS2" firstAttribute="width" secondItem="mQb-Oe-CkO" secondAttribute="width" id="YLK-1p-ScX"/>
-                                <constraint firstItem="aON-Mw-vjP" firstAttribute="top" secondItem="TAH-AX-iG6" secondAttribute="bottom" id="aOq-uV-gb3"/>
-                                <constraint firstItem="H6m-hp-RPI" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" id="c6S-P6-pMr"/>
-                                <constraint firstItem="5Bw-KF-wS2" firstAttribute="centerX" secondItem="mQb-Oe-CkO" secondAttribute="centerX" id="cVo-uc-l6c"/>
-                                <constraint firstItem="TAH-AX-iG6" firstAttribute="top" secondItem="5Bw-KF-wS2" secondAttribute="bottom" id="cau-O5-kI8"/>
-                                <constraint firstItem="TAH-AX-iG6" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" id="qHb-2W-5NX"/>
+                                <constraint firstAttribute="trailing" secondItem="Ccc-nR-HNL" secondAttribute="trailing" id="HJZ-gh-DHQ"/>
+                                <constraint firstAttribute="trailing" secondItem="H6m-hp-RPI" secondAttribute="trailing" constant="11" id="LL7-zV-eCE"/>
+                                <constraint firstItem="H6m-hp-RPI" firstAttribute="top" secondItem="gqh-2V-VYI" secondAttribute="top" constant="12" id="LQW-Fb-CqC"/>
+                                <constraint firstItem="Ccc-nR-HNL" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" id="S7i-KA-I1Z"/>
+                                <constraint firstItem="H6m-hp-RPI" firstAttribute="leading" secondItem="gqh-2V-VYI" secondAttribute="leading" constant="11" id="c6S-P6-pMr"/>
+                                <constraint firstItem="aON-Mw-vjP" firstAttribute="top" secondItem="Ccc-nR-HNL" secondAttribute="bottom" constant="20" id="cCr-Pj-yOV"/>
+                                <constraint firstItem="Ccc-nR-HNL" firstAttribute="top" secondItem="H6m-hp-RPI" secondAttribute="bottom" constant="16" id="ctj-br-yy3"/>
                                 <constraint firstAttribute="bottom" secondItem="aON-Mw-vjP" secondAttribute="bottom" id="vAF-uu-2wE"/>
                             </constraints>
                         </view>
@@ -152,7 +188,7 @@
                 <constraint firstItem="Md1-gg-ksD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zxw-td-f02"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="23" y="200"/>
+            <point key="canvasLocation" x="126" y="161"/>
         </view>
     </objects>
 </document>

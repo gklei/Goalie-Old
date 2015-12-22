@@ -25,11 +25,11 @@ class MonthSelectorMonthView: UIView
    var selected: Bool {
       didSet {
          backgroundColor = selected == true ? selectedBackgroundColor : unselectedBackgroundColor
-         _monthLabel.textColor = selected == true ? UIColor.lightBlueTextColor() : UIColor.lightPurpleTextColor()
+         _monthLabel.textColor = selected == true ? UIColor.whiteColor() : UIColor.lightPurpleTextColor()
       }
    }
    
-   var selectedBackgroundColor = UIColor.lightPurpleTextColor()
+   var selectedBackgroundColor = UIColor.mainTabBarColor()
    var unselectedBackgroundColor = UIColor.mainBackgroundColor()
    
    private var _monthLabel: UILabel

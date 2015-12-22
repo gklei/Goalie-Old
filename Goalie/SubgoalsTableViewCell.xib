@@ -45,6 +45,7 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="tintColor" red="0.48627450979999998" green="0.48627450979999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <inset key="contentEdgeInsets" minX="0.0" minY="-4" maxX="0.0" maxY="0.0"/>
                         <state key="normal" title="◦"/>
                         <connections>
                             <action selector="completeButtonPressed" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pjN-UX-ZB0"/>
