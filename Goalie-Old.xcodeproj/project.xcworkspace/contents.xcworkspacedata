@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Goalie.xcodeproj">
+      location = "self:/Users/gklein/Projects/Incipia/iOS/Goalie/Goalie-Old.xcodeproj">
    </FileRef>
 </Workspace>

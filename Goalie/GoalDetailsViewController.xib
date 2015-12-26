@@ -67,8 +67,8 @@
                                                 <constraint firstAttribute="height" constant="1" id="pck-Cw-fL1"/>
                                             </constraints>
                                         </view>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Title" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-Oe-CkO" customClass="JVFloatLabeledTextField">
-                                            <rect key="frame" x="10" y="10" width="300" height="50"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TITLE" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="mQb-Oe-CkO" customClass="JVFloatLabeledTextField">
+                                            <rect key="frame" x="14" y="10" width="296" height="50"/>
                                             <color key="tintColor" red="0.42745098039215684" green="0.792156862745098" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="BjQ-X3-wEi"/>
@@ -95,8 +95,8 @@
                                                 <constraint firstAttribute="height" constant="1" id="5UH-0l-D9Y"/>
                                             </constraints>
                                         </view>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Description" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
-                                            <rect key="frame" x="10" y="72" width="300" height="50"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="DESCRIPTION" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Bw-KF-wS2" customClass="JVFloatLabeledTextField">
+                                            <rect key="frame" x="14" y="72" width="296" height="50"/>
                                             <color key="tintColor" red="0.42745098040000001" green="0.79215686269999996" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Umi-Sr-7Aw"/>
@@ -125,7 +125,7 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.21960784310000001" green="0.23529411759999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="mQb-Oe-CkO" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" constant="10" id="6cI-QS-JjM"/>
+                                        <constraint firstItem="mQb-Oe-CkO" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" constant="14" id="6cI-QS-JjM"/>
                                         <constraint firstItem="ycc-X4-hiC" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" id="7wm-ls-HzM"/>
                                         <constraint firstItem="E58-Rc-rph" firstAttribute="leading" secondItem="Ccc-nR-HNL" secondAttribute="leading" id="CYl-Xr-h7x"/>
                                         <constraint firstAttribute="trailing" secondItem="qJq-mG-X4t" secondAttribute="trailing" id="LZP-uu-DXF"/>

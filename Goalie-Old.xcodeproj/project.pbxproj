@@ -162,14 +162,14 @@
 		F393249E1C1E6F78009A525A /* GoalieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoalieTableViewCell.swift; path = Goalie/GoalieTableViewCell.swift; sourceTree = "<group>"; };
 		F3C84B7E1C18986300E7CD3B /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		F3C84B801C18987E00E7CD3B /* TomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomorrowViewController.swift; sourceTree = "<group>"; };
-		F3D461841C113221002F31A6 /* Goalie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goalie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D461841C113221002F31A6 /* Goalie-Old.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Goalie-Old.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D461871C113221002F31A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Goalie/AppDelegate.swift; sourceTree = "<group>"; };
 		F3D461891C113221002F31A6 /* AllGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGoalsViewController.swift; sourceTree = "<group>"; };
 		F3D4618B1C113221002F31A6 /* MonthsGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsGridViewController.swift; sourceTree = "<group>"; };
 		F3D4618E1C113221002F31A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F3D461931C113221002F31A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3D461951C113221002F31A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Goalie/Info.plist; sourceTree = "<group>"; };
-		F3D4619A1C113221002F31A6 /* GoalieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoalieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3D4619A1C113221002F31A6 /* Goalie-Old.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Goalie-Old.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D4619E1C113221002F31A6 /* GoalieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalieTests.swift; sourceTree = "<group>"; };
 		F3D461A01C113221002F31A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3D461A91C113698002F31A6 /* TodayTomorrowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTomorrowViewController.swift; sourceTree = "<group>"; };
@@ -303,8 +303,8 @@
 		F3D461851C113221002F31A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F3D461841C113221002F31A6 /* Goalie.app */,
-				F3D4619A1C113221002F31A6 /* GoalieTests.xctest */,
+				F3D461841C113221002F31A6 /* Goalie-Old.app */,
+				F3D4619A1C113221002F31A6 /* Goalie-Old.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,9 +428,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F3D461831C113221002F31A6 /* Goalie */ = {
+		F3D461831C113221002F31A6 /* Goalie-Old */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3D461A31C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie" */;
+			buildConfigurationList = F3D461A31C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie-Old" */;
 			buildPhases = (
 				F3D461801C113221002F31A6 /* Sources */,
 				F3D461811C113221002F31A6 /* Frameworks */,
@@ -442,14 +442,14 @@
 			);
 			dependencies = (
 			);
-			name = Goalie;
+			name = "Goalie-Old";
 			productName = Goalie;
-			productReference = F3D461841C113221002F31A6 /* Goalie.app */;
+			productReference = F3D461841C113221002F31A6 /* Goalie-Old.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F3D461991C113221002F31A6 /* GoalieTests */ = {
+		F3D461991C113221002F31A6 /* Goalie-OldTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3D461A61C113221002F31A6 /* Build configuration list for PBXNativeTarget "GoalieTests" */;
+			buildConfigurationList = F3D461A61C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie-OldTests" */;
 			buildPhases = (
 				F3D461961C113221002F31A6 /* Sources */,
 				F3D461971C113221002F31A6 /* Frameworks */,
@@ -460,9 +460,9 @@
 			dependencies = (
 				F3D4619C1C113221002F31A6 /* PBXTargetDependency */,
 			);
-			name = GoalieTests;
+			name = "Goalie-OldTests";
 			productName = GoalieTests;
-			productReference = F3D4619A1C113221002F31A6 /* GoalieTests.xctest */;
+			productReference = F3D4619A1C113221002F31A6 /* Goalie-Old.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -485,7 +485,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F3D4617F1C113221002F31A6 /* Build configuration list for PBXProject "Goalie" */;
+			buildConfigurationList = F3D4617F1C113221002F31A6 /* Build configuration list for PBXProject "Goalie-Old" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -498,8 +498,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F3D461831C113221002F31A6 /* Goalie */,
-				F3D461991C113221002F31A6 /* GoalieTests */,
+				F3D461831C113221002F31A6 /* Goalie-Old */,
+				F3D461991C113221002F31A6 /* Goalie-OldTests */,
 			);
 		};
 /* End PBXProject section */
@@ -621,7 +621,7 @@
 /* Begin PBXTargetDependency section */
 		F3D4619C1C113221002F31A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F3D461831C113221002F31A6 /* Goalie */;
+			target = F3D461831C113221002F31A6 /* Goalie-Old */;
 			targetProxy = F3D4619B1C113221002F31A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -744,7 +744,7 @@
 				INFOPLIST_FILE = Goalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Goalie-Old";
 				PROVISIONING_PROFILE = "9d0ccd64-9702-4ad7-a544-e285b2069cbd";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Goalie/Goalie-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -766,7 +766,7 @@
 				INFOPLIST_FILE = Goalie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.Goalie;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Goalie-Old";
 				PROVISIONING_PROFILE = "9d0ccd64-9702-4ad7-a544-e285b2069cbd";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Goalie/Goalie-Bridging-Header.h";
 			};
@@ -779,8 +779,8 @@
 				INFOPLIST_FILE = GoalieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.GoalieTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goalie.app/Goalie";
+				PRODUCT_NAME = "Goalie-Old";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goalie-Old.app/Goalie-Old";
 			};
 			name = Debug;
 		};
@@ -791,15 +791,15 @@
 				INFOPLIST_FILE = GoalieTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.incipia.GoalieTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goalie.app/Goalie";
+				PRODUCT_NAME = "Goalie-Old";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Goalie-Old.app/Goalie-Old";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F3D4617F1C113221002F31A6 /* Build configuration list for PBXProject "Goalie" */ = {
+		F3D4617F1C113221002F31A6 /* Build configuration list for PBXProject "Goalie-Old" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F3D461A11C113221002F31A6 /* Debug */,
@@ -808,7 +808,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3D461A31C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie" */ = {
+		F3D461A31C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie-Old" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F3D461A41C113221002F31A6 /* Debug */,
@@ -817,7 +817,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3D461A61C113221002F31A6 /* Build configuration list for PBXNativeTarget "GoalieTests" */ = {
+		F3D461A61C113221002F31A6 /* Build configuration list for PBXNativeTarget "Goalie-OldTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F3D461A71C113221002F31A6 /* Debug */,

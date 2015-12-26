@@ -13,12 +13,13 @@ let SubgoalsCellIdentifier = "SubgoalsCellIdentifier"
 
 class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
 {
+   var managedObjectContext: NSManagedObjectContext!
+   
    private var _goal: Goal!
    private var _shouldShowCancelButton: Bool!
    private var _cancelBarButtonItem: UIBarButtonItem?
-
-   var managedObjectContext: NSManagedObjectContext!
    private var _currentSubgoalCell: SubgoalsTableViewCell?
+   
    private var _emptySubgoalAtBottom: Bool {
       var emptySubgoalAtBottom = false
       if let lastSubgoal = _goal.subgoals.last {
@@ -30,26 +31,45 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       return (_currentSubgoalCell != nil) || _titleTextField.isFirstResponder() || _summaryTextField.isFirstResponder()
    }
    
-   @IBOutlet private weak var _monthSelectorContainer: UIView!
+   private var _monthSelectorViewController = MonthSelectorViewController()
+   @IBOutlet private weak var _monthSelectorContainer: UIView! { didSet {
+      _monthSelectorContainer.backgroundColor = UIColor.mainTabBarColor()
+      _monthSelectorContainer.layer.masksToBounds = true
+      _monthSelectorContainer.layer.cornerRadius = 3
+      _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
+      }
+   }
    @IBOutlet private weak var _parentKeyboardAvoidingScrollView: TPKeyboardAvoidingScrollView!
    @IBOutlet private weak var _titleTextField: JVFloatLabeledTextField! { didSet {
       _titleTextField.textColor = UIColor.whiteColor()
       _titleTextField.attributedPlaceholder = NSAttributedString(string: "Title", attributes: [NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8)])
+      _titleTextField.floatingLabel.attributedText = NSAttributedString(string: "TITLE:",
+         attributes: [
+            NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8),
+            NSKernAttributeName : 3
+         ])
       }
    }
    @IBOutlet private weak var _summaryTextField: JVFloatLabeledTextField! { didSet {
       _summaryTextField.textColor = UIColor.whiteColor()
       _summaryTextField.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8)])
+      _summaryTextField.floatingLabel.attributedText = NSAttributedString(string: "DESCRIPTION:",
+         attributes: [
+            NSForegroundColorAttributeName : UIColor.lightPurpleTextColor().colorWithAlphaComponent(0.8),
+            NSKernAttributeName : 3
+         ])
       }
    }
-   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! { didSet { _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem }}
+   @IBOutlet private weak var _topNavigationBar: GoalieNavigationBar! { didSet {
+      _cancelBarButtonItem = _topNavigationBar.leftBarButtonItem
+      }
+   }
    @IBOutlet private weak var _subgoalsTableView: UITableView! { didSet {
          let nib = UINib(nibName: "SubgoalsTableViewCell", bundle: nil)
          _subgoalsTableView.registerNib(nib, forCellReuseIdentifier: SubgoalsCellIdentifier)
       }
    }
    
-   private var _monthSelectorViewController = MonthSelectorViewController()
    private var _shouldGiveNextCreatedCellFocus = false
 
    private typealias DataProvider = FetchedResultsDataProvider<GoalDetailsViewController>
@@ -62,15 +82,6 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    }
    
    // MARK: - Lifecycle
-   override func viewDidLoad()
-   {
-      super.viewDidLoad()
-      _monthSelectorContainer.backgroundColor = UIColor.mainTabBarColor()
-      _monthSelectorContainer.layer.masksToBounds = true
-      _monthSelectorContainer.layer.cornerRadius = 3
-      _monthSelectorContainer.addSubview(_monthSelectorViewController.view)
-   }
-   
    override func viewDidLayoutSubviews()
    {
       super.viewDidLayoutSubviews()
@@ -82,7 +93,7 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
    {
       super.viewWillAppear(animated)
       _updateTitlesAndUI()
-      _hideOrShowCancelButton()
+      _updateBarButtonItems()
       _setupSubgoalsTable()
       
       _monthSelectorViewController.selectedMonth = _goal.month
@@ -104,10 +115,11 @@ class GoalDetailsViewController: UIViewController, ManagedObjectContextSettable
       _topNavigationBar.updateTitle(title)
    }
    
-   private func _hideOrShowCancelButton()
+   private func _updateBarButtonItems()
    {
       let leftBarButtonItem: UIBarButtonItem? = (_shouldShowCancelButton == true) ? _cancelBarButtonItem : nil
       _topNavigationBar.leftBarButtonItem = leftBarButtonItem
+      _topNavigationBar.rightBarButtonItem?.title = (_shouldShowCancelButton == true) ? "Add" : "Done"
    }
    
    private func _setupSubgoalsTable()
